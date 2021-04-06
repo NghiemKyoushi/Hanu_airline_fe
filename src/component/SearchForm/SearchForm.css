@@ -1,0 +1,101 @@
+.form{
+    
+        background-color: #5f6668;
+        width: 649px;
+        display:flex;
+        height: 250px;
+        margin: auto;
+        border-radius: 50px;
+        /* align-items: flex-start; */
+        box-shadow: 1.1px 1.1px 4px;
+        flex-direction: row;
+        justify-content: center;
+        /* align-items: center; */
+      
+}
+.oneway{
+    width: 90px;
+    height: 40px;
+    border-radius: 60px;
+    background-color: #ffff;
+    font-weight: bold;
+    border: none;
+    box-shadow: 1.1px 1.1px 5px;
+}
+.buttonClass{
+    /* margin-top: 9px;
+    margin-left: 15px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 42px;
+    border-radius: 60px;
+    background-color: rgb(252, 249, 249);
+}
+.container1, .container2{
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container2{
+    margin-left: 6px;
+}
+
+.departuretime{
+    margin-top: 10px;
+    width: 280px;
+    height: 32px;
+    text-align: center;
+
+    border-radius: 50px;
+    background-color: rgb(153, 153, 149);
+    border: none;
+    font-size: 17px;
+    /* color: #ffff; */
+    box-shadow: 1.1px 1.1px 5px;
+}
+.time_departure {
+    margin-top: 10px;
+    margin-left: 10px;
+
+    width: 118px;
+    text-align: center;
+
+    height: 32px;
+    border-radius: 50px;
+    background-color: rgb(153, 153, 149);
+    border: none;
+    /* font-size: 10px; */
+    /* color: #ffff; */
+    box-shadow: 1.1px 1.1px 5px;
+    
+}
+.ageSelect{
+    margin-top: 30px;
+    margin-left: 10px;
+    width: 80px;
+    height: 32px;
+    border-radius: 50px;
+    background-color: rgb(153, 153, 149);
+    border: none;
+    font-weight: bold;
+    /* font-size: 10px; */
+    /* color: #ffff; */
+    box-shadow: 1.1px 1.1px 5px;
+    text-align: center;
+}
+.searchButton{
+    width: 140px;
+    height: 50px;
+    border-radius: 60px;
+    background-color: rgb(243, 247, 18);
+    font-weight: bold;
+    border: none;
+    font-size: 23px;
+    box-shadow: 1.1px 1.1px 5px;
+    margin-top: 30px;
+    margin-left: 80px;
+    
+}
