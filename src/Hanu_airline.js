@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, withRouter } from "react-router-dom";
 //COMPONENT IMPORT
 import HomePage from './view/home/homepage';
 //import UnAuthen
-import UnAuthenRoute from './route/viewer_route/unAuthen_route';
+import UnAuthenRoute from './routes/viewer_route/unAuthen_route';
 //Authentication
 import SignIn from "./view/login/index";
 import SignUp from './view/register/signup';

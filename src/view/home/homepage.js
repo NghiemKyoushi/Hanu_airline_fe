@@ -2,10 +2,10 @@ import React from "react";
 import { Button, Grid } from "@material-ui/core";
 
 import { withRouter } from "react-router-dom";
-import Header from "../../component/header/header";
-import Footer from "../../component/footer/footer";
-import NavBar from "../../component/navbar/navbar";
-import SearchForm from '../../component/SearchForm/SearchForm';
+import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer";
+import NavBar from "../../components/navbar/navbar";
+import SearchForm from '../../components/SearchForm/SearchForm';
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
