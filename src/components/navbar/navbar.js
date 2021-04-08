@@ -21,13 +21,13 @@ class NavBar extends React.Component{
     render(){
         // const classes = useStyles();
         return(
-               <div style={{ background: '#ffff', width: "500px",display: "flex", height: "45px", margin: "auto", borderRadius: "50px", alignItems:'flex-start', boxShadow: "1.1px 1.1px 4px" }} >
+               <div style={{ background: '#ffff', width: "768px",display: "flex", height: "55px", margin: "auto", borderRadius: "50px", alignItems:'flex-start', boxShadow: "1.1px 1.1px 4px" }} >
                    <Toolbar style={{marginTop: "-10px"}}>
-                   <Button variant="contained" style={{ background: '#ffff', borderRadius: "40px" }}  >Home</Button>
-                   <Button variant="contained" style={{marginLeft: 1.5,background: '#ffff',borderRadius: "40px"}}>Promotion</Button>
-                   <Button variant="contained" style={{marginLeft: 1.5,background: '#ffff',borderRadius: "40px"}}>Flight</Button>
-                   <Button variant="contained" style={{marginLeft: 1.5,background: '#ffff',borderRadius: "40px"}}>Ticket</Button>
-                   <Button variant="contained" style={{marginLeft: 1.5,background: '#ffff',borderRadius: "40px"}}>Contact</Button>
+                   <Button variant="contained" style={{margin: "15px 0px 10px -17px", background: '#ffff', borderRadius: "40px", height: "45px", width: "150px" }}  >Home</Button>
+                   <Button variant="contained" style={{margin: "15px 0px 10px 1px", background: '#ffff', borderRadius: "40px", height: "45px", width: "150px"}}>Promotion</Button>
+                   <Button variant="contained" style={{margin:  "15px 0px 10px 1px", background: '#ffff', borderRadius: "40px", height: "45px", width: "150px"}}>Flight</Button>
+                   <Button variant="contained" style={{margin:  "15px 0px 10px 1px", background: '#ffff', borderRadius: "40px", height: "45px", width: "150px"}}>Ticket</Button>
+                   <Button variant="contained" style={{margin: "15px 0px 10px 1px", background: '#ffff', borderRadius: "40px", height: "45px", width: "150px"}}>Contact</Button>
 
                    </Toolbar>
                </div>

@@ -21,20 +21,22 @@ class SearchForm extends React.Component {
          <button className ="oneway">Multi-city</button>
          </div>
          <div className="location">
-         <div ><input className ="departuretime" placeholder ="Departure airport or city"
+         <div >
+           <div className = "place"><b>From . . . </b></div>
+           <input className ="departuretime" placeholder ="  Departure airport or city . . ."
          /></div>
          
          </div>
          <div className="flighttime">
          <label></label>
-         <input className="time_departure" type="date"/>
-         <input className="time_departure" type="date"/>
+         <input className="time_departure" type="date" id="date"/>
+         <input className="time_departure" type="date" id="date"/>
 
          </div>
          <div className="age">
          <label></label>
-         <input placeholder="adult" className="ageSelect" type="number"/>
-         <input placeholder="children" className="ageSelect" type="number"/>
+         <input placeholder="    Adult" className="ageSelect" type="number"/>
+         <input placeholder="    Children" className="ageSelect" type="number"/>
 
          </div>
          </div>
@@ -45,10 +47,11 @@ class SearchForm extends React.Component {
          <button className ="oneway">Economy</button>
          </div>
          <div className="location">
-         <div ><input className ="departuretime" placeholder ="Arrival airport or city"
-         /></div>
+         <div > <div className = "place"><b>To . . . </b></div>
+         <input className ="departuretime" placeholder ="  Arrival airport or city . . ."
+         /></div> 
          </div>
-         <button className="searchButton">Search</button>
+         <button className="searchButton">Search Fights</button>
          </div>
         </form>
       </>

@@ -24,7 +24,7 @@ class HomePage extends React.Component {
           <Grid item>
           <NavBar/>
           </Grid>
-          <div style={{ height: "20px" }}></div>
+          <div style={{ height: "20px", marginTop: "10px", borderRadius: "40px"}}></div>
           <Grid item  style={{display: "flex",justifyContent: "center", alignItems: "center"}}>
             <Button  variant="contained" color="primary" size ="large">BOOKING</Button>
           </Grid>
