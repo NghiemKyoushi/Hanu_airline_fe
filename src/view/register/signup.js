@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { withStyles } from "@material-ui/core/styles";
+import './signup.css';
 //fetch data
 
 import {Register} from '../../utils/fetchData/fetchData'
@@ -28,23 +29,7 @@ function Copyright() {
 }
 
 const styles = (theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
+  
 });
 
 class SignUp extends React.Component {
@@ -83,19 +68,12 @@ class SignUp extends React.Component {
   render(){
     const { classes } = this.props;
     return (
-      <Container component="main" maxWidth="xs">
+      <Container >
         <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <form className={classes.form} noValidate>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
+            <div class ="cont" noValidate>
+              <div class = "SignUpForm">
+                <h2>Sign up</h2>
+                <div class = "dis-textbox"><TextField
                   size="small"
                   autoComplete="uname"
                   name="usernameOrEmail"
@@ -104,15 +82,12 @@ class SignUp extends React.Component {
                   fullWidth
                   id="username"
                   type= "text"
-  
                   label="Username"
                   autoFocus
                   onChange= {this.onChange}
 
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
+                /></div>
+                <div class = "dis-textbox"><TextField
                   size="small"
                   variant="outlined"
                   required
@@ -123,10 +98,8 @@ class SignUp extends React.Component {
                   type= "text"
                   autoComplete="name"
                   onChange={this.onChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
+                /></div>
+                <div class = "dis-textbox"><TextField
                   size="small"
                   variant="outlined"
                   required
@@ -138,55 +111,8 @@ class SignUp extends React.Component {
                   autoComplete="email"
                   onChange= {this.onChange}
 
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  size="small"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="imageUrl"
-                  label="imageUrl"
-                  name="imageUrl"
-                  type="text"
-                  autoComplete="imageUrl"
-                  onChange= {this.onChange}
-
-                />
-              </Grid>
-              {/* <Grid item xs={12}>
-                <TextField
-                  size="small"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="idcard"
-                  label="IDCard"
-                  name="IDCard"
-                  type="number"
-                  autoComplete="IDCard"
-                  onChange= {this.onChange}
-
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  size="small"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="idcard"
-                  label="Credit No"
-                  name="creditno"
-                  type="number"
-                  autoComplete="creditno"
-                  onChange= {this.onChange}
-
-                />
-              </Grid> */}
-              <Grid item xs={12}>
-                <TextField
+                /></div>
+                <div class = "dis-textbox"><TextField
                   size="small"
                   variant="outlined"
                   required
@@ -197,38 +123,40 @@ class SignUp extends React.Component {
                   id="password"
                   autoComplete="current-password"
                   onChange= {this.onChange}
-
-                />
-              </Grid>
-              {/* <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid> */}
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-              onClick= {this.onSubmit}
-            >
-              Sign Up
-            </Button>
-            <Grid container justify="flex-end">
-              <Grid item>
-                <Link href="/login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
-          </form>
-        </div>
-        <Box mt={5}>
-          <Copyright />
-        </Box>
+                /></div>
+              
+                <div class = "dis-textbox"><TextField
+                  size="small"
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Confirm Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                  onChange= {this.onChange}
+                /></div>
+            
+                <div class = "SignUp"><Button
+                  type="button"
+                  class = "submit"
+                  fullWidth
+                  variant="contained"
+                  className={classes.submit}
+                  onClick= {this.onSubmit}
+                >Sign Up
+                </Button></div>
+              </div>
+              <div class = "img">
+                <div class = "Sub-SignUp">Already a Member?</div>
+                <p>If you already have an account, just SIGN IN!</p>
+                  <Link href="/login">
+                  <div class = "ButtonSignIn"><h3> Sign in</h3></div>
+                  </Link>
+                
+              </div>
+          </div>
       </Container>
     );
   }

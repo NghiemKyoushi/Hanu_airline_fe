@@ -22,7 +22,7 @@ class SearchForm extends React.Component {
          </div>
          <div className="location">
          <div >
-           <div className = "place"><b>From . . . </b></div>
+           <div className = "place"></div>
            <input className ="departuretime" placeholder ="  Departure airport or city . . ."
          /></div>
          
@@ -47,7 +47,7 @@ class SearchForm extends React.Component {
          <button className ="oneway">Economy</button>
          </div>
          <div className="location">
-         <div > <div className = "place"><b>To . . . </b></div>
+         <div > <div className = "place"></div>
          <input className ="departuretime" placeholder ="  Arrival airport or city . . ."
          /></div> 
          </div>

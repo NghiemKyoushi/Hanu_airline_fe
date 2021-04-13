@@ -1,5 +1,5 @@
 import React from "react";
-
+import './login.css';
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -29,23 +29,7 @@ function Copyright() {
 }
 
 const useStyles = (theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
+  
 });
 
 class SignIn extends React.Component {
@@ -97,18 +81,12 @@ class SignIn extends React.Component {
     console.log("props day",this.props);
 
     return (
-      <Container component="main" maxWidth="xs">
+      <Container>
         <CssBaseline />
-        <div className={classes.paper}>
-          <Link to='/'><Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          </Link>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <form className={classes.form} noValidate>
-            <TextField
+        <div class ="container" noValidate>
+          <div class = "SignInForm">
+                <h2>Sign In</h2>
+                <div class = "textbox"><TextField
               variant="outlined"
               margin="normal"
               required
@@ -119,46 +97,45 @@ class SignIn extends React.Component {
               autoComplete="usernameOrEmail"
               autoFocus
               onChange={this.onChange}
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              onChange={this.onChange}
-            />
-            <FormControlLabel
+            /></div>
+            <div class = "textbox"><TextField
+                  size="small"
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                  onChange= {this.onChange}
+                />
+            </div>
+            <div class = "check"><FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
-            />
+            /></div>
+            
+            
             <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-              onClick={this.onSubmit}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link to="#" variant="body2">
+                  type="button"
+                  class = "submitSignIn"
+                  fullWidth
+                  variant="contained"
+                  className={classes.submit}
+                  onClick= {this.onSubmit}
+                >Sign In
+                </Button>
+                <div class = "forgot"><Link to="#" variant="body2">
                   Forgot password?
                 </Link>
-              </Grid>
-              <Grid item>
-                <Link to="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
-          </form>
+                  </div>
+          </div>
+          <div class = "imgg"><div class = "title">Create an account?</div>
+          <div class = "If">If you have no account, enter SIGN UP to start!</div>
+          <Link to="/signup" variant="body2">
+                  <div class = "ButtonSignUp"><h3> Sign Up</h3></div>
+                </Link></div>
         </div>
         <Box mt={8}>
           <Copyright />
@@ -167,12 +144,4 @@ class SignIn extends React.Component {
     );
   }
 }
-
-// SignIn.propTypes = {
-//   login: React.PropTypes.func.isRequired,
-// };
-
-// SignIn.contextType = {
-//   router: React.PropTypes.object.isRequired,
-// };
 export default withStyles(useStyles) (withRouter(SignIn));
