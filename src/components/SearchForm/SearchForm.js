@@ -22,24 +22,30 @@ class SearchForm extends React.Component {
          </div>
          <div className="location">
          <div >
-           <div className = "place"></div>
-           <input className ="departuretime" placeholder ="  Departure airport or city . . ."
+           <div className = "place">Flying from</div>
+           <input className ="departuretime" placeholder ="  City or airport . . ."
          /></div>
          
          </div>
-         <div className="flighttime">
-         <label></label>
-         <input className="time_departure" type="date" id="date"/>
-         <input className="time_departure" type="date" id="date"/>
-
+         <div className="flighttime1">
+         <div className = "place">Departing</div>
+         <input className="time_departure" type="date" id="date" required/>
+         <div className="flighttime2"></div>
+         <div className = "place">Aldults (18+)</div>
+         <input className="ageSelect" type="number"/>
+         
          </div>
          <div className="age">
-         <label></label>
-         <input placeholder="    Adult" className="ageSelect" type="number"/>
-         <input placeholder="    Children" className="ageSelect" type="number"/>
-
+         <div className="flighttime1">
+         <div className = "place">Returning</div>
+         <input className="time_departure" type="date" id="date" required/>
+         <div className="flighttime2"></div>
+         <div className = "place">Children (0-17)</div>
+         <input  className="ageSelect" type="number"/>
          </div>
          </div>
+         </div>
+         
          <div className ="container2">
          <div className="buttonClass">
          <button className ="oneway">Bussiness</button>
@@ -47,13 +53,161 @@ class SearchForm extends React.Component {
          <button className ="oneway">Economy</button>
          </div>
          <div className="location">
-         <div > <div className = "place"></div>
-         <input className ="departuretime" placeholder ="  Arrival airport or city . . ."
+         <div > <div className = "place"> Flying to</div>
+         <input className ="departuretime" placeholder ="  City or airport . . ."
          /></div> 
          </div>
-         <button className="searchButton">Search Fights</button>
+         <button className="searchButton">Search</button>
          </div>
         </form>
+
+        <form class = "promotionForm">
+        <div class = "promotionMenu">
+          <div class = "promotion">
+            <div style={{height: "20px", marginTop: "30px", marginBottom: "40px", borderRadius: "60px", display: "flex",justifyContent: "center", alignItems: "center"}}>
+            <Button  variant="contained" color="primary" size ="large">Promotion</Button>
+            </div>
+            <nav>
+                <ul>
+                <li><div className ="promorion3">
+                    <button className ="from">Ha Noi</button>
+                      <div className = "t">to</div>
+                      <button className ="from">HCM City</button>
+                        <input className="time_departure_pr" type="date" id="date"/>
+                        <div className ="price">Price</div>
+                        <div>
+                          <button className ="oneway_pr">One way</button>
+                          <button className ="oneway_pr">Economy</button>
+                        </div>
+                          <button className="BookNow">Book Now</button>
+                    </div>
+                    </li>
+                    <li><div className ="promorion3">
+                    <button className ="from">Ha Noi</button>
+                      <div className = "t">to</div>
+                      <button className ="from">HCM City</button>
+                        <input className="time_departure_pr" type="date" id="date"/>
+                        <div className ="price">Price</div>
+                        <div>
+                          <button className ="oneway_pr">One way</button>
+                          <button className ="oneway_pr">Economy</button>
+                        </div>
+                          <button className="BookNow">Book Now</button>
+                    </div>
+                    </li>
+                    <li><div className ="promorion3">
+                    <button className ="from">Ha Noi</button>
+                      <div className = "t">to</div>
+                      <button className ="from">HCM City</button>
+                        <input className="time_departure_pr" type="date" id="date"/>
+                        <div className ="price">Price</div>
+                        <div>
+                          <button className ="oneway_pr">One way</button>
+                          <button className ="oneway_pr">Economy</button>
+                        </div>
+                          <button className="BookNow">Book Now</button>
+                    </div>
+                    </li>
+                    <li><div className ="promorion3">
+                    <button className ="from">Ha Noi</button>
+                      <div className = "t">to</div>
+                      <button className ="from">HCM City</button>
+                        <input className="time_departure_pr" type="date" id="date"/>
+                        <div className ="price">Price</div>
+                        <div>
+                          <button className ="oneway_pr">One way</button>
+                          <button className ="oneway_pr">Economy</button>
+                        </div>
+                          <button className="BookNow">Book Now</button>
+                    </div>
+                    </li>
+                </ul>
+            </nav>
+            <button className="more">More</button>
+          </div>
+        </div>
+        </form>
+
+<form class = "FlightForm">
+        <div class = "promotionMenu">
+          <div class = "promotion">
+          <div style={{height: "20px", marginTop: "100px", marginBottom: "40px", borderRadius: "60px", display: "flex",justifyContent: "center", alignItems: "center"}}>
+            <Button  variant="contained" color="primary" size ="large">Flight</Button>
+            </div>
+            <nav>
+                <ul>
+                <li><div className ="promorion3">
+                    <button className ="from">Ha Noi</button>
+                      <div className = "t">to</div>
+                      <button className ="from">HCM City</button>
+                        <input className="time_departure_pr" type="date" id="date"/>
+                        <div className ="price">Price</div>
+                        <div>
+                          <button className ="oneway_pr">One way</button>
+                          <button className ="oneway_pr">Economy</button>
+                        </div>
+                          <button className="BookNow">Book Now</button>
+                    </div>
+                    </li>
+                    <li><div className ="promorion3">
+                    <button className ="from">Ha Noi</button>
+                      <div className = "t">to</div>
+                      <button className ="from">HCM City</button>
+                        <input className="time_departure_pr" type="date" id="date"/>
+                        <div className ="price">Price</div>
+                        <div>
+                          <button className ="oneway_pr">One way</button>
+                          <button className ="oneway_pr">Economy</button>
+                        </div>
+                          <button className="BookNow">Book Now</button>
+                    </div>
+                    </li>
+                    <li><div className ="promorion3">
+                    <button className ="from">Ha Noi</button>
+                      <div className = "t">to</div>
+                      <button className ="from">HCM City</button>
+                        <input className="time_departure_pr" type="date" id="date"/>
+                        <div className ="price">Price</div>
+                        <div>
+                          <button className ="oneway_pr">One way</button>
+                          <button className ="oneway_pr">Economy</button>
+                        </div>
+                          <button className="BookNow">Book Now</button>
+                    </div>
+                    </li>
+                    <li><div className ="promorion3">
+                    <button className ="from">Ha Noi</button>
+                      <div className = "t">to</div>
+                      <button className ="from">HCM City</button>
+                        <input className="time_departure_pr" type="date" id="date"/>
+                        <div className ="price">Price</div>
+                        <div>
+                          <button className ="oneway_pr">One way</button>
+                          <button className ="oneway_pr">Economy</button>
+                        </div>
+                          <button className="BookNow">Book Now</button>
+                    </div>
+                    </li>
+                </ul>
+            </nav>
+            <button className="more">More</button>
+          </div>
+        </div>
+        </form>
+
+        <div class = "promotionMenu">
+          <div class = "promotion">
+          <div style={{height: "20px", marginTop: "180px", marginBottom: "30px", borderRadius: "60px", display: "flex",justifyContent: "center", alignItems: "center"}}>
+            <Button  variant="contained" color="primary" size ="large">Ticket</Button>
+            </div>
+            <form class = "form_check">
+            <div ><input className ="TicketID" placeholder ="  Ticket ID _ " />
+            <button className="check">check status</button></div>
+            
+            </form>
+            
+          </div>
+        </div>
       </>
     );
   }
