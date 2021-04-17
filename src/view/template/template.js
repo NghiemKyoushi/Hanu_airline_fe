@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Grid } from "@material-ui/core";
-import './homepage.css';
+import '../home/homepage.css';
 import { withRouter } from "react-router-dom";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
@@ -10,20 +10,19 @@ import axios from "axios";
 import FlightForm from '../../components/flightForm/flightForm';
 import PromotionForm from '../../components/propotionForm/promotionForm';
 import TicketForm from '../../components/ticketForm/ticketForm';
-class HomePage extends React.Component {
+class Template extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allFlight: "",
-      // departureAirport_city: "",
-      // arrivalAirport_city: "",
-      // departure: "",
-      // minPrice: 0
+      allFlight: ""
     }
-    // this.formatDate = this.formatDate.bind(this);
+    this.formatDate = this.formatDate.bind(this);
   }
 
-  
+  formatDate(date){
+    const format = new Date(date);
+    return format.toLocaleDateString();
+  }
 
 async componentDidMount(){
     console.log("homeeeeeeeeee");
@@ -38,7 +37,6 @@ async componentDidMount(){
   }
 
   render() {
-    const {allFlight} = this.state
     const { children } = this.props;
     return (
       <div className ="home" id="home">
@@ -51,18 +49,18 @@ async componentDidMount(){
           <Grid item>
           <NavBar/>
           </Grid>
-          <div style={{ height: "20px", marginTop: "10px", borderRadius: "60px"}}></div>
+          {/* <div style={{ height: "20px", marginTop: "10px", borderRadius: "60px"}}></div>
           <Grid item  style={{display: "flex",justifyContent: "center", alignItems: "center"}}>
             <Button  variant="contained" color="primary" size ="large">BOOKING</Button>
           </Grid>
           <div style={{ height: "20px" }}></div>
 
           <Grid item >
-          <SearchForm />
-          <PromotionForm allFlight = {allFlight}/>
-          <FlightForm allFlight = {allFlight}/>
+          <SearchForm/>
+          <PromotionForm/>
+          <FlightForm/>
           <TicketForm/>
-          </Grid>
+          </Grid> */}
           <div style={{ height: "20px" }}></div>
           <Grid item container>
             <Grid item xs={false} sm={2} />
@@ -84,4 +82,4 @@ async componentDidMount(){
   }
 }
 
-export default withRouter(HomePage);
+export default withRouter(Template);

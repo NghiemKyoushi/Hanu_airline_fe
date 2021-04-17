@@ -18,6 +18,7 @@ import {Link } from "react-router-dom";
 //import function
 import {setCookie, getCookie} from '../../utils/fetchData/fetchData'
 import { Login } from "../../utils/fetchData/fetchData";
+import Header from '../../components/header/header'
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -53,13 +54,10 @@ class SignIn extends React.Component {
         console.log("Vaooooooooo",res)
         if(res !== "Login_false"){
           setCookie("jwtToken", "Bearer"+ " "+res.data.accessToken, 14.4);
-          // this.props.setStateLogin(true, () => {
-          //   this.props.history.push("/");
-          // })
+        
         }else {
           alert("login false")
         }
-        
       })
       const jwtToken = getCookie("jwtToken");
       if(jwtToken){
