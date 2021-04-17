@@ -46,7 +46,7 @@ export  async function Login(usernameOrEmail, password){
         usernameOrEmail: usernameOrEmail,
         password: password
     }
-    const url = "http://localhost:8080/auth/signin";
+    const url = "http://hanuairline.azurewebsites.net/auth/signin";
     try{
         const postData = await axios.post(url, body)
         if(postData){
@@ -66,7 +66,7 @@ export async function Register(data){
         imageUrl: data.imageUrl,
         password: data.password
     }
-    const url ="http://localhost:8080/auth/signup";
+    const url ="http://hanuairline.azurewebsites.net/auth/signup";
     try{
         const postData = await axios.post(url, body)
         if(postData){
@@ -77,4 +77,10 @@ export async function Register(data){
         return message;
     }
 
+}
+
+//format date 
+export function formatDate(date){
+  const format = new Date(date);
+  return format.toLocaleDateString('pt-PT');
 }

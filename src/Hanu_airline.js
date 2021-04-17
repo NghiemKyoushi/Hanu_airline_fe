@@ -9,6 +9,8 @@ import SignIn from "./view/login/index";
 import SignUp from './view/register/signup';
 //cookies
 import {getCookie} from './utils/fetchData/fetchData';
+import  SearchForm from './components/SearchForm/SearchForm';
+import Template from './view/template/template'
 class Hanu_Airline extends React.Component{
   constructor(){
     super();
@@ -61,6 +63,12 @@ setStateLogin(data, callback_function) {
 
       <Switch>
       <Route exact path ='/' component={HomePage}/>
+      {/* <Route exact path ='/template'>
+        <Template>
+          <SearchForm/>
+        </Template>
+      </Route> */}
+
 
       <UnAuthenRoute isLogin={isLogin} exact ={true} path ='/login'>
       <SignIn saveAuthentication = {this.saveAuthentication} setStateLogin = {this.setStateLogin}/>

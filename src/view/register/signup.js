@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios'; 
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -16,6 +17,7 @@ import './signup.css';
 //fetch data
 
 import {Register} from '../../utils/fetchData/fetchData'
+import { withRouter } from "react-router";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -51,17 +53,38 @@ class SignUp extends React.Component {
       [e.target.name]: e.target.value,
     });
   }
-  onSubmit(e){
+  async onSubmit(e){
     e.preventDefault();
     console.log("suppppppppp");
-    const message = Register(this.state).then(res=>
-      console.log(res.data)
-      )
-      if(message.data.message){
-        alert("register successfully, come to login")
-      }else{
-        alert("Register false")
-      }
+    const {name, username, email, password} = this.state;
+    const body ={
+      name: name,
+      username: username,
+      email: email,
+      imageUrl: "imageUrl",
+      password: password
+  }
+  console.log(body)
+  const url ="http://hanuairline.azurewebsites.net/auth/signup";
+
+  try{
+    const postData = await axios.post(url, body)
+    if(postData){
+        console.log(postData.data);
+        console.log("props", this.props)
+    }
+   }catch(e){
+    const message = "SignUp_false" ;
+    console.log(message)
+}
+    // const message = Register(this.state).then(res=>
+    //   console.log(res.data)
+    //   )
+    //   if(message.data.message){
+    //     alert("register successfully, come to login")
+    //   }else{
+    //     alert("Register false")
+    //   }
       // {success: true, message: "User registered successfully"}
   }
 
@@ -69,24 +92,11 @@ class SignUp extends React.Component {
     const { classes } = this.props;
     return (
       <Container >
-        <CssBaseline />
+        {/* <CssBaseline /> */}
             <div class ="cont" noValidate>
               <div class = "SignUpForm">
                 <h2>Sign up</h2>
-                <div class = "dis-textbox"><TextField
-                  size="small"
-                  autoComplete="uname"
-                  name="usernameOrEmail"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="username"
-                  type= "text"
-                  label="Username"
-                  autoFocus
-                  onChange= {this.onChange}
-
-                /></div>
+                
                 <div class = "dis-textbox"><TextField
                   size="small"
                   variant="outlined"
@@ -98,6 +108,20 @@ class SignUp extends React.Component {
                   type= "text"
                   autoComplete="name"
                   onChange={this.onChange}
+                /></div>
+                <div class = "dis-textbox"><TextField
+                  size="small"
+                  autoComplete="uname"
+                  name="username"
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="username"
+                  type= "text"
+                  label="Username"
+                  autoFocus
+                  onChange= {this.onChange}
+
                 /></div>
                 <div class = "dis-textbox"><TextField
                   size="small"
@@ -125,7 +149,7 @@ class SignUp extends React.Component {
                   onChange= {this.onChange}
                 /></div>
               
-                <div class = "dis-textbox"><TextField
+                {/* <div class = "dis-textbox"><TextField
                   size="small"
                   variant="outlined"
                   required
@@ -136,7 +160,7 @@ class SignUp extends React.Component {
                   id="password"
                   autoComplete="current-password"
                   onChange= {this.onChange}
-                /></div>
+                /></div> */}
             
                 <div class = "SignUp"><Button
                   type="button"
@@ -163,4 +187,4 @@ class SignUp extends React.Component {
  
 }
 
-export default withStyles(styles) (SignUp);
+export default withStyles(styles) (withRouter(SignUp));
