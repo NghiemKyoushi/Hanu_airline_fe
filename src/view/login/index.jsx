@@ -111,7 +111,7 @@ class SignIn extends React.Component {
                   onChange= {this.onChange}
                 />
             </div>
-            <div class = "check"><FormControlLabel
+            <div class = "checkLogIn"><FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             /></div>
