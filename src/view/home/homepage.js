@@ -37,7 +37,7 @@ class HomePage extends React.Component {
           <Grid item container>
             <Grid item xs={false} sm={2} />
 
-            <Grid item xs={8} style={{ height: "900px"}}>
+            <Grid item xs={8} style={{}}>
               {children}
             </Grid>
 
