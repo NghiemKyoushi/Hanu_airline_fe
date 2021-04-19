@@ -76,7 +76,7 @@ class SearchForm extends React.Component {
     e.target.classList.toggle("typeFlight")
 
   }
-
+// thieu cai nay
   submitSearch(e){
     e.preventDefault();
     // console.log("search")
