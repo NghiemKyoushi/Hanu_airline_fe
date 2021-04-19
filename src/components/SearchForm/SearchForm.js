@@ -142,6 +142,15 @@ class SearchForm extends React.Component {
     const {oneWay, roadTrip, multiCity} = this.state;
     return (
       <>
+        <div style={{
+                  height: "20px",
+                  marginTop: "50px",
+                  marginBottom: "40px",
+                  borderRadius: "60px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}><button className = "bookButton" >Booking</button></div>
         <form className="form">
           <div className="container1">
             <div className="buttonClass">
@@ -154,8 +163,8 @@ class SearchForm extends React.Component {
                 <div className="place">Flying from</div>
                 <input
                 name ="departureAirportOrCity"
-                  className="departuretime"
-                  placeholder="  City or airport . . ."
+                  className="departuretime1"
+                  placeholder="City or airport . . ."
                   onChange={this.handleChange}
                 />
               </div>
@@ -211,22 +220,22 @@ class SearchForm extends React.Component {
           </div>
 
           <div className="container2">
-            <div className="buttonClass">
-              <button className="oneway " name = "travelClassId" value ="1" onClick={this.onClick}>Bussiness</button>
-              <button className="oneway" name = "travelClassId" value ="2" onClick={this.onClick} >Economy flex</button>
-              <button className="oneway" name = "travelClassId" value ="3" onClick={this.onClick}>Economy</button>
-            </div>
             <div className="location">
               <div>
-                <div className="place"> Flying to</div>
+                <div className="place1"> Flying to</div>
                 <input
                 name ="arrivalAirportOrCity"
-                  className="departuretime"
-                  placeholder="  City or airport . . ."
+                  className="departuretime2"
+                  placeholder="City or airport . . ."
                   onChange={this.handleChange}
                 />
               </div>
             </div>
+            <select className="buttonClass_Bus">
+              <option className="oneway " name = "travelClassId" value ="1" onClick={this.onClick}>Bussiness</option>
+              <option className="oneway" name = "travelClassId" value ="2" onClick={this.onClick} >Economy flex</option>
+              <option className="oneway" name = "travelClassId" value ="3" onClick={this.onClick}>Economy</option>
+            </select>
             <button className="searchButton" onClick = {this.submitSearch}>Search</button>
           </div>
         </form>

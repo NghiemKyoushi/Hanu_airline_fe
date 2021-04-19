@@ -66,11 +66,7 @@ async componentDidMount(){
           <Grid item>
           <NavBar/>
           </Grid>
-          <div style={{ height: "20px", marginTop: "10px", borderRadius: "60px"}}></div>
-          <Grid item  style={{display: "flex",justifyContent: "center", alignItems: "center"}}>
-            <Button  variant="contained" color="primary" size ="large">BOOKING</Button>
-          </Grid>
-          <div style={{ height: "20px" }}></div>
+          
 
           <Grid item >
           <SearchForm setDataSearch ={this.setDataSearch}/>

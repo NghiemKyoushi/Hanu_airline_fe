@@ -1,5 +1,4 @@
 .form{
-    
         background-color: rgba(0, 0, 0, 0.7);
         width: 950px;
         display:flex;
@@ -10,6 +9,25 @@
         box-shadow: 1px 1px 5px #888888;
         flex-direction: row;
         justify-content: center;
+}
+.bookButton{
+    border: none;
+    background-color: #3f51b5;
+    color: white;
+    width: 100px;
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
 }
 .oneway{
     width: 150px;
@@ -28,7 +46,6 @@
 
 }
 .buttonClass{
-    /* margin-top: 9px;*/
     box-shadow: 1px 1px 5px #888888;
     margin-top: 25px;
     margin-left: 20px;
@@ -41,12 +58,24 @@
     border-radius: 60px;
     background-color: rgb(249, 252, 252);
 }
-
-.departuretime{
+.buttonClass_Bus{
+    box-shadow: 1px 1px 5px #888888;
+    margin-top: 55px;
+    margin-left: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 45px;
+    border-radius: 60px;
+    background-color: rgb(249, 252, 252);
+    padding-left: 15px;
+}
+.departuretime1{
     margin-top: 8px;
-    margin-left: 20px;
+    margin-left: 18px;
     margin-right: 10px;
-    width: 400px;
+    width: 390px;
     height: 40px;
     text-align: left;
     border-radius: 60px;
@@ -54,6 +83,21 @@
     border: none;
     font-size: 17px;
     box-shadow: 1px 1px 5px #888888;
+    padding-left: 15px;
+}
+.departuretime2{
+    margin-top: 9px;
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 390px;
+    height: 40px;
+    text-align: left;
+    border-radius: 60px;
+    background-color: white;
+    border: none;
+    font-size: 17px;
+    box-shadow: 1px 1px 5px #888888;
+    padding-left: 15px;
 }
 .container1, .container2{
     margin-top: 10px;
@@ -78,6 +122,14 @@
 }
 .place{
     margin-top: 25px;
+    margin-left: 40px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: white;
+}
+.place1{
+    margin-top: 95px;
     margin-left: 40px;
     text-align: left;
     font-size: 12px;
@@ -119,7 +171,7 @@
     border: none;
     font-size: 23px;
     box-shadow: 1px 1px 5px #888888;
-    margin-top: 100px;
+    margin-top: 40px;
     margin-left: 70px;
     
 }
@@ -211,14 +263,14 @@ nav li a{
 }
 .time_departure_pr{
     margin: 15px 10px 0px 30px;
-    width: 135px;
+    width: 110px;
     text-align: center;
     height: 30px;
     border-radius: 50px;
     background-color: white;
     border: none;
     box-shadow: 1px 1px 5px #888888;
-    
+    padding: 0px 15px;
 }
 .from{
     width: 140px;
@@ -230,6 +282,9 @@ nav li a{
     border: none;
     margin-left: 27px;
     margin-top: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 .to{
     width: 140px;
@@ -259,6 +314,7 @@ nav li a{
     font-size: 15px;
     text-align: center;
     justify-content: center;
+    align-items: center;
 }
 .more{
     width: 70px;
@@ -272,6 +328,7 @@ nav li a{
     margin-top: 20px;
     justify-content: center;
     display: flex;
+    align-items: center;
 }
 .form_check{
     background-color: rgba(0, 0, 0, 0.7);
@@ -307,4 +364,6 @@ nav li a{
     font-size: 20px;
     box-shadow: 1px 1px 5px #888888;
     text-transform: uppercase;
+    margin-left: 175px;
+    margin-top: 12px;
 }
