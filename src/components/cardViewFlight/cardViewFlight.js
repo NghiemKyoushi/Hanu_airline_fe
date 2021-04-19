@@ -3,7 +3,7 @@ import {Button} from '@material-ui/core';
 import {formatDate} from '../../utils/fetchData/fetchData';
 class CardViewFlight extends React.Component{
     render(){
-        console.log("recieved props", this.props);
+        // console.log("recieved props", this.props);
         const {departureAirport_city ,arrivalAirport_city, price ,departureTime} = this.props
         return(
             <>

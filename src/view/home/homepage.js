@@ -15,21 +15,23 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
       allFlight: "",
-      // departureAirport_city: "",
-      // arrivalAirport_city: "",
-      // departure: "",
-      // minPrice: 0
+      dataSearch: ""
     }
+    this.setDataSearch = this.setDataSearch.bind(this);
     // this.formatDate = this.formatDate.bind(this);
   }
 
   
 
+  setDataSearch(d){
+    this.setState({
+      dataSearch: d
+    })
+  }
 async componentDidMount(){
     console.log("homeeeeeeeeee");
 
     const  apiGetFlight = "http://hanuairline.azurewebsites.net/flight/getAll";
-
     const getFlight = await axios.get(apiGetFlight);
     console.log(getFlight.data);
     this.setState({
@@ -40,6 +42,7 @@ async componentDidMount(){
   render() {
     const {allFlight} = this.state
     const { children } = this.props;
+    console.log("receive data", this.state.dataSearch);
     return (
       <div className ="home" id="home">
         <Grid container direction="column">
@@ -58,7 +61,7 @@ async componentDidMount(){
           <div style={{ height: "20px" }}></div>
 
           <Grid item >
-          <SearchForm />
+          <SearchForm setDataSearch ={this.setDataSearch}/>
           <PromotionForm allFlight = {allFlight}/>
           <FlightForm allFlight = {allFlight}/>
           <TicketForm/>

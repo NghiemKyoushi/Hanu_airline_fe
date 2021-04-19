@@ -68,8 +68,6 @@ setStateLogin(data, callback_function) {
           <SearchForm/>
         </Template>
       </Route> */}
-
-
       <UnAuthenRoute isLogin={isLogin} exact ={true} path ='/login'>
       <SignIn saveAuthentication = {this.saveAuthentication} setStateLogin = {this.setStateLogin}/>
       </UnAuthenRoute>
