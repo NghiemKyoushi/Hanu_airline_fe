@@ -15,7 +15,7 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
       allFlight: "",
-      dataSearch: ""
+      resultSearchOne:""
     }
     this.setDataSearch = this.setDataSearch.bind(this);
     // this.formatDate = this.formatDate.bind(this);
@@ -23,10 +23,22 @@ class HomePage extends React.Component {
 
   
 
-  setDataSearch(d){
+ async setDataSearch(d){
+   
     this.setState({
       dataSearch: d
     })
+    console.log("data", d)
+    const apiSearchOne= "http://hanuairline.azurewebsites.net/flight/search-one";
+    try{
+      const searchFlight = await axios.post(apiSearchOne,d);
+      this.setState({
+        resultSearchOne: searchFlight.data
+      })
+    }catch(e){
+      alert("false ff")
+    }
+    
   }
 async componentDidMount(){
     console.log("homeeeeeeeeee");
@@ -42,7 +54,7 @@ async componentDidMount(){
   render() {
     const {allFlight} = this.state
     const { children } = this.props;
-    console.log("receive data", this.state.dataSearch);
+    console.log("receive data", this.state.resultSearchOne);
     return (
       <div className ="home" id="home">
         <Grid container direction="column">
