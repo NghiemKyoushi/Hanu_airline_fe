@@ -24,7 +24,7 @@ class SearchForm extends React.Component {
 
       //choose type of flight
       oneWay: false,
-      roadTrip: false,
+      roadTrip: true,
       multiCity: false
 
     };
@@ -232,7 +232,7 @@ class SearchForm extends React.Component {
               </div>
             </div>
             <select className="buttonClass_Bus">
-              <option className="oneway " name = "travelClassId" value ="1" onClick={this.onClick}>Bussiness</option>
+              <option className="oneway" name = "travelClassId" value ="1" onClick={this.onClick}>Bussiness</option>
               <option className="oneway" name = "travelClassId" value ="2" onClick={this.onClick} >Economy flex</option>
               <option className="oneway" name = "travelClassId" value ="3" onClick={this.onClick}>Economy</option>
             </select>

@@ -103,7 +103,7 @@ class SignUp extends React.Component {
                   required
                   fullWidth
                   id="Name"
-                  label="Name"
+                  label="Username"
                   name="name"
                   type= "text"
                   autoComplete="name"
@@ -118,7 +118,7 @@ class SignUp extends React.Component {
                   fullWidth
                   id="username"
                   type= "text"
-                  label="Username"
+                  label="Name"
                   autoFocus
                   onChange= {this.onChange}
 
@@ -135,6 +135,42 @@ class SignUp extends React.Component {
                   autoComplete="email"
                   onChange= {this.onChange}
 
+                /></div>
+                <div class = "dis-textbox"><TextField
+                  size="small"
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="PhoneNumber"
+                  label="Phone Number"
+                  name="phonenumber"
+                  type= "number"
+                  autoComplete="phonenumber"
+                  onChange={this.onChange}
+                /></div>
+                <div class = "dis-textbox"><TextField
+                  size="small"
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="IDCard"
+                  label="ID Card"
+                  name="ID Card"
+                  type= "number"
+                  autoComplete="IDCard"
+                  onChange={this.onChange}
+                /></div>
+                <div class = "dis-textbox"><TextField
+                  size="small"
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="CreditNumber"
+                  label="Credit Number"
+                  name="creditno"
+                  type= "number"
+                  autoComplete="creditno"
+                  onChange={this.onChange}
                 /></div>
                 <div class = "dis-textbox"><TextField
                   size="small"

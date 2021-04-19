@@ -129,11 +129,13 @@ class SignIn extends React.Component {
                 </Link>
                   </div>
           </div>
-          <div class = "imgg"><div class = "title">Create an account?</div>
-          <div class = "If">If you have no account, enter SIGN UP to start!</div>
-          <Link to="/signup" variant="body2">
+          <div class = "imgg">
+            <div class = "title">Create an account?</div>
+            <div class = "If">If you have no account, enter SIGN UP to start!</div>
+            <Link to="/signup" variant="body2">
                   <div class = "ButtonSignUp"><h3> Sign Up</h3></div>
-                </Link></div>
+                </Link>
+          </div>
         </div>
         <Box mt={8}>
           <Copyright />
