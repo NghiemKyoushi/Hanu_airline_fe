@@ -9,10 +9,11 @@ import React from "react";
 // import Box from "@material-ui/core/Box";
 import "./SearchForm.css";
 import { ClearAll } from "@material-ui/icons";
+import { withRouter } from "react-router";
 class SearchForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state ={
       typeFlight: "",
       departureAirportOrCity: "",
       arrivalAirportOrCity: "",
@@ -20,43 +21,54 @@ class SearchForm extends React.Component {
       arrivalTime:"",
       childNumber: 0,
       adultNumber: 0,
-      travelClassId: "",
+      travelClassId: "1",
+      numberFlight: 0,
 
       //choose type of flight
       oneWay: false,
       roadTrip: true,
-      multiCity: false
+      multiCity: false,
+      //value of travel class
 
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.onClick = this.onClick.bind(this);
+    // this.onChange = this.onChange.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
     this.clickTypeFlight = this.clickTypeFlight.bind(this);
+    this.setValueTravelClass = this.setValueTravelClass.bind(this);
 
   }
 
+  setValueTravelClass(e){
+    console.log("kdkdkd")
+    this.setState({
+      travelClassId: e.target.value
+    })
+  }
   async clickTypeFlight(e){
     e.preventDefault();
-    console.log("eeeeeee", e.target);
-    this.setState({
+    await this.setState({
       typeFlight: e.target.value
     })
 
-     if(e.target.value == "oneWay"){
-       console.log("aaaaaaaaaaa")
+     if(this.state.typeFlight === "oneWay"){
+      console.log("target",e.target.value)
        this.setState({
         oneWay: true,
         roadTrip: false,
         multiCity: false,
       })
-    }else if(e.target.value == "roadTrip"){
+    }else if(this.state.typeFlight === "roadTrip"){
+      console.log("target",e.target.value)
+
       this.setState({
         roadTrip: true,
         oneWay: false,
         multiCity: false,
       })
-    }else if(e.target.value == "multiCity"){
+    }else if(this.state.typeFlight === "multi_city"){
+      console.log("target",e.target.value)
       this.setState({
         multiCity: true,
         oneWay: false,
@@ -94,7 +106,8 @@ class SearchForm extends React.Component {
         travelClassId: travelClassId
       }
       console.log("body 1", body1)
-      this.props.setDataSearch(body1)
+      this.props.setDataSearchOneWay(body1);
+      
 
     }else if(this.state.roadTrip){
       const body2 = {
@@ -105,44 +118,29 @@ class SearchForm extends React.Component {
         numberOfTraveler: Number(childNumber) + Number(adultNumber), 
         travelClassId: travelClassId
       }
-      this.props.setDataSearch(body2)
+      this.props.setDataSearchRoadTrip(body2)
 
+    }else if(this.state.multiCity){
+      this.props.history.push(`/multiCity/${this.state.numberFlight}`)
     }
     
     // console.log("bodysearch", body)
     
   }
   handleChange(e) {
+    console.log("ahaha")
     this.setState({
       [e.target.name]: e.target.value,
     });
   }
- async onClick(e){
-    e.preventDefault();
-    console.log("jdjd=djdjdj")
-    await this.setState({
-      travelClassId: e.target.value
-    })
-
-    console.log("travel classID: ", this.state.travelClassId);
-   
-    const travelClass = document.querySelectorAll(".oneway");
-     travelClass.forEach((b) => {
-        clearAll(travelClass);
-    });
-
-     function clearAll(buttons){
-        buttons.forEach((b) =>{
-        b.classList.remove("travelClass")
-      })
-    }
-    e.target.classList.toggle("travelClass")
-  }
+ 
   render() {
     const {oneWay, roadTrip, multiCity} = this.state;
+    console.log("type", oneWay, roadTrip, multiCity);
     return (
       <>
-        <div style={{
+      {
+        (oneWay || roadTrip) ? (<> <div style={{
                   height: "20px",
                   marginTop: "50px",
                   marginBottom: "40px",
@@ -156,8 +154,17 @@ class SearchForm extends React.Component {
             <div className="buttonClass">
               <button className="oneway" value= "oneWay" onClick={this.clickTypeFlight} >One way</button>
               <button className="oneway" value="roadTrip" onClick={this.clickTypeFlight} >Road Trip</button>
-              <button className="oneway" value = "multiCity" onClick={this.clickTypeFlight} >Multi-city</button>
+              <button className="oneway" value = "multi_city" onClick={this.clickTypeFlight} >Multi-city</button>
             </div>
+
+            {/* adjust follow flight type */}
+            {/* {
+              (multiCity) ? (<div>
+
+              </div>): (<div>
+                
+              </div>)
+            } */}
             <div className="location">
               <div>
                 <div className="place">Flying from</div>
@@ -195,7 +202,7 @@ class SearchForm extends React.Component {
               {
               (roadTrip) ? (<><div className="place">Returning</div>
                 <input
-                name ="arrivalTime"
+                  name ="arrivalTime"
                   className="time_departure"
                   type="date"
                   id="date"
@@ -231,16 +238,54 @@ class SearchForm extends React.Component {
                 />
               </div>
             </div>
-            <select className="buttonClass_Bus">
-              <option className="oneway" name = "travelClassId" value ="1" onClick={this.onClick}>Bussiness</option>
-              <option className="oneway" name = "travelClassId" value ="2" onClick={this.onClick} >Economy flex</option>
-              <option className="oneway" name = "travelClassId" value ="3" onClick={this.onClick}>Economy</option>
+            
+            <select className="buttonClass_Bus" name ="travelClassId" onChange={this.handleChange} value ={this.state.travelClassId}>
+              <option className="oneway"  value ="1">Bussiness</option>
+              <option className="oneway"  value ="2" >Economy flex</option>
+              <option className="oneway"  value ="3" >Economy</option>
             </select>
             <button className="searchButton" onClick = {this.submitSearch}>Search</button>
           </div>
-        </form>
+        </form></>): (<>
+         <div style={{
+                  height: "20px",
+                  marginTop: "50px",
+                  marginBottom: "40px",
+                  borderRadius: "60px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}><button className = "bookButton" >Booking</button></div>
+        <form className="form-in-multiTrip">
+          <div className="container1">
+            <div className="buttonClass">
+            <button className="oneway" value= "oneWay" onClick={this.clickTypeFlight} >One way</button>
+              <button className="oneway" value="roadTrip" onClick={this.clickTypeFlight} >Road Trip</button>
+              <button className="oneway" value = "multi_city" onClick={this.clickTypeFlight} >Multi-city</button>
+            </div>
+            
+            <div className="flighttime1">
+              <div className="flighttime2"></div>
+              <div className="place">Number of flights</div>
+              <input
+              name ="numberFlight"
+                className="ageSelect-in-multiTrip"
+                type="number"
+                min="0"
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div className="container2">
+            <button className="searchButton-in-multiTrip" onClick = {this.submitSearch}>Search</button>
+          </div>
+        </form></>)
+      }
+
+
+       
       </>
     );
   }
 }
-export default SearchForm;
+export default withRouter(SearchForm) ;

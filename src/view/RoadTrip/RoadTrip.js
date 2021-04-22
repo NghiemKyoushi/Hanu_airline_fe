@@ -1,17 +1,21 @@
 import React from "react";
-// import {
-//   AppBar,
-//   Button,
-//   Toolbar,
-//   Typography,
-//   TextField,
-// } from "@material-ui/core";
-// import Box from "@material-ui/core/Box";
-import "./SearchForm.css";
-import { ClearAll } from "@material-ui/icons";
+import {nextDayOfDepartureTime,formatDate} from '../../utils/fetchData/fetchData';
+import CardViewTimeFlight from '../../components/cardViewTimeFlight/cardViewTimeFlight';
 class RoadTrip extends React.Component {
-  
+  constructor(props){
+    super(props);
+
+    this.state= {
+      departure_Time: this.props.departure_Time,
+      arrival_Time: this.props.arrival_Time,
+      dataSearch: this.props.dataSearch
+    }
+    // this.clickChooseDay = this.clickChooseDay.bind(this);
+  }
   render() {
+    const {departure_Time, arrival_Time} = this.state;
+    console.log("ssss", departure_Time );
+    console.log("wwwwwwww",arrival_Time);
     return (
       <>
         <div style={{
@@ -25,20 +29,30 @@ class RoadTrip extends React.Component {
                 }}><button className = "bookButton" >Booking</button></div>
         
         <div className = "RoadTrip">
-          <div className = "departingFlight">Departing Flight</div>
-          <div className = "frominroad">Ha Noi</div>
+        {
+          (departure_Time) ? (<> <div className = "departingFlight">Departing Flight</div>
+          <div className = "frominroad">{departure_Time[0].airway.departureAirport.city}</div>
           <div className = "tinroad">❯❯❯</div>
-          <div className = "toinroad">HCM City</div>
+          <div className = "toinroad">{departure_Time[0].airway.arrivalAirport.city}</div>
+
+          </>) : ""
+        }
+          
         </div>
 
         <div className = "day">
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
+        {
+          (departure_Time) ? (<>
+                   <button className = "eachday" >{ formatDate(departure_Time[0].departureTime)}</button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 1)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 2)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 3)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 4)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 5)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 6)}</button>
+          </>): (<></>)
+        }
+                  
         </div>
 
         <form className="FlightForm" id="flight">
@@ -46,78 +60,17 @@ class RoadTrip extends React.Component {
             <div className="promotion">
               <nav>
                 <ul>
-                  <li>
-                    <div className="promorion3">
-                      <div className="from">Ha Noi</div>
-                      <div className="t">to</div>
-                      <div className="from">HCM City</div>
-                      <input
-                        className="time_departure_pr"
-                        type="time"
-                        id="date"
-                      />
-                      <div className="price">Price</div>
-                      <div>
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Book Now</button>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <div className="from">Ha Noi</div>
-                      <div className="t">to</div>
-                      <div className="from">HCM City</div>
-                      <input
-                        className="time_departure_pr"
-                        type="time"
-                        id="date"
-                      />
-                      <div className="price">Price</div>
-                      <div>
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Book Now</button>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <div className="from">Ha Noi</div>
-                      <div className="t">to</div>
-                      <div className="from">HCM City</div>
-                      <input
-                        className="time_departure_pr"
-                        type="time"
-                        id="date"
-                      />
-                      <div className="price">Price</div>
-                      <div>
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Book Now</button>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <div className="from">Ha Noi</div>
-                      <div className="t">to</div>
-                      <div className="from">HCM City</div>
-                      <input
-                        className="time_departure_pr"
-                        type="time"
-                        id="date"
-                      />
-                      <div className="price">Price</div>
-                      <div>
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Book Now</button>
-                    </div>
-                  </li>
+                {
+                  (departure_Time) ? (
+                    departure_Time.map( (flight, index) => {
+                      return (
+                        <li key = {index}>
+                        <CardViewTimeFlight departureAirport_city = {flight.airway.departureAirport.city} arrivalAirport_city = {flight.airway.arrivalAirport.city} price ={flight.minPrice} departureTime={flight.departureTime} />
+                        </li>
+                      )
+                    })
+                  ): ""
+                }
                 </ul>
               </nav>
               <button className="more">More</button>
@@ -127,97 +80,47 @@ class RoadTrip extends React.Component {
 
         
         <div className = "RoadTrip">
+        {
+          (arrival_Time) ? (<>
           <div className = "departingFlight">Returning Flight</div>
-          <div className = "frominroad">HCM City</div>
+          <div className = "frominroad">{arrival_Time[0].airway.departureAirport.city}</div>
           <div className = "tinroad">❯❯❯</div>
-          <div className = "toinroad">Ha Noi</div>
+          <div className = "toinroad">{arrival_Time[0].airway.arrivalAirport.city}</div>
+
+          </>) : ""
+        }
+          
         </div>
         <div className = "day">
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
-                   <button className = "eachday" >01/01/0101 </button>
+        {
+          (arrival_Time) ? (<>
+                  <button className = "eachday" >{ formatDate(arrival_Time[0].departureTime)}</button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(arrival_Time[0].departureTime, 1)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(arrival_Time[0].departureTime, 2)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(arrival_Time[0].departureTime, 3)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(arrival_Time[0].departureTime, 4)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(arrival_Time[0].departureTime, 5)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(arrival_Time[0].departureTime, 6)}</button>
+          </>): (<></>)
+        }
         </div>
         <form class="FlightForm" id="flight">
           <div class="promotionMenu">
             <div class="promotion">
               <nav>
                 <ul>
-                  <li>
-                    <div className="promorion3">
-                      <div className="from">Ha Noi</div>
-                      <div className="t">to</div>
-                      <button className="from">HCM City</button>
-                      <input
-                        className="time_departure_pr"
-                        type="time"
-                        id="date"
-                      />
-                      <div className="price">Price</div>
-                      <div>
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Book Now</button>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <div className="from">Ha Noi</div>
-                      <div className="t">to</div>
-                      <div className="from">HCM City</div>
-                      <input
-                        className="time_departure_pr"
-                        type="time"
-                        id="date"
-                      />
-                      <div className="price">Price</div>
-                      <div>
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Book Now</button>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <div className="from">Ha Noi</div>
-                      <div className="t">to</div>
-                      <div className="from">HCM City</div>
-                      <input
-                        className="time_departure_pr"
-                        type="time"
-                        id="date"
-                      />
-                      <div className="price">Price</div>
-                      <div>
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Book Now</button>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <div className="from">Ha Noi</div>
-                      <div className="t">to</div>
-                      <div className="from">HCM City</div>
-                      <input
-                        className="time_departure_pr"
-                        type="time"
-                        id="date"
-                      />
-                      <div className="price">Price</div>
-                      <div>
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Book Now</button>
-                    </div>
-                  </li>
+
+                {
+                  (arrival_Time) ? (
+                    arrival_Time.map( (flight, index) => {
+                      return (
+                        <li key = {index}>
+                        <CardViewTimeFlight departureAirport_city = {flight.airway.departureAirport.city} arrivalAirport_city = {flight.airway.arrivalAirport.city} price ={flight.minPrice} departureTime={flight.departureTime} />
+                        </li>
+                      )
+                    })
+                  ): ""
+                }
                 </ul>
               </nav>
               <button className="more">More</button>

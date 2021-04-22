@@ -98,17 +98,7 @@ class MultiFlight extends React.Component {
               <button className="oneway" value = "multi_city" onClick={this.clickTypeFlight} >Multi-city</button>
             </div>
             
-            <div className="flighttime1">
-              <div className="flighttime2"></div>
-              <div className="place">Number of flights</div>
-              <input
-              name ="adultNumber"
-                className="ageSelect-in-multiTrip"
-                type="number"
-                min="0"
-                onChange={this.handleChange}
-              />
-            </div>
+           
           </div>
           <div className="container2">
             <button className="searchButton-in-multiTrip" onClick = {this.submitSearch}>Search</button>

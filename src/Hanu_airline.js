@@ -10,7 +10,10 @@ import SignUp from './view/register/signup';
 //cookies
 import {getCookie} from './utils/fetchData/fetchData';
 import  SearchForm from './components/SearchForm/SearchForm';
-import Template from './view/template/template'
+import Template from './view/template/template';
+import OneWay from './view/OneWay/oneWay';
+import MultiFlight1 from './view/MultiTrip/MultiFlight1';
+
 class Hanu_Airline extends React.Component{
   constructor(){
     super();
@@ -18,13 +21,32 @@ class Hanu_Airline extends React.Component{
     this.state={
       Authentication: "",
       user: {},
-      isLogin: false
+      isLogin: false,
+      //data search;
+      dataSearch:"",
+      //flight one way
+      flightOneWay:""
     }
     this.saveAuthentication = this.saveAuthentication.bind(this);
     this.setStateLogin = this.setStateLogin.bind(this);
-  }
+    // receive data from search one way
+    this.oneWayFlight = this.oneWayFlight.bind(this);
+    this.dataSearch = this.dataSearch.bind(this);
 
-  
+  }
+  //oneWay flight 
+  oneWayFlight(flight){
+    this.setState({
+      flightOneWay: flight
+    })
+  }
+  //receive data search
+   dataSearch(data){
+     this.setState({
+       dataSearch: data
+     })
+   }
+
 //authentication for user
 setStateLogin(data, callback_function) {
   this.setState(
@@ -57,26 +79,27 @@ setStateLogin(data, callback_function) {
   }
 
   render(){
-    const {isLogin} = this.state;
+    const {isLogin, flightOneWay, dataSearch} = this.state;
+
     return (
       <BrowserRouter>
-
       <Switch>
-      <Route exact path ='/' component={HomePage}/>
-      {/* <Route exact path ='/template'>
+      <Route exact path ='/'>
+        <HomePage oneWayFlight = {this.oneWayFlight} dataSearch= {this.dataSearch}/>
+      </Route>
+      <Route exact path ='/multiCity/:id'>
         <Template>
-          <SearchForm/>
+          <MultiFlight1 flightOneWay = {flightOneWay} dataSearch = {dataSearch} />
         </Template>
-      </Route> */}
-      <UnAuthenRoute isLogin={isLogin} exact ={true} path ='/login'>
+      </Route>
+      <UnAuthenRoute isLogin={isLogin} exact ={true} path ='/login' >
       <SignIn saveAuthentication = {this.saveAuthentication} setStateLogin = {this.setStateLogin}/>
       </UnAuthenRoute>
 
       <UnAuthenRoute exact ={true} path ='/signup'>
-      <SignUp />
+      <SignUp/>
       </UnAuthenRoute>
       </Switch>
-
       </BrowserRouter>
     )
   }

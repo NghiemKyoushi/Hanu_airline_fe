@@ -6,10 +6,10 @@ export function getCookie(cname) {
     var ca = decodedCookie.split(';');
     for(var i = 0; i <ca.length; i++) {
       var c = ca[i];
-      while (c.charAt(0) == ' ') {
+      while (c.charAt(0) === ' ') {
         c = c.substring(1);
       }
-      if (c.indexOf(name) == 0) {
+      if (c.indexOf(name) === 0) {
         return c.substring(name.length, c.length);
       }
     }
@@ -83,4 +83,21 @@ export async function Register(data){
 export function formatDate(date){
   const format = new Date(date);
   return format.toLocaleDateString('pt-PT');
+}
+
+export function formatTime(date){
+  const format = new Date(date);
+  console.log("timmmmmmmmmmmmmm",format.getHours);
+  return format.toLocaleTimeString('en-US');
+}
+export function nextDayOfDepartureTime(date, number){
+  
+  const format = new Date(date);
+  // const day1 = format.toLocaleDateString('pt-PT');
+  // const day = new Date(day1);
+  // console.log("day", format)
+  const nextDay = new Date(format);
+  // console.log("nextday",nextDay);
+  nextDay.setDate(format.getDate() + number) 
+  return nextDay.toLocaleDateString('pt-PT');
 }

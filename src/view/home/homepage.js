@@ -10,24 +10,89 @@ import axios from "axios";
 import FlightForm from '../../components/flightForm/flightForm';
 import PromotionForm from '../../components/propotionForm/promotionForm';
 import TicketForm from '../../components/ticketForm/ticketForm';
+import OneWay from '../../view/OneWay/oneWay';
+import RoadTrip from '../../view/RoadTrip/RoadTrip';
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       allFlight: "",
-      resultSearchOne:""
+      resultSearchOne:"",
+      dataSearch: "",
+      //reault roadTrip
+      departure_Time: "",
+      arrival_Time: ""
     }
-    this.setDataSearch = this.setDataSearch.bind(this);
+    this.setDataSearchOneWay = this.setDataSearchOneWay.bind(this);
     // this.formatDate = this.formatDate.bind(this);
+    this.setDataSearchRoadTrip = this.setDataSearchRoadTrip.bind(this);
   }
 
+  async setDataSearchRoadTrip(d){
+    // this.setState({
+    //   dataSearch: d
+    // })
+    this.props.dataSearch(d);
+
+
+    console.log("data inti", d);
+    const arrivalTime = d.arrivalTime;
+    const departureTime = d.departureTime;
+    const data1 = d;
+    data1.arrivalTime = departureTime;
+    data1.departureTime = departureTime;
+    console.log("data roadtrip", data1)
+
+
+    
+    const apiSearchOne= "http://hanuairline.azurewebsites.net/flight/search-one";
+    try{
+      const searchFlight = await axios.post(apiSearchOne,data1);
+      this.setState({
+        departure_Time: searchFlight.data
+      })
+      // this.props.oneWayFlight(searchFlight.data);
+      // console.log("deee",searchFlight.data )
+      // this.props.history.push(`/oneway/${searchFlight.data.id}`);
+    }catch(e){
+      alert("false ff")
+    }
+
+    const data2 = d;
+    data2.arrivalTime = arrivalTime;
+    data2.departureTime = arrivalTime;
+    const departureAirportOrCity =  data2.departureAirportOrCity;
+    const arrivalAirportOrCity = data2.arrivalAirportOrCity;
+
+    data2.departureAirportOrCity = arrivalAirportOrCity;
+    data2.arrivalAirportOrCity = departureAirportOrCity;
+
+    console.log("data roadtrip2", data2)
+
+    try{
+      const searchFlight1 = await axios.post(apiSearchOne,data2);
+      this.setState({
+        arrival_Time: searchFlight1.data
+      })
+      // this.props.oneWayFlight(searchFlight1.data);
+      console.log("arrr",searchFlight1.data )
+
+      // this.props.history.push(`/oneway/${searchFlight.data.id}`);
+    }catch(e){
+      alert("false ff")
+    }
+    // console.log("dddd",departureTime);
+    // console.log("aaaaaaa",arrivalTime)
+
+  }
   
 
- async setDataSearch(d){
-   
+ async setDataSearchOneWay(d){
     this.setState({
       dataSearch: d
     })
+    this.props.dataSearch(d);
+
     console.log("data", d)
     const apiSearchOne= "http://hanuairline.azurewebsites.net/flight/search-one";
     try{
@@ -35,6 +100,8 @@ class HomePage extends React.Component {
       this.setState({
         resultSearchOne: searchFlight.data
       })
+      this.props.oneWayFlight(searchFlight.data);
+      // this.props.history.push(`/oneway/${searchFlight.data.id}`);
     }catch(e){
       alert("false ff")
     }
@@ -52,9 +119,9 @@ async componentDidMount(){
   }
 
   render() {
-    const {allFlight} = this.state
+    const {allFlight, dataSearch,resultSearchOne, departure_Time, arrival_Time} = this.state
     const { children } = this.props;
-    console.log("receive data", this.state.resultSearchOne);
+    // console.log("this data", this.state.dataSearch)
     return (
       <div className ="home" id="home">
         <Grid container direction="column">
@@ -69,10 +136,18 @@ async componentDidMount(){
           
 
           <Grid item >
-          <SearchForm setDataSearch ={this.setDataSearch}/>
-          <PromotionForm allFlight = {allFlight}/>
+          <SearchForm setDataSearchOneWay ={this.setDataSearchOneWay} setDataSearchRoadTrip = {this.setDataSearchRoadTrip}/>
+          {
+            (resultSearchOne) ? (<><OneWay flightOneWay ={resultSearchOne}/></>) : ""
+          }
+          {
+            (departure_Time && arrival_Time) ? (<> <RoadTrip departure_Time={departure_Time} arrival_Time={arrival_Time} /></>) :""
+          }
+          {
+            (! resultSearchOne && ! departure_Time &&  ! arrival_Time) ? (<> <PromotionForm allFlight = {allFlight}/>
           <FlightForm allFlight = {allFlight}/>
-          <TicketForm/>
+          <TicketForm/></>): ""
+          }
           </Grid>
           <div style={{ height: "20px" }}></div>
           <Grid item container>
