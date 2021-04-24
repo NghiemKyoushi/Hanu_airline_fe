@@ -11,7 +11,6 @@ class CardViewTimeFlight extends React.Component{
                     <button className ="from">{departureAirport_city}</button>
                       <div className = "t">to</div>
                       <button className ="from">{arrivalAirport_city}</button>
-                      
                         <input className="time_departure_pr" id="" value={formatTime(departureTime)}/>
                         <div className ="price1">
                           <div className="price">{price} VNĐ</div>
