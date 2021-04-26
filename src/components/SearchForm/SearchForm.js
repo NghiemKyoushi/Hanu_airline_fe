@@ -121,6 +121,7 @@ class SearchForm extends React.Component {
       this.props.setDataSearchRoadTrip(body2)
 
     }else if(this.state.multiCity){
+      
       this.props.history.push(`/multiCity/${this.state.numberFlight}`)
     }
     

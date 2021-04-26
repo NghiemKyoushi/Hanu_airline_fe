@@ -41,10 +41,8 @@ class HomePage extends React.Component {
     const data1 = d;
     data1.arrivalTime = departureTime;
     data1.departureTime = departureTime;
-    console.log("data roadtrip", data1)
+    // console.log("data roadtrip", data1)
 
-
-    
     const apiSearchOne= "http://hanuairline.azurewebsites.net/flight/search-one";
     try{
       const searchFlight = await axios.post(apiSearchOne,data1);

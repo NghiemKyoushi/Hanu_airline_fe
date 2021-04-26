@@ -13,6 +13,7 @@ import  SearchForm from './components/SearchForm/SearchForm';
 import Template from './view/template/template';
 import OneWay from './view/OneWay/oneWay';
 import MultiFlight1 from './view/MultiTrip/MultiFlight1';
+import SeatBooking from "./view/seatBooking/SeatBooking";
 
 class Hanu_Airline extends React.Component{
   constructor(){
@@ -92,12 +93,19 @@ setStateLogin(data, callback_function) {
           <MultiFlight1 flightOneWay = {flightOneWay} dataSearch = {dataSearch} />
         </Template>
       </Route>
+
+      <Route exact path ='/seatbooking'>
+        <Template>
+          <SeatBooking/>
+        </Template>
+      </Route>
+
       <UnAuthenRoute isLogin={isLogin} exact ={true} path ='/login' >
       <SignIn saveAuthentication = {this.saveAuthentication} setStateLogin = {this.setStateLogin}/>
       </UnAuthenRoute>
 
       <UnAuthenRoute exact ={true} path ='/signup'>
-      <SignUp/>
+      <SignUp setStateLogin = {this.setStateLogin} />
       </UnAuthenRoute>
       </Switch>
       </BrowserRouter>

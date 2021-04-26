@@ -21,7 +21,9 @@ class Header extends React.Component{
        }
     }
     onClick(){
-        deleteCookie("jwtToken")
+        deleteCookie("jwtToken");
+        deleteCookie("username");
+        deleteCookie("userId");
         window.location.reload()
     }
     render(){
@@ -33,7 +35,7 @@ class Header extends React.Component{
                {
                    (isLogin) ?
                    <Toolbar >
-                   <Typography style={{flexGrow: 1}} > <Link to = "/">HANU<FlightIcon/>AIRLINE</Link> </Typography>
+                   <Typography style={{flexGrow: 1}} > <Link to = "/" style={{textDecoration: "none", color: "#ffff"}}>HANU<FlightIcon/>AIRLINE</Link> </Typography>
                    
                    <Button variant="contained" style={{ background: '#ffff' }} onClick={this.onClick}><ExitToAppIcon/></Button>
                    </Toolbar>

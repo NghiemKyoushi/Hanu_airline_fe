@@ -65,50 +65,30 @@ class SignUp extends React.Component {
       password: password
   }
   console.log(body)
-  const url ="http://hanuairline.azurewebsites.net/auth/signup";
 
   try{
+    const url ="http://hanuairline.azurewebsites.net/auth/signup";
     const postData = await axios.post(url, body)
-    if(postData){
-        console.log(postData.data);
-        console.log("props", this.props)
+    if(postData.data.success){
+       this.props.history.push("/login");
     }
+
    }catch(e){
     const message = "SignUp_false" ;
-    console.log(message)
+    alert(message); 
 }
-    // const message = Register(this.state).then(res=>
-    //   console.log(res.data)
-    //   )
-    //   if(message.data.message){
-    //     alert("register successfully, come to login")
-    //   }else{
-    //     alert("Register false")
-    //   }
-      // {success: true, message: "User registered successfully"}
+   
   }
 
   render(){
-    const { classes } = this.props;
+    console.log("Props sign up", this.props);
+    // const { classes } = this.props;
     return (
       <Container >
         {/* <CssBaseline /> */}
             <div class ="cont" noValidate>
               <div class = "SignUpForm">
                 <h2>Sign up</h2>
-                
-                <div class = "dis-textbox"><TextField
-                  size="small"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="Name"
-                  label="Username"
-                  name="name"
-                  type= "text"
-                  autoComplete="name"
-                  onChange={this.onChange}
-                /></div>
                 <div class = "dis-textbox"><TextField
                   size="small"
                   autoComplete="uname"
@@ -118,11 +98,24 @@ class SignUp extends React.Component {
                   fullWidth
                   id="username"
                   type= "text"
-                  label="Name"
+                  label="Username"
                   autoFocus
                   onChange= {this.onChange}
 
                 /></div>
+                <div class = "dis-textbox"><TextField
+                  size="small"
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="Name"
+                  label="Name"
+                  name="name"
+                  type= "text"
+                  autoComplete="name"
+                  onChange={this.onChange}
+                /></div>
+               
                 <div class = "dis-textbox"><TextField
                   size="small"
                   variant="outlined"
@@ -136,74 +129,12 @@ class SignUp extends React.Component {
                   onChange= {this.onChange}
 
                 /></div>
-                <div class = "dis-textbox"><TextField
-                  size="small"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="PhoneNumber"
-                  label="Phone Number"
-                  name="phonenumber"
-                  type= "number"
-                  autoComplete="phonenumber"
-                  onChange={this.onChange}
-                /></div>
-                <div class = "dis-textbox"><TextField
-                  size="small"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="IDCard"
-                  label="ID Card"
-                  name="ID Card"
-                  type= "number"
-                  autoComplete="IDCard"
-                  onChange={this.onChange}
-                /></div>
-                <div class = "dis-textbox"><TextField
-                  size="small"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="CreditNumber"
-                  label="Credit Number"
-                  name="creditno"
-                  type= "number"
-                  autoComplete="creditno"
-                  onChange={this.onChange}
-                /></div>
-                <div class = "dis-textbox"><TextField
-                  size="small"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                  onChange= {this.onChange}
-                /></div>
-              
-                {/* <div class = "dis-textbox"><TextField
-                  size="small"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Confirm Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                  onChange= {this.onChange}
-                /></div> */}
-            
                 <div class = "SignUp"><Button
                   type="button"
                   class = "submit"
                   fullWidth
                   variant="contained"
-                  className={classes.submit}
+                  // className={classes.submit}
                   onClick= {this.onSubmit}
                 >Sign Up
                 </Button></div>
