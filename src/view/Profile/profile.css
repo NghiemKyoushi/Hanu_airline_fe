@@ -1,0 +1,123 @@
+.EditButton{
+  width: 100px;
+  height: 30px;
+  border-radius: 60px;
+  background-color: #3f51b5;
+  font-weight: bold;
+  border: none;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 150px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  color: white;
+}
+.EditButton1{
+width: 100px;
+height: 30px;
+border-radius: 60px;
+background-color: #3f51b5;
+font-weight: bold;
+border: none;
+font-size: 18px;
+display: flex;
+text-align: center;
+justify-content: center;
+align-items: center;
+color: white;
+margin: auto;
+}
+.DeleteButton{
+width: 100px;
+height: 30px;
+border-radius: 60px;
+background-color: #ff0000;
+font-weight: bold;
+border: none;
+font-size: 18px;
+margin: auto;
+display: flex;
+text-align: center;
+justify-content: center;
+align-items: center;
+margin-bottom: 40px;
+color: white;
+}
+
+.profile{
+  margin-top: 50px;
+
+}
+.profile-user {
+  min-height: 60vh;
+  background: #009FFF;
+  background: -webkit-linear-gradient(left, #94AAD6, #426EB4);
+  color: white;
+  clip-path: ellipse(100vw 60vh at 50% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  text-align: center;
+}
+
+.profile-pic {
+  height: 6rem;
+  width: 6rem;
+  object-fit: center;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.location p {
+  display: inline-block;
+}
+
+.location svg {
+  vertical-align: middle;
+}
+
+.stats {
+  display: flex;
+}
+
+.stats .col-1 {
+  width: 10rem;
+  text-align: center;
+}
+.stats .col-2 {
+  width: 10rem;
+  text-align: center;
+  margin-left: 100px;
+  margin-top: 10px;
+}
+
+.heading {
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+.ProfileButton{
+  border: none;
+  background-color: #3f51b5;
+  color: white;
+  width: 150px;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 0.9375rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  }
