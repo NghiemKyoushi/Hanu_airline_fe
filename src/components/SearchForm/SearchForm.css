@@ -683,6 +683,7 @@ font-size: 15px;
 text-align: center;
 justify-content: center;
 align-items: center;
+margin-top: 15px;
 }
 .ticket-id{
     display: flex;
