@@ -283,6 +283,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 margin-top: 15px;
+margin-left: 20px;
 }
 .ageSelect{
 margin-top: 8px;
@@ -391,14 +392,14 @@ font-weight: bold;
 border: none;
 font-size: 15px;
 margin: auto;
-margin-top: 10px;
+margin-top: 20px;
 display: flex;
 align-items: center;
 justify-content: center;
 align-items: center;
 }
 .promorion3{
-    padding: 15px;
+    padding: 35px;
 }
 .promotionForm{
 width: 950px;
@@ -684,6 +685,18 @@ text-align: center;
 justify-content: center;
 align-items: center;
 margin-top: 15px;
+}
+.oneway-economy{
+    display: flex;
+    color: rgb(0, 0, 0);
+    margin: auto;
+    border-radius: 60px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
 }
 .ticket-id{
     display: flex;

@@ -25,7 +25,7 @@ class CardViewFlight extends React.Component {
           />
 
           <div className="price">{price} VNĐ</div>
-          <div>
+          <div className = "oneway-economy">
             <button className="oneway_pr">One way</button>
             <button className="oneway_pr">Economy</button>
           </div>
