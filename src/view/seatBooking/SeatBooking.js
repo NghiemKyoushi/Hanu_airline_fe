@@ -113,8 +113,8 @@ class SeatBooking extends React.Component {
               {business.map((bus, index) => {
                 return (
                   <li class="seat2" key ={index}>
-                    <input type="checkbox" id="1B" />
-                    <label for="1B">{bus.id}</label>
+                    <input type="checkbox" id={bus.id} />
+                    <label for={bus.id}>{bus.id}</label>
                   </li>
                 );
               })}
@@ -129,8 +129,8 @@ class SeatBooking extends React.Component {
             {premiumEconomy.map((pre, index) => {
                 return (
                   <li class="seat" key ={index}>
-                    <input type="checkbox" id="1B" />
-                    <label for="1B">{pre.id}</label>
+                    <input type="checkbox" id={pre.id} />
+                    <label for={pre.id}>{pre.id}</label>
                   </li>
                 );
               })}
@@ -149,8 +149,8 @@ class SeatBooking extends React.Component {
             {economy.map((eco, index) => {
                 return (
                   <li class="seat3" key ={index}>
-                    <input type="checkbox" id="1B" />
-                    <label for="1B">{eco.id}</label>
+                    <input type="checkbox" id={eco.id} />
+                    <label for={eco.id}>{eco.id}</label>
                   </li>
                 );
               })}

@@ -12,6 +12,8 @@ import PromotionForm from '../../components/propotionForm/promotionForm';
 import TicketForm from '../../components/ticketForm/ticketForm';
 import OneWay from '../../view/OneWay/oneWay';
 import RoadTrip from '../../view/RoadTrip/RoadTrip';
+
+import  {setCookie, deleteCookie, getCookie} from '../../utils/fetchData/fetchData';
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +23,8 @@ class HomePage extends React.Component {
       dataSearch: "",
       //reault roadTrip
       departure_Time: "",
-      arrival_Time: ""
+      arrival_Time: "",
+      localArray: []
     }
     this.setDataSearchOneWay = this.setDataSearchOneWay.bind(this);
     // this.formatDate = this.formatDate.bind(this);
@@ -29,6 +32,7 @@ class HomePage extends React.Component {
   }
 
   async setDataSearchRoadTrip(d){
+
     // this.setState({
     //   dataSearch: d
     // })
@@ -43,15 +47,19 @@ class HomePage extends React.Component {
     data1.departureTime = departureTime;
     // console.log("data roadtrip", data1)
 
+    const arrDepartureTime = [];
     const apiSearchOne= "http://hanuairline.azurewebsites.net/flight/search-one";
     try{
       const searchFlight = await axios.post(apiSearchOne,data1);
       this.setState({
         departure_Time: searchFlight.data
       })
-      // this.props.oneWayFlight(searchFlight.data);
-      // console.log("deee",searchFlight.data )
-      // this.props.history.push(`/oneway/${searchFlight.data.id}`);
+      searchFlight.data.map( flight => arrDepartureTime.push(flight.id));
+
+
+      setCookie("departureTime", arrDepartureTime,100);
+
+
     }catch(e){
       alert("false ff")
     }
@@ -64,42 +72,61 @@ class HomePage extends React.Component {
 
     data2.departureAirportOrCity = arrivalAirportOrCity;
     data2.arrivalAirportOrCity = departureAirportOrCity;
+    console.log("data roadtrip2", data2);
 
-    console.log("data roadtrip2", data2)
 
+    const arrArrivalTime = [];
     try{
       const searchFlight1 = await axios.post(apiSearchOne,data2);
       this.setState({
         arrival_Time: searchFlight1.data
       })
-      // this.props.oneWayFlight(searchFlight1.data);
-      console.log("arrr",searchFlight1.data )
 
+      searchFlight1.data.map( flight => arrArrivalTime.push(flight.id));
+      setCookie("arrivalTime", arrArrivalTime,100);
+      // this.props.oneWayFlight(searchFlight1.data);
       // this.props.history.push(`/oneway/${searchFlight.data.id}`);
     }catch(e){
       alert("false ff")
     }
+
+    if(getCookie("departureTime") && getCookie("arrivalTime")){
+      this.props.history.push(`/roadtrip`);
+    }
     // console.log("dddd",departureTime);
-    // console.log("aaaaaaa",arrivalTime)
+    // console.log("aaaaaaa",arrivalTime);
 
   }
   
 
  async setDataSearchOneWay(d){
+
+
     this.setState({
+
       dataSearch: d
     })
     this.props.dataSearch(d);
 
-    console.log("data", d)
+    // console.log("data", d)
     const apiSearchOne= "http://hanuairline.azurewebsites.net/flight/search-one";
     try{
       const searchFlight = await axios.post(apiSearchOne,d);
+
       this.setState({
         resultSearchOne: searchFlight.data
       })
-      this.props.oneWayFlight(searchFlight.data);
-      // this.props.history.push(`/oneway/${searchFlight.data.id}`);
+      // this.props.oneWayFlight(searchFlight.data);
+
+      //console.log("arrr",searchFlight.data );
+      const arrFlight = [];
+      searchFlight.data.map( flight => arrFlight.push(flight.id));
+      // console.log("arrrr ", arrFlight );
+      setCookie("arrFlightOneWay", arrFlight, 100);
+
+      // getCookie("arrFlightOneWay");
+      this.props.history.push(`/oneway`);
+
     }catch(e){
       alert("false ff")
     }

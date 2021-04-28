@@ -10,6 +10,8 @@ import React from "react";
 import "./SearchForm.css";
 import { ClearAll } from "@material-ui/icons";
 import { withRouter } from "react-router";
+import  {setCookie, deleteCookie} from '../../utils/fetchData/fetchData';
+
 class SearchForm extends React.Component {
   constructor(props) {
     super(props);
@@ -91,7 +93,11 @@ class SearchForm extends React.Component {
 // thieu cai nay
   submitSearch(e){
     e.preventDefault();
-    // console.log("search")
+    // console.log("search");
+    deleteCookie("arrFlightOneWay");
+    deleteCookie("departureTime");
+    deleteCookie("arrivalTime");
+
 
     const { departureAirportOrCity, arrivalAirportOrCity, departureTime, arrivalTime, travelClassId, childNumber,adultNumber } = this.state;
    

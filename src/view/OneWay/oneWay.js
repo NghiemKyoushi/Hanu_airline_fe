@@ -1,21 +1,47 @@
 import React from "react";
+import axios from "axios";
 import CardViewTimeFlight from '../../components/cardViewTimeFlight/cardViewTimeFlight';
 import {nextDayOfDepartureTime,formatDate} from '../../utils/fetchData/fetchData';
-
+import {setCookie, getCookie} from '../../utils/fetchData/fetchData';
 class OneWay extends React.Component {
   constructor(props){
     super(props);
 
     this.state= {
-      oneWayFlight: this.props.flightOneWay,
+      oneWayFlight: [],
       dataSearch: this.props.dataSearch
     }
-    this.clickChooseDay = this.clickChooseDay.bind(this);
+    // this.clickChooseDay = this.clickChooseDay.bind(this);
   }
 
-  clickChooseDay(e){
-    e.preventDefault();
+  // clickChooseDay(e){
+  //   e.preventDefault();
   
+  // }
+async componentDidMount(){
+   let storedAry = getCookie("arrFlightOneWay").split(",");
+ 
+   console.log(storedAry);
+   const containerResult = [];
+   storedAry.map( async (flight) =>
+    {
+     let flight_Number = Number(flight);
+     console.log("nummmmmmmmm",typeof flight_Number);
+
+    let apiSearchOne1 = `http://hanuairline.azurewebsites.net/flight/getById/${flight_Number}`;
+    let fetchData = await axios.get(apiSearchOne1);
+
+    console.log(apiSearchOne1);
+    containerResult.push(fetchData.data);
+    console.log("oneway",containerResult);
+   })
+
+   this.setState({
+     oneWayFlight: containerResult
+   })
+   console.log("aaaaaaaaaaaaaa",this.state.oneWayFlight);
+   
+
   }
   render() {
     const {oneWayFlight} = this.state;
@@ -23,7 +49,7 @@ class OneWay extends React.Component {
 
     return (
       <>
-        <div style={{
+        {/* <div style={{
                   height: "20px",
                   marginTop: "50px",
                   marginBottom: "40px",
@@ -68,7 +94,7 @@ class OneWay extends React.Component {
               <button className="more">More</button>
             </div>
           </div>
-        </form>
+        </form> */}
       </>
     );
   }

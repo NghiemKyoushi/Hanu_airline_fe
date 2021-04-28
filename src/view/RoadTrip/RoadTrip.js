@@ -1,6 +1,9 @@
 import React from "react";
 import {nextDayOfDepartureTime,formatDate} from '../../utils/fetchData/fetchData';
 import CardViewTimeFlight from '../../components/cardViewTimeFlight/cardViewTimeFlight';
+import {setCookie, getCookie} from '../../utils/fetchData/fetchData';
+import axios from "axios";
+
 class RoadTrip extends React.Component {
   constructor(props){
     super(props);
@@ -12,13 +15,44 @@ class RoadTrip extends React.Component {
     }
     // this.clickChooseDay = this.clickChooseDay.bind(this);
   }
+
+ async componentDidMount(){
+      let storedAry;
+     //  arr = getCookie("arrFlightOneWay");
+     // storedAry = getCookie('arrFlightOneWay').split(",");
+      // console.log(getCookie("departureTime"));
+      // console.log(typeof getCookie("arrivalTime"));
+
+      const idDepart = Number(getCookie("arrivalTime"));
+
+
+      const apiSearchOne1 = `http://hanuairline.azurewebsites.net/flight/getById/${idDepart}`;
+      const fetchData1 = await axios.get(apiSearchOne1);
+      this.setState({
+        departure_Time: fetchData1.data
+      })
+      console.log("roadtrip1",fetchData1.data);
+
+      const idArrival = Number(getCookie("arrivalTime"));
+
+      const apiSearchOne = `http://hanuairline.azurewebsites.net/flight/getById/${idArrival}`;
+      const fetchData = await axios.get(apiSearchOne);
+      this.setState({
+        arrival_Time: fetchData.data
+      })
+      console.log("roadtrip",fetchData.data)
+
+
+
+  }
   render() {
     const {departure_Time, arrival_Time} = this.state;
     console.log("ssss", departure_Time );
     console.log("wwwwwwww",arrival_Time);
+
     return (
       <>
-        <div style={{
+        {/* <div style={{
                   height: "20px",
                   marginTop: "50px",
                   marginBottom: "40px",
@@ -31,9 +65,9 @@ class RoadTrip extends React.Component {
         <div className = "RoadTrip">
         {
           (departure_Time) ? (<> <div className = "departingFlight">Departing Flight</div>
-          <div className = "frominroad">{departure_Time[0].airway.departureAirport.city}</div>
+          <div className = "frominroad">{departure_Time.airway.departureAirport.city}</div>
           <div className = "tinroad">❯❯❯</div>
-          <div className = "toinroad">{departure_Time[0].airway.arrivalAirport.city}</div>
+          <div className = "toinroad">{departure_Time.airway.arrivalAirport.city}</div>
 
           </>) : ""
         }
@@ -44,12 +78,12 @@ class RoadTrip extends React.Component {
         {
           (departure_Time) ? (<>
                    <button className = "eachday" >{ formatDate(departure_Time[0].departureTime)}</button>
-                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 1)} </button>
-                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 2)} </button>
-                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 3)} </button>
-                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 4)} </button>
-                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 5)} </button>
-                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time[0].departureTime, 6)}</button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time.departureTime, 1)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time.departureTime, 2)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time.departureTime, 3)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time.departureTime, 4)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time.departureTime, 5)} </button>
+                   <button className = "eachday" >{ nextDayOfDepartureTime(departure_Time.departureTime, 6)}</button>
           </>): (<></>)
         }
                   
@@ -126,7 +160,7 @@ class RoadTrip extends React.Component {
               <button className="more">More</button>
             </div>
           </div>
-        </form>
+        </form> */}
       </>
     );
   }

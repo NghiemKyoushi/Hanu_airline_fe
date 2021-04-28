@@ -12,6 +12,7 @@ import {getCookie} from './utils/fetchData/fetchData';
 import  SearchForm from './components/SearchForm/SearchForm';
 import Template from './view/template/template';
 import OneWay from './view/OneWay/oneWay';
+import RoadTrip from './view/RoadTrip/RoadTrip';
 import MultiFlight1 from './view/MultiTrip/MultiFlight1';
 import SeatBooking from "./view/seatBooking/SeatBooking";
 
@@ -97,6 +98,18 @@ setStateLogin(data, callback_function) {
       <Route exact path ='/seatbooking'>
         <Template>
           <SeatBooking/>
+        </Template>
+      </Route>
+
+      <Route exact path ='/oneway'>
+        <Template>
+          <OneWay/>
+        </Template>
+      </Route>
+
+      <Route exact path ='/roadtrip'>
+        <Template>
+          <RoadTrip/>
         </Template>
       </Route>
 
