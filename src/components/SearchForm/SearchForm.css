@@ -10,6 +10,26 @@
     flex-direction: row;
     justify-content: center;
 }
+
+.ticket{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 1080px;
+    display:flex;
+    height: 250px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+}
+.button-ticket{
+    display:flex;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+}
 .form-in-multiTrip{
     background-color: rgba(0, 0, 0, 0.7);
     width: 950px;
@@ -54,6 +74,25 @@ font-weight: 500;
 line-height: 1.75;
 letter-spacing: 0.02857em;
 }
+.PaymentButton{
+    border: none;
+    background-color: #3f51b5;
+    color: white;
+    width: 200px;
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    }
 .ProfileButton{
     border: none;
     background-color: #3f51b5;
@@ -107,6 +146,26 @@ width: 400px;
 height: 45px;
 border-radius: 60px;
 background-color: rgb(249, 252, 252);
+}
+.ticket-form{
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 45px;
+    border-radius: 60px;
+}
+.total{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    border-radius: 60px;
+    padding-left: 685px;
 }
 .buttonClass_Bus{
 box-shadow: 1px 1px 5px #888888;
@@ -395,7 +454,7 @@ margin-left: 20px;
 margin-right: 20px;
 background-color: rgba(0, 0, 0, 0.7);
 width: 230px;
-height: 320px;
+height: 350px;
 border-radius: 15px;
 }
 nav li a{
@@ -413,13 +472,52 @@ background-color: #ffff;
 font-weight: bold;
 font-size: 10px;
 border: none;
-margin: auto;
+margin-left: 7px;
+margin-right: 10px;
 margin-top: 15px;
 align-items: center;
 justify-content: center;
 justify-items: center;
-margin-left: 30px;
-margin-right: -15px;
+}
+.adult-in-ticket{
+    width: 120px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #ffff;
+    font-weight: bold;
+    font-size: 10px;
+    border: none;
+    margin-left: 7px;
+    margin-right: 10px;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.confirm-ticket{
+    width: 120px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #FFC940;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    margin-right: 100px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.cancel-ticket{
+    width: 120px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(255, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
 }
 .time_departure_pr{
 margin: auto;
@@ -442,12 +540,107 @@ height: 40px;
 border-radius: 50px;
 background-color: rgb(64, 204, 223);
 font-weight: bold;
-font-size: 20px;
 border: none;
 margin: auto;
 align-items: center;
 display: flex;
 justify-content: center;
+}
+.ticket-field{
+    width: 140px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(64, 204, 223);
+    font-weight: bold;
+    border: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.total-price{
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(64, 204, 223);
+    font-weight: bold;
+    border: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.ticket-field-1{
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(64, 204, 223);
+    font-weight: bold;
+    border: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.ticket-from-to{
+    width: 140px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(64, 204, 223);
+    font-weight: bold;
+    border: none;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.ticket-field-detail{
+    width: 350px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: white;
+    font-weight: bold;
+    border: none;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+}
+.total-price-detail{
+    width: 250px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: white;
+    font-weight: bold;
+    border: none;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+}
+.ticket-field-status{
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(0, 255, 0);
+    font-weight: bold;
+    border: none;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+}
+.ticket-field-detail-2{
+    width: 250px;
+    height: 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    border: none;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 45px;
 }
 .to{
 width: 140px;
@@ -455,7 +648,6 @@ height: 40px;
 border-radius: 50px;
 background-color: rgb(64, 204, 223);
 font-weight: bold;
-font-size: 20px;
 border: none;
 margin-left: 27px;
 }
@@ -491,7 +683,7 @@ font-size: 15px;
 text-align: center;
 justify-content: center;
 align-items: center;
-margin-top: 10px;
+margin-top: 15px;
 }
 .ticket-id{
     display: flex;
@@ -681,6 +873,17 @@ margin-top: 12px;
     display: flex;
     color: white;
     margin-left: 12px;
+}
+.t-in-ticket{
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+    margin-left: 12px;
+    margin-right: 12px;
 }
 .toinroad{
     width: 110px;
