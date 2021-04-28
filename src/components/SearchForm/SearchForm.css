@@ -6,7 +6,6 @@
     margin: auto;
     margin-top: 10px;
     border-radius: 10px;
-    box-shadow: 1px 1px 5px #888888;
     flex-direction: row;
     justify-content: center;
 }
@@ -38,7 +37,6 @@
     margin: auto;
     margin-top: 10px;
     border-radius: 10px;
-    box-shadow: 1px 1px 5px #888888;
     flex-direction: row;
     justify-content: center;
 }
@@ -50,7 +48,6 @@
     margin: auto;
     margin-top: 10px;
     border-radius: 10px;
-    box-shadow: 1px 1px 5px #888888;
     flex-direction: row;
     justify-content: center;
     margin-bottom: 35px;
@@ -135,7 +132,6 @@ color: white;
 
 }
 .buttonClass{
-box-shadow: 1px 1px 5px #888888;
 margin-top: 25px;
 margin-left: 20px;
 margin-right: 20px;
@@ -168,7 +164,6 @@ background-color: rgb(249, 252, 252);
     padding-left: 685px;
 }
 .buttonClass_Bus{
-box-shadow: 1px 1px 5px #888888;
 margin-top: 60px;
 margin-left: 26px;
 display: flex;
@@ -181,7 +176,6 @@ background-color: rgb(249, 252, 252);
 padding-left: 15px;
 }
 .buttonClass-in-multi{
-    box-shadow: 1px 1px 5px #888888;
     margin-top: 39px;
     margin-left: 32px;
     display: flex;
@@ -204,7 +198,6 @@ border-radius: 60px;
 background-color: white;
 border: none;
 font-size: 17px;
-box-shadow: 1px 1px 5px #888888;
 padding-left: 15px;
 align-items: center;
 justify-content: center;
@@ -220,7 +213,6 @@ border-radius: 60px;
 background-color: white;
 border: none;
 font-size: 17px;
-box-shadow: 1px 1px 5px #888888;
 padding-left: 15px;
 align-items: center;
 justify-content: center;
@@ -278,7 +270,6 @@ height: 40px;
 border-radius: 50px;
 background-color: white;
 border: none;
-box-shadow: 1px 1px 5px #888888;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -295,7 +286,6 @@ border-radius: 50px;
 background-color: white;
 border: none;
 font-weight: bold;
-box-shadow: 1px 1px 5px #888888;
 text-align: left;
 padding: 0px 15px;
 }
@@ -309,7 +299,6 @@ padding: 0px 15px;
     background-color: white;
     border: none;
     font-weight: bold;
-    box-shadow: 1px 1px 5px #888888;
     text-align: left;
     padding: 0px 15px;
     }
@@ -323,8 +312,6 @@ padding: 0px 15px;
     background-color: white;
     border: none;
     font-weight: bold;
-    box-shadow: 1px 1px 5px #888888;
-    text-align: left;
     padding: 0px 15px;
     }
 .searchButton{
@@ -335,7 +322,6 @@ background-color:#FFC940;
 font-weight: bold;
 border: none;
 font-size: 23px;
-box-shadow: 1px 1px 5px #888888;
 margin-top: 40px;
 margin-left: 70px;
 }
@@ -364,7 +350,6 @@ margin-left: 70px;
     font-weight: bold;
     border: none;
     font-size: 23px;
-    box-shadow: 1px 1px 5px #888888;
     margin-top: 200px;
     margin-left: 70px;
     }
@@ -376,7 +361,6 @@ margin-left: 70px;
     font-weight: bold;
     border: none;
     font-size: 23px;
-    box-shadow: 1px 1px 5px #888888;
     display: flex;
     text-align: center;
     align-items: center;
@@ -531,7 +515,6 @@ height: 30px;
 border-radius: 50px;
 background-color: white;
 border: none;
-box-shadow: 1px 1px 5px #888888;
 padding: 0px 15px;
 margin-top: 15px;
 }
@@ -749,7 +732,6 @@ height: 180px;
 margin: auto;
 margin-top: 10px;
 border-radius: 10px;
-box-shadow: 1px 1px 5px #888888;
 flex-direction: row;
 justify-content: center;
 }
@@ -763,7 +745,6 @@ border-radius: 60px;
 background-color: white;
 border: none;
 font-size: 17px;
-box-shadow: 1px 1px 5px #888888;
 }
 .check{
 width: 250px;
@@ -773,7 +754,6 @@ background-color:#FFC940;
 font-weight: bold;
 border: none;
 font-size: 20px;
-box-shadow: 1px 1px 5px #888888;
 text-transform: uppercase;
 margin-left: 175px;
 margin-top: 12px;
@@ -851,7 +831,6 @@ margin-top: 12px;
     height: 35px;
     width: 110px;
     border: none;
-    box-shadow: 1px 1px 5px #dcdada;
     margin: 0.5px;
 }
 .RoadTrip{
