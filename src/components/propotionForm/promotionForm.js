@@ -35,10 +35,10 @@ class PromotionForm extends React.Component {
                 {
                       (allFlight) ? (
                         allFlight.map((flight, index) => {
-                      if(index < 4){
+                      if(index >5 ){
                         return (
-                      <li>
-                        <CardViewFlight departureAirport_city = {flight.airway.departureAirport.city} arrivalAirport_city = {flight.airway.arrivalAirport.city} price ={flight.minPrice} departureTime={flight.departureTime} />
+                      <li  key ={index}>
+                        <CardViewFlight departureAirport_city = {flight.airway.departureAirport.city} arrivalAirport_city = {flight.airway.arrivalAirport.city} price ={flight.minPrice} departureTime={flight.departureTime} idFlight={flight.id} />
                       </li>
                     );
                       }

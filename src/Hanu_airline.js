@@ -15,7 +15,7 @@ import OneWay from './view/OneWay/oneWay';
 import RoadTrip from './view/RoadTrip/RoadTrip';
 import MultiFlight1 from './view/MultiTrip/MultiFlight1';
 import SeatBooking from "./view/seatBooking/SeatBooking";
-
+import ChooseType from './view/ChooseType/ChooseType';
 class Hanu_Airline extends React.Component{
   constructor(){
     super();
@@ -95,7 +95,7 @@ setStateLogin(data, callback_function) {
         </Template>
       </Route>
 
-      <Route exact path ='/seatbooking'>
+      <Route exact path ='/seatbooking/:id'>
         <Template>
           <SeatBooking/>
         </Template>
@@ -112,6 +112,7 @@ setStateLogin(data, callback_function) {
           <RoadTrip/>
         </Template>
       </Route>
+
 
       <UnAuthenRoute isLogin={isLogin} exact ={true} path ='/login' >
       <SignIn saveAuthentication = {this.saveAuthentication} setStateLogin = {this.setStateLogin}/>

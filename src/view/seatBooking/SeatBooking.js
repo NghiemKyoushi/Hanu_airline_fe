@@ -10,15 +10,49 @@ class SeatBooking extends React.Component {
       business: [],
       premiumEconomy: [],
       economy: [],
-      test: [9, 6, 7, 8],
+      form: null
+      
+      // test: [9, 6, 7, 8],
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
+
+  onSubmit(e){
+    e.preventDefault();
+
+  }
+
+  handleChange(e){
+    // e.preventDefault();
+    // const {name} = e.target;
+    const checkedArray= [];
+    let value;
+    if(e.target.type !=='checkbox'){
+      value = e.target.value;
+    }else{
+      const checkeds = document.getElementsByTagName('input');
+      for(let i = 0 ; i < checkeds.length ; i++){
+        if(checkeds[i].checked ){
+          checkedArray.push(checkeds[i].id);
+          // console.log("fjfjfjf",checkeds[i].id);
+        
+        }
+      }
+      // const {form} = this.state;
+      // this.state.form = checkedArray;
+      console.log("form", checkedArray);
+
+    }
+  }
+
   async componentDidMount() {
+    const id = Number(this.props.match.params.id);
     const business = [];
     const premiumEconomy = [];
     const economy = [];
     const api =
-      "http://hanuairline.azurewebsites.net/aircraftSeat/admin/getByAircraftId/33";
+      `http://hanuairline.azurewebsites.net/aircraftSeat/admin/getByAircraftId/${id}`;
 
     const getData = await axios.get(api, {
       headers: {
@@ -57,6 +91,7 @@ class SeatBooking extends React.Component {
     console.log("data seat : ", business);
 
     return (
+      <>
       <div class="plane">
         <div class="cockpit">
           <div
@@ -112,7 +147,7 @@ class SeatBooking extends React.Component {
             <ol class="seats" type="A">
               {business.map((bus, index) => {
                 return (
-                  <li class="seat2" key ={index}>
+                  <li class="seat2" key={index}>
                     <input type="checkbox" id={bus.id} />
                     <label for={bus.id}>{bus.id}</label>
                   </li>
@@ -125,20 +160,14 @@ class SeatBooking extends React.Component {
         <ol class="cabin fuselage">
           <li class="row row--2">
             <ol class="seats" type="A">
-
-            {premiumEconomy.map((pre, index) => {
+              {premiumEconomy.map((pre, index) => {
                 return (
-                  <li class="seat" key ={index}>
-                    <input type="checkbox" id={pre.id} />
+                  <li class="seat" key={index}>
+                    <input type="checkbox" id={pre.id} onChange ={this.handleChange}/>
                     <label for={pre.id}>{pre.id}</label>
                   </li>
                 );
               })}
-
-
-
-
-              
             </ol>
           </li>
         </ol>
@@ -146,57 +175,24 @@ class SeatBooking extends React.Component {
           <br />
           <li class="row row--3">
             <ol class="seats" type="A">
-            {economy.map((eco, index) => {
+              {economy.map((eco, index) => {
                 return (
-                  <li class="seat3" key ={index}>
-                    <input type="checkbox" id={eco.id} />
+                  <li class="seat3" key={index}>
+                    <input type="checkbox" id={eco.id} value={eco.id}/>
                     <label for={eco.id}>{eco.id}</label>
                   </li>
                 );
               })}
-
-
-
-              <li class="seat3">
-                <input type="checkbox" id="2A" />
-                <label for="2A">2A</label>
-              </li>
-              <li class="seat3">
-                <input type="checkbox" id="2B" />
-                <label for="2B">2B</label>
-              </li>
-              <li class="seat3">
-                <input type="checkbox" id="2C" />
-                <label for="2C">2C</label>
-              </li>
-              <li class="seat3">
-                <input type="checkbox" id="2D" />
-                <label for="2D">2D</label>
-              </li>
-              <li class="seat3">
-                <input type="checkbox" id="2E" />
-                <label for="2E">2E</label>
-              </li>
-              <li class="seat3">
-                <input type="checkbox" id="2F" />
-                <label for="2F">2F</label>
-              </li>
-              <li class="seat3">
-                <input type="checkbox" id="2D" />
-                <label for="2D">2D</label>
-              </li>
-              <li class="seat3">
-                <input type="checkbox" id="2E" />
-                <label for="2E">2E</label>
-              </li>
-              <li class="seat3">
-                <input type="checkbox" id="2F" />
-                <label for="2F">2F</label>
-              </li>
-            </ol>
+           </ol>
           </li>
         </div>
+       
       </div>
+      <div className = "button-ticket">
+                  <button className="confirm-ticket">Confirm</button>
+                  <button className="cancel-ticket">Cancel</button>
+                </div>
+      </>
     );
   }
 }
