@@ -57,56 +57,108 @@ class SeatBooking extends React.Component {
     console.log("data seat : ", business);
 
     return (
+      <> 
+        <div style={{
+                  height: "20px",
+                  marginTop: "50px",
+                  marginBottom: "40px",
+                  borderRadius: "60px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}><button className = "FlightDetail" >Flight Details</button></div>
+                <form className="aircraftForm">
+                  <div className="container1">
+                    <div className="ticket-form">
+                      <div className="aircraft">Aircaft Name</div>
+                      <div className="aircraft-name">HANUB78N1</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft-1">Airway</div>
+                      <div className="aircraft-2">
+                        <div className = "ticket-from-to">HCM City</div>
+                        <div className = "t-in-ticket">❯❯❯</div>
+                        <div className = "ticket-from-to">Ha Noi</div>
+                      </div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Departure Airport</div>
+                      <div className="aircraft-name">Tan Son Nhat</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Departure Gate</div>
+                      <div className="aircraft-name">A1</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Departure Time</div>
+                      <div className="aircraft-name">DD/MM/YYYY</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="status">Status</div>
+                      <div className="status-ok">OK</div>
+                    </div>
+                  </div>
+                  <div className="container2">
+                    <div className="ticket-form">
+                      <div className="aircraft">Discount Rate</div>
+                      <div className="aircraft-name">50%</div>
+                    </div>
+                    <div className="blank">
+                      <div className="blank1"></div>
+                      <div className="blank2"></div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Departure Airport</div>
+                      <div className="aircraft-name">Tan Son Nhat</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Departure Gate</div>
+                      <div className="aircraft-name">A1</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Departure Time</div>
+                      <div className="aircraft-name">DD/MM/YYYY</div>
+                    </div>
+                  </div>
+                </form>
+                
+                <div style={{
+                  height: "20px",
+                  marginTop: "50px",
+                  marginBottom: "40px",
+                  borderRadius: "60px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}><button className = "FlightDetail" >Available Seat</button></div>
+              <form className = "available-seat-form">
+                 <div className="container1">
+                    <div className="seat-form">
+                      <div className="round1"></div>
+                      <div className="round-note">Business Seat</div>
+                    </div>
+                    <div className="seat-form">
+                      <div className="round2"></div>
+                      <div className="round-note">Economy Flex Seat</div>
+                    </div>
+                    <div className="seat-form">
+                      <div className="round3"></div>
+                      <div className="round-note">Economy Seat</div>
+                    </div>
+                    <div className="seat-form">
+                      <div className="round4"></div>
+                      <div className="round-note">Confirmed Seat</div>
+                    </div>
+                    <div className="seat-form">
+                      <div className="round5"></div>
+                      <div className="round-note">Selected Seat</div>
+                    </div>
+                    <div className="seat-form">
+                      <div className="round6">Exit</div>
+                      <div className="round-note">Exit Row</div>
+                    </div>
+                  </div>
       <div class="plane">
-        <div class="cockpit">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "row",
-              height: "40px",
-            }}
-          >
-            <div
-              className="color_class"
-              style={{ backgroundColor: "yellow" }}
-            ></div>
-            <h4>Business</h4>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "row",
-              height: "40px",
-            }}
-          >
-            <div
-              className="color_class"
-              style={{ backgroundColor: "blue" }}
-            ></div>
-            <h4>Economy Flex</h4>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "row",
-              height: "40px",
-            }}
-          >
-            <div
-              className="color_class"
-              style={{ backgroundColor: "Highlight" }}
-            ></div>
-            <h4>Economy</h4>
-          </div>
-        </div>
         <ol class="cabin fuselage">
           <li class="row row--1">
             <ol class="seats" type="A">
@@ -134,11 +186,6 @@ class SeatBooking extends React.Component {
                   </li>
                 );
               })}
-
-
-
-
-              
             </ol>
           </li>
         </ol>
@@ -154,9 +201,6 @@ class SeatBooking extends React.Component {
                   </li>
                 );
               })}
-
-
-
               <li class="seat3">
                 <input type="checkbox" id="2A" />
                 <label for="2A">2A</label>
@@ -197,6 +241,12 @@ class SeatBooking extends React.Component {
           </li>
         </div>
       </div>
+      </form>
+               <div className = "button-seat">
+                  <button className="confirm-ticket">Confirm</button>
+                  <button className="cancel-ticket">Cancel</button>
+                </div>
+      </>
     );
   }
 }
