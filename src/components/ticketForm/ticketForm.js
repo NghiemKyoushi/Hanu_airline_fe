@@ -23,7 +23,7 @@ class TicketForm extends React.Component {
             </div>
             <form class="form_check">
               <div>
-                <input className="TicketID" placeholder="  Ticket ID _ " />
+                <input className="TicketID" placeholder="Ticket ID _ " />
                 <button className="check">check status</button>
               </div>
             </form>

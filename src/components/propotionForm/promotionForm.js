@@ -1,5 +1,5 @@
 import React from "react";
-import CardViewFlight from "../../components/cardViewFlight/cardViewFlight";
+import CardViewTimeFlight from "../../components/cardViewTimeFlight/cardViewTimeFlight";
 import { Button } from "@material-ui/core";
 import { formatDate } from "../../utils/fetchData/fetchData";
 class PromotionForm extends React.Component {
@@ -19,7 +19,7 @@ class PromotionForm extends React.Component {
                 style={{
                   height: "20px",
                   marginTop: "30px",
-                  marginBottom: "40px",
+                  marginBottom: "10px",
                   borderRadius: "60px",
                   display: "flex",
                   justifyContent: "center",
@@ -38,7 +38,7 @@ class PromotionForm extends React.Component {
                       if(index < 4){
                         return (
                       <li>
-                        <CardViewFlight departureAirport_city = {flight.airway.departureAirport.city} arrivalAirport_city = {flight.airway.arrivalAirport.city} price ={flight.minPrice} departureTime={flight.departureTime} />
+                        <CardViewTimeFlight departureAirport_city = {flight.airway.departureAirport.city} arrivalAirport_city = {flight.airway.arrivalAirport.city} price ={flight.minPrice} departureTime={flight.departureTime} />
                       </li>
                     );
                       }
