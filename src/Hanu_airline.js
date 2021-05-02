@@ -4,6 +4,8 @@ import { BrowserRouter, Switch, Route, withRouter } from "react-router-dom";
 import HomePage from './view/home/homepage';
 //import UnAuthen
 import UnAuthenRoute from './routes/viewer_route/unAuthen_route';
+import ProtectedRoute from './routes/user_route/ProtectedRoute';
+
 //Authentication
 import SignIn from "./view/login/index";
 import SignUp from './view/register/signup';
@@ -16,6 +18,7 @@ import RoadTrip from './view/RoadTrip/RoadTrip';
 import MultiFlight1 from './view/MultiTrip/MultiFlight1';
 import SeatBooking from "./view/seatBooking/SeatBooking";
 import ChooseType from './view/ChooseType/ChooseType';
+import  Profile from './view/Profile/profile';
 class Hanu_Airline extends React.Component{
   constructor(){
     super();
@@ -95,6 +98,11 @@ setStateLogin(data, callback_function) {
         </Template>
       </Route>
 
+      <ProtectedRoute>
+        <Template>
+        <Profile isLogin = {isLogin} path ='user/profiles'/>
+        </Template>
+      </ProtectedRoute>
       <Route exact path ='/seatbooking/:id'>
         <Template>
           <SeatBooking/>

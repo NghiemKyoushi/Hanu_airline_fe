@@ -9,12 +9,13 @@ html {
 }
 
 .plane {
-  background-color: #121044;
+  background-color: #ffffff;
   opacity: 0.9;
   margin: 20px auto;
   max-width: 664px;
   overflow: scroll;
   height: 1000px;
+  border-radius: 20px;
 }
 
 .cockpit {
@@ -59,6 +60,8 @@ html {
 .exit {
   position: relative;
   height: 50px;
+  font-weight: bold;
+  margin-top: 30px;
   &:before,
   &:after {
     content: "EXIT";
@@ -81,19 +84,15 @@ html {
   }
 }
 
-.fuselage {
-  border-right: 5px solid #d8d8d8;
-  border-left: 5px solid #d8d8d8;
-}
-
 ol {
   list-style: none;
-  padding: 0;
+  padding-left: 10px;
   margin: 0;
+  margin-top: 30px;
 }
 
 .seats {
-  margin-left: 15px;
+  margin-left: 35px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -145,11 +144,11 @@ ol {
     position: relative;
     width: 100%;
     text-align: center;
-    font-size: 14px;
+    font-size: 11px;
     font-weight: bold;
-    line-height: 1.5rem;
+    line-height: 2rem;
     padding: 4px 0;
-    background: #30b5e1;
+    background: #2f6aff;
     border-radius: 5px;
     animation-duration: 300ms;
     animation-fill-mode: both;
@@ -162,31 +161,22 @@ ol {
       top: 1px;
       left: 50%;
       transform: translate(-50%, 0%);
-      background: rgba(255, 255, 255, 0.4);
       border-radius: 3px;
     }
     &:hover {
       cursor: pointer;
-      box-shadow: 0 0 0px 2px #5c6aff;
+      box-shadow: 0 0 0px 2px black;
     }
   }
 }
 
-//seat economy
-// .seats {
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   justify-content: flex-start;
-// }
-
 .seat2 {
-  margin-left: 57px;
   display: flex;
   flex: 0 0 9.195714%;
   padding: 4px;
   position: relative;
-  &:nth-child(1n + 0) {
+  margin-top: 15px;
+  &:nth-child(2n + 0) {
     margin-right: 5.699914%;
   }
   input[type="checkbox"] {
@@ -195,7 +185,7 @@ ol {
   }
   input[type="checkbox"]:checked {
     + label {
-      background: #e91313;
+      background: rgb(143, 143, 143);
       -webkit-animation-name: rubberBand;
       animation-name: rubberBand;
       animation-duration: 300ms;
@@ -226,11 +216,11 @@ ol {
     position: relative;
     width: 100%;
     text-align: center;
-    font-size: 14px;
+    font-size: 11px;
     font-weight: bold;
-    line-height: 1.5rem;
+    line-height: 2rem;
     padding: 4px 0;
-    background: #edf032;
+    background-color: #ffa600;
     border-radius: 5px;
     animation-duration: 300ms;
     animation-fill-mode: both;
@@ -243,12 +233,11 @@ ol {
       top: 1px;
       left: 50%;
       transform: translate(-50%, 0%);
-      background: rgba(255, 255, 255, 0.4);
       border-radius: 3px;
     }
     &:hover {
       cursor: pointer;
-      box-shadow: 0 0 0px 2px #5c6aff;
+      box-shadow: 0 0 0px 2px black;
     }
   }
 }
@@ -298,11 +287,11 @@ ol {
     position: relative;
     width: 100%;
     text-align: center;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: bold;
-    line-height: 1.5rem;
+    line-height: 2rem;
     padding: 4px 0;
-    background: #30e17d;
+    background: #23bc2d;
     border-radius: 5px;
     animation-duration: 300ms;
     animation-fill-mode: both;
@@ -311,16 +300,15 @@ ol {
       content: "";
       position: absolute;
       width: 88%;
-    height: 73%;
+      height: 73%;
       top: 1px;
       left: 50%;
       transform: translate(-50%, 0%);
-      background: rgba(255, 255, 255, 0.4);
       border-radius: 3px;
     }
     &:hover {
       cursor: pointer;
-      box-shadow: 0 0 0px 2px #5093c9;
+      box-shadow: 0 0 0px 2px black;
     }
   }
 }

@@ -6,14 +6,11 @@
     margin: auto;
     margin-top: 10px;
     border-radius: 10px;
-    box-shadow: 1px 1px 5px #888888;
     flex-direction: row;
     justify-content: center;
 }
-
 .ticket{
     background-color: rgba(0, 0, 0, 0.7);
-    width: 1080px;
     display:flex;
     height: 250px;
     margin: auto;
@@ -30,6 +27,15 @@
     flex-direction: row;
     justify-content: center;
 }
+.button-seat{
+    display:flex;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+}
 .form-in-multiTrip{
     background-color: rgba(0, 0, 0, 0.7);
     width: 950px;
@@ -38,7 +44,6 @@
     margin: auto;
     margin-top: 10px;
     border-radius: 10px;
-    box-shadow: 1px 1px 5px #888888;
     flex-direction: row;
     justify-content: center;
 }
@@ -50,7 +55,6 @@
     margin: auto;
     margin-top: 10px;
     border-radius: 10px;
-    box-shadow: 1px 1px 5px #888888;
     flex-direction: row;
     justify-content: center;
     margin-bottom: 35px;
@@ -74,6 +78,24 @@ font-weight: 500;
 line-height: 1.75;
 letter-spacing: 0.02857em;
 }
+.FlightDetail{
+    border: none;
+    background-color: #3f51b5;
+    color: white;
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    }
 .PaymentButton{
     border: none;
     background-color: #3f51b5;
@@ -135,7 +157,6 @@ color: white;
 
 }
 .buttonClass{
-box-shadow: 1px 1px 5px #888888;
 margin-top: 25px;
 margin-left: 20px;
 margin-right: 20px;
@@ -148,7 +169,26 @@ border-radius: 60px;
 background-color: rgb(249, 252, 252);
 }
 .ticket-form{
-    margin-top: 25px;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 45px;
+    border-radius: 60px;
+}
+.seat-form{
+    margin-top: 5px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    padding: 15px;
+}
+.blank{
+    margin-top: 15px;
     margin-left: 20px;
     margin-right: 20px;
     display: flex;
@@ -168,8 +208,7 @@ background-color: rgb(249, 252, 252);
     padding-left: 685px;
 }
 .buttonClass_Bus{
-box-shadow: 1px 1px 5px #888888;
-margin-top: 60px;
+margin-top: 66px;
 margin-left: 26px;
 display: flex;
 justify-content: center;
@@ -181,7 +220,6 @@ background-color: rgb(249, 252, 252);
 padding-left: 15px;
 }
 .buttonClass-in-multi{
-    box-shadow: 1px 1px 5px #888888;
     margin-top: 39px;
     margin-left: 32px;
     display: flex;
@@ -204,7 +242,6 @@ border-radius: 60px;
 background-color: white;
 border: none;
 font-size: 17px;
-box-shadow: 1px 1px 5px #888888;
 padding-left: 15px;
 align-items: center;
 justify-content: center;
@@ -220,7 +257,6 @@ border-radius: 60px;
 background-color: white;
 border: none;
 font-size: 17px;
-box-shadow: 1px 1px 5px #888888;
 padding-left: 15px;
 align-items: center;
 justify-content: center;
@@ -278,11 +314,11 @@ height: 40px;
 border-radius: 50px;
 background-color: white;
 border: none;
-box-shadow: 1px 1px 5px #888888;
 display: flex;
 align-items: center;
 justify-content: center;
 margin-top: 15px;
+margin-left: 20px;
 }
 .ageSelect{
 margin-top: 8px;
@@ -294,7 +330,6 @@ border-radius: 50px;
 background-color: white;
 border: none;
 font-weight: bold;
-box-shadow: 1px 1px 5px #888888;
 text-align: left;
 padding: 0px 15px;
 }
@@ -308,7 +343,6 @@ padding: 0px 15px;
     background-color: white;
     border: none;
     font-weight: bold;
-    box-shadow: 1px 1px 5px #888888;
     text-align: left;
     padding: 0px 15px;
     }
@@ -322,21 +356,18 @@ padding: 0px 15px;
     background-color: white;
     border: none;
     font-weight: bold;
-    box-shadow: 1px 1px 5px #888888;
-    text-align: left;
     padding: 0px 15px;
     }
 .searchButton{
-width: 300px;
+width: 200px;
 height: 50px;
 border-radius: 60px;
 background-color:#FFC940;
 font-weight: bold;
 border: none;
 font-size: 23px;
-box-shadow: 1px 1px 5px #888888;
 margin-top: 40px;
-margin-left: 70px;
+margin-left: 130px;
 }
 .EditButton{
     width: 100px;
@@ -363,7 +394,6 @@ margin-left: 70px;
     font-weight: bold;
     border: none;
     font-size: 23px;
-    box-shadow: 1px 1px 5px #888888;
     margin-top: 200px;
     margin-left: 70px;
     }
@@ -375,7 +405,6 @@ margin-left: 70px;
     font-weight: bold;
     border: none;
     font-size: 23px;
-    box-shadow: 1px 1px 5px #888888;
     display: flex;
     text-align: center;
     align-items: center;
@@ -391,14 +420,14 @@ font-weight: bold;
 border: none;
 font-size: 15px;
 margin: auto;
-margin-top: 10px;
+margin-top: 20px;
 display: flex;
 align-items: center;
 justify-content: center;
 align-items: center;
 }
 .promorion3{
-    padding: 15px;
+    padding: 35px;
 }
 .promotionForm{
 width: 950px;
@@ -530,7 +559,6 @@ height: 30px;
 border-radius: 50px;
 background-color: white;
 border: none;
-box-shadow: 1px 1px 5px #888888;
 padding: 0px 15px;
 margin-top: 15px;
 }
@@ -557,6 +585,132 @@ justify-content: center;
     display: flex;
     justify-content: center;
 }
+.round1{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #FFA600;
+}
+.round2{
+    width: 35px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #2F6AFF;
+}
+.round3{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #23BC2D;
+}
+.round4{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #ff0000;
+}
+.round5{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(143, 143, 143);
+}
+.round6{
+    width: 30px;
+    height: 20px;
+    color: white;
+    background-color: green;
+    font-weight: bold;
+    border: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.round-note{
+    color: white;
+    margin-left: 20px;
+    font-weight: 500;
+}
+.aircraftForm{
+    background-color: rgba(0, 0, 0, 0.7);
+    display:flex;
+    margin: auto;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+    padding: 30px;
+}
+
+.available-seat-form{
+    background-color: rgba(0, 0, 0, 0.7);
+    display:flex;
+    margin: auto;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+    padding: 30px;
+}
+.aircraft{
+    width: 200px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(64, 204, 223);
+    font-weight: bold;
+    border: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.aircraft-name{
+    width: 350px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: white;
+    font-weight: bold;
+    border: none;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+}
+.aircraft-1{
+    width: 140px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(64, 204, 223);
+    font-weight: bold;
+    border: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.aircraft-2{
+    width: 240px;
+    height: 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    border: none;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+}
+.status{
+    width: 140px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(64, 204, 223);
+    font-weight: bold;
+    border: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 .total-price{
     width: 100px;
     height: 30px;
@@ -567,6 +721,18 @@ justify-content: center;
     align-items: center;
     display: flex;
     justify-content: center;
+}
+.status-ok{
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(0, 255, 0);
+    font-weight: bold;
+    border: none;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
 .ticket-field-1{
     width: 100px;
@@ -579,6 +745,7 @@ justify-content: center;
     display: flex;
     justify-content: center;
 }
+
 .ticket-from-to{
     width: 140px;
     height: 30px;
@@ -604,6 +771,7 @@ justify-content: center;
     justify-content: center;
     margin-left: 50px;
 }
+
 .total-price-detail{
     width: 250px;
     height: 30px;
@@ -642,6 +810,7 @@ justify-content: center;
     justify-content: center;
     margin-left: 45px;
 }
+
 .to{
 width: 140px;
 height: 40px;
@@ -684,6 +853,18 @@ text-align: center;
 justify-content: center;
 align-items: center;
 margin-top: 15px;
+}
+.oneway-economy{
+    display: flex;
+    color: rgb(0, 0, 0);
+    margin: auto;
+    border-radius: 60px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
 }
 .ticket-id{
     display: flex;
@@ -736,7 +917,6 @@ height: 180px;
 margin: auto;
 margin-top: 10px;
 border-radius: 10px;
-box-shadow: 1px 1px 5px #888888;
 flex-direction: row;
 justify-content: center;
 }
@@ -750,7 +930,6 @@ border-radius: 60px;
 background-color: white;
 border: none;
 font-size: 17px;
-box-shadow: 1px 1px 5px #888888;
 }
 .check{
 width: 250px;
@@ -760,7 +939,6 @@ background-color:#FFC940;
 font-weight: bold;
 border: none;
 font-size: 20px;
-box-shadow: 1px 1px 5px #888888;
 text-transform: uppercase;
 margin-left: 175px;
 margin-top: 12px;
@@ -838,7 +1016,6 @@ margin-top: 12px;
     height: 35px;
     width: 110px;
     border: none;
-    box-shadow: 1px 1px 5px #dcdada;
     margin: 0.5px;
 }
 .RoadTrip{

@@ -1,14 +1,5 @@
 import React from "react";
-// import {
-//   AppBar,
-//   Button,
-//   Toolbar,
-//   Typography,
-//   TextField,
-// } from "@material-ui/core";
-// import Box from "@material-ui/core/Box";
-import "./Profile.css";
-import { ClearAll } from "@material-ui/icons";
+import "./profile.css";
 class Profile extends React.Component {
   
   render() {

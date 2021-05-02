@@ -286,8 +286,8 @@ class SearchForm extends React.Component {
           <div className="container2">
             <button className="searchButton-in-multiTrip" onClick = {this.submitSearch}>Search</button>
           </div>
-        </form></>)
-      }
+        </form></>
+        )}
 
 
        

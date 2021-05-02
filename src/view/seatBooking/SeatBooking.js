@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { withRouter } from "react-router";
 import { get } from "react-scroll/modules/mixins/scroller";
+import {formatDate} from '../../utils/fetchData/fetchData';
 import "./seatBooking.scss";
 class SeatBooking extends React.Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class SeatBooking extends React.Component {
       business: [],
       premiumEconomy: [],
       economy: [],
-      form: null
+      form: null,
+      showFlightInfo: ""
       
       // test: [9, 6, 7, 8],
     };
@@ -48,33 +50,44 @@ class SeatBooking extends React.Component {
 
   async componentDidMount() {
     const id = Number(this.props.match.params.id);
+    //inform của máy bay 
+    const apiFlight = `http://hanuairline.azurewebsites.net/flight/getById/${id}`;
+    const getDataFight = await axios.get(apiFlight);
+    // this.setState({
+    //   showFlightInfo: getDataFight.data
+    // })
+
+    const apiSeat = `http://hanuairline.azurewebsites.net/flight/seats-and-status/${id}`;
+    const fetchDatSeat =  await axios.get(apiSeat);
+    console.log(fetchDatSeat.data[1]);
+
     const business = [];
     const premiumEconomy = [];
     const economy = [];
-    const api =
-      `http://hanuairline.azurewebsites.net/aircraftSeat/admin/getByAircraftId/${id}`;
+    // const api =
+    //   `http://hanuairline.azurewebsites.net/aircraftSeat/admin/getByAircraftId/${id}`;
 
-    const getData = await axios.get(api, {
-      headers: {
-        authorization:
-          "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjE5NDI4OTQ5LCJleHAiOjE2MjAyOTI5NDl9.LP1g-LPjTE64Amj7m_ZuDseHFQ7niya47Pb-Phvedq0DPkd9xoCOeeq1W1vY5fJ0W_yn3bgL_htnDz5p5MLd7g",
-      },
-    });
+    // const getData = await axios.get(api, {
+    //   headers: {
+    //     authorization:
+    //       "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjE5NDI4OTQ5LCJleHAiOjE2MjAyOTI5NDl9.LP1g-LPjTE64Amj7m_ZuDseHFQ7niya47Pb-Phvedq0DPkd9xoCOeeq1W1vY5fJ0W_yn3bgL_htnDz5p5MLd7g",
+    //   },
+    // });
 
     // const getData = await axios({
     //   method: "GET",
     //   api,
     //   headers:{ }
     // });
-    const data = getData.data;
+    const data = fetchDatSeat.data[1];
     const mapData = data.map((item, index) => {
-      if (item.travelClass.description === "BUSINESS CLASS CLASSIC") {
+      if (item.travelClass_id === 1) {
         business.push(data[index]);
       } else if (
-        item.travelClass.description === "PREMIUM ECONOMY CLASS CLASSIC"
+        item.travelClass_id === 2
       ) {
         premiumEconomy.push(data[index]);
-      } else if (item.travelClass.description === "ECONOMY CLASS CLASSIC") {
+      } else if (item.travelClass_id === 3) {
         economy.push(data[index]);
       }
     });
@@ -82,76 +95,151 @@ class SeatBooking extends React.Component {
       business: business,
       premiumEconomy: premiumEconomy,
       economy: economy,
+      showFlightInfo: getDataFight.data
     });
   }
 
   render() {
-    const { business, premiumEconomy, economy } = this.state;
+    const { business, premiumEconomy, economy, showFlightInfo } = this.state;
     // console.log("bussssss",typeof business)
-    console.log("data seat : ", business);
+    console.log("data seat : ", showFlightInfo.id);
 
-    return (
-      <>
+    return ( 
+      <> 
+{
+ (showFlightInfo) ? (<>
+  <div style={{
+                  height: "20px",
+                  marginTop: "50px",
+                  marginBottom: "40px",
+                  borderRadius: "60px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}><button className = "FlightDetail" >Flight Details</button>
+                </div>
+
+                <form className="aircraftForm">
+                  <div className="container1">
+                    <div className="ticket-form">
+                      <div className="aircraft">Airway Name</div>
+                      <div className="aircraft-name">{showFlightInfo.aircraft.name}</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft-1">Airway</div>
+                      <div className="aircraft-2">
+                        <div className = "ticket-from-to">{showFlightInfo.airway.departureAirport.city}</div>
+                        <div className = "t-in-ticket">❯❯❯</div>
+                        <div className = "ticket-from-to">{showFlightInfo.airway.arrivalAirport.city}</div>
+                      </div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Departure Airport</div>
+                      <div className="aircraft-name">{showFlightInfo.airway.departureAirport.city}</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Departure Gate</div>
+                      <div className="aircraft-name">{showFlightInfo.departureGate.name}</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Departure Time</div>
+                      <div className="aircraft-name">{formatDate(showFlightInfo.departureTime)}</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="status">Status</div>
+                      <div className="status-ok">{showFlightInfo.status}</div>
+                    </div>
+                  </div>
+                  <div className="container2">
+                    <div className="ticket-form">
+                      <div className="aircraft">Discount Rate</div>
+                      <div className="aircraft-name">0%</div>
+                    </div>
+                    <div className="blank">
+                      <div className="blank1"></div>
+                      <div className="blank2"></div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Arrival Airport</div>
+                      <div className="aircraft-name">{showFlightInfo.airway.arrivalAirport.city}</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Arrival Gate</div>
+                      <div className="aircraft-name">{showFlightInfo.arrivalGate.name}</div>
+                    </div>
+                    <div className="ticket-form">
+                      <div className="aircraft">Arrival Time</div>
+                      <div className="aircraft-name">{formatDate(showFlightInfo.arrivalTime)}</div>
+                    </div>
+                  </div>
+                </form>
+ </>) : "" 
+}
+       
+                
+                <div style={{
+                  height: "20px",
+                  marginTop: "50px",
+                  marginBottom: "40px",
+                  borderRadius: "60px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}><button className = "FlightDetail" >Available Seat</button></div>
+              <form className = "available-seat-form">
+                 <div className="container1">
+                    <div className="seat-form">
+                      <div className="round1"></div>
+                      <div className="round-note">Business Seat</div>
+                    </div>
+                    <div className="seat-form">
+                      <div className="round2"></div>
+                      <div className="round-note">Economy Flex Seat</div>
+                    </div>
+                    <div className="seat-form">
+                      <div className="round3"></div>
+                      <div className="round-note">Economy Seat</div>
+                    </div>
+                    <div className="seat-form">
+                      <div className="round4"></div>
+                      <div className="round-note">Confirmed Seat</div>
+                    </div>
+                    <div className="seat-form">
+                      <div className="round5"></div>
+                      <div className="round-note">Selected Seat</div>
+                    </div>
+                    <div className="seat-form">
+                      <div className="round6">Exit</div>
+                      <div className="round-note">Exit Row</div>
+                    </div>
+                  </div>
       <div class="plane">
-        <div class="cockpit">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "row",
-              height: "40px",
-            }}
-          >
-            <div
-              className="color_class"
-              style={{ backgroundColor: "yellow" }}
-            ></div>
-            <h4>Business</h4>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "row",
-              height: "40px",
-            }}
-          >
-            <div
-              className="color_class"
-              style={{ backgroundColor: "blue" }}
-            ></div>
-            <h4>Economy Flex</h4>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "row",
-              height: "40px",
-            }}
-          >
-            <div
-              className="color_class"
-              style={{ backgroundColor: "Highlight" }}
-            ></div>
-            <h4>Economy</h4>
-          </div>
-        </div>
         <ol class="cabin fuselage">
           <li class="row row--1">
             <ol class="seats" type="A">
+              {
+                business.map((bus, index) => {
+                if(bus.status === 'BOOKED'){
+                  return (
+                    <li class="seat2" key={index} >
+                    <input type="checkbox" id={bus.id} disabled/>
+                    <label for={bus.id}>{bus.id}</label>
+                  </li>
+                  )
+                }
+                
+              })}
+
               {business.map((bus, index) => {
-                return (
+                if (bus.status === "AVAILABLE"){
+                  return (
                   <li class="seat2" key={index}>
                     <input type="checkbox" id={bus.id} />
                     <label for={bus.id}>{bus.id}</label>
                   </li>
                 );
+                }
+                
               })}
             </ol>
           </li>
@@ -161,12 +249,26 @@ class SeatBooking extends React.Component {
           <li class="row row--2">
             <ol class="seats" type="A">
               {premiumEconomy.map((pre, index) => {
-                return (
+                if(pre.status === "BOOKED"){
+                  return (
+                  <li class="seat" key={index}>
+                    <input type="checkbox" id={pre.id} disabled onChange ={this.handleChange}/>
+                    <label for={pre.id}>{pre.id}</label>
+                  </li>
+                );
+                }
+                
+              })}
+              {premiumEconomy.map((pre, index) => {
+                if(pre.status === "AVAILABLE"){
+                  return (
                   <li class="seat" key={index}>
                     <input type="checkbox" id={pre.id} onChange ={this.handleChange}/>
                     <label for={pre.id}>{pre.id}</label>
                   </li>
                 );
+                }
+                
               })}
             </ol>
           </li>
@@ -176,19 +278,35 @@ class SeatBooking extends React.Component {
           <li class="row row--3">
             <ol class="seats" type="A">
               {economy.map((eco, index) => {
-                return (
+                if(eco.status === "BOOKED"){
+                  return (
                   <li class="seat3" key={index}>
-                    <input type="checkbox" id={eco.id} value={eco.id}/>
+                    <input type="checkbox" id={eco.id} value={eco.id} disabled onChange ={this.handleChange}/>
                     <label for={eco.id}>{eco.id}</label>
                   </li>
                 );
+                }
+                
+              })}
+
+              {economy.map((eco, index) => {
+                if(eco.status === "AVAILABLE"){
+                  return (
+                  <li class="seat3" key={index}>
+                    <input type="checkbox" id={eco.id} value={eco.id} onChange ={this.handleChange}/>
+                    <label for={eco.id}>{eco.id}</label>
+                  </li>
+                );
+                }
+                
               })}
            </ol>
           </li>
         </div>
-       
-      </div>
-      <div className = "button-ticket">
+        </div>
+        </form>                 
+        <div>
+
                   <button className="confirm-ticket">Confirm</button>
                   <button className="cancel-ticket">Cancel</button>
                 </div>
@@ -198,29 +316,3 @@ class SeatBooking extends React.Component {
 }
 export default withRouter(SeatBooking);
 
-{
-  /* business.map( (business, index) =>(
-                <li class="seat2">
-                <input type="checkbox" id="1A" />
-                <label for="1A">1A</label>
-              </li>
-              )) */
-}
-{
-  /* <li class="seat2">
-                <input type="checkbox" id="1A" />
-                <label for="1A">1A</label>
-              </li>
-              <li class="seat2">
-                <input type="checkbox" id="1B" />
-                <label for="1B">1B</label>
-              </li>
-              <li class="seat2">
-                <input type="checkbox" id="1C" />
-                <label for="1C">1C</label>
-              </li>
-              <li class="seat2">
-                <input type="checkbox" id="1D" />
-                <label for="1D">1D</label>
-              </li> */
-}
