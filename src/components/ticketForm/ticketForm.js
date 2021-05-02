@@ -9,7 +9,7 @@ class TicketForm extends React.Component {
             <div
               style={{
                 height: "20px",
-                marginTop: "180px",
+                marginTop: "50px",
                 marginBottom: "30px",
                 borderRadius: "60px",
                 display: "flex",

@@ -2,9 +2,8 @@
     background-color: rgba(0, 0, 0, 0.7);
     width: 950px;
     display:flex;
-    height: 400px;
     margin: auto;
-    margin-top: 10px;
+    padding: 45px;
     border-radius: 10px;
     flex-direction: row;
     justify-content: center;
@@ -427,12 +426,10 @@ justify-content: center;
 align-items: center;
 }
 .promorion3{
-    padding: 35px;
+    padding: 10px;
 }
 .promotionForm{
-width: 950px;
 display:flex;
-height: 400px;
 margin: auto;
 margin-top: 10px;
 border-radius: 10px;
@@ -442,7 +439,6 @@ justify-content: center;
 .FlightForm{
 width: 950px;
 display:flex;
-height: 400px;
 margin: auto;
 margin-top: 10px;
 border-radius: 10px;
@@ -467,10 +463,10 @@ height: 40px;
 
 nav{
 width: 1080px;
-height: 350px;
 display: flex;
 justify-content: center;
 margin: auto;
+padding: auto;
 }
 nav ul{
 margin:0;
@@ -483,8 +479,9 @@ margin-left: 20px;
 margin-right: 20px;
 background-color: rgba(0, 0, 0, 0.7);
 width: 230px;
-height: 350px;
+margin-top: 30px;
 border-radius: 15px;
+padding: 10px;
 }
 nav li a{
 display:inline-block;
@@ -896,8 +893,7 @@ margin-top: 15px;
     align-items: center;
 }
 .more{
-width: 70px;
-height: 20px;
+padding: 5px 15px;
 border-radius: 50px;
 background-color: rgb(64, 204, 223);
 font-weight: bold;
@@ -909,39 +905,57 @@ justify-content: center;
 display: flex;
 align-items: center;
 }
+.more-flight{
+    padding: 5px 15px;
+    border-radius: 50px;
+    background-color: rgb(64, 204, 223);
+    font-weight: bold;
+    font-size: 12px;
+    border: none;
+    margin: auto;
+    margin-top: 50px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
 .form_check{
 background-color: rgba(0, 0, 0, 0.7);
 width: 600px;
 display:flex;
-height: 180px;
 margin: auto;
-margin-top: 10px;
+padding: 20px;
 border-radius: 10px;
 flex-direction: row;
 justify-content: center;
 }
 .TicketID{
-margin-top: 30px;
-margin-left: 100px;
+margin: auto;
+margin-bottom: 20px;
 width: 400px;
-height: 50px;
 text-align: left;
 border-radius: 60px;
 background-color: white;
 border: none;
 font-size: 17px;
+padding: 15px 30px;
+display: flex;
+justify-content: center;
+justify-items: center;
+align-items: center;
 }
 .check{
 width: 250px;
-height: 50px;
 border-radius: 60px;
 background-color:#FFC940;
-font-weight: bold;
+font-weight: 500;
 border: none;
 font-size: 20px;
 text-transform: uppercase;
-margin-left: 175px;
-margin-top: 12px;
+padding: 7px;
+display: flex;
+justify-content: center;
+justify-items: center;
+margin: auto;
 }
 .departingFlight{
     border: none;

@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router";
 // import {
 //   AppBar,
 //   Button,
@@ -65,4 +66,4 @@ class Profile extends React.Component {
     );
   }
 }
-export default Profile;
+export default withRouter(Profile);

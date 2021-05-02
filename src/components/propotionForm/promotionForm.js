@@ -49,10 +49,11 @@ class PromotionForm extends React.Component {
                   }
                 </ul>
               </nav>
-              <button className="more">More</button>
+              
             </div>
           </div>
         </form>
+        <button className="more">More</button>
       </>
     );
   }
