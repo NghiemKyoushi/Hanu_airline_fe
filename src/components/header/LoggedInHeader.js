@@ -42,7 +42,7 @@ class LoggedInHeader extends React.Component{
                    <Typography style={{flexGrow: 1}} >  HANU<FlightIcon/>AIRLINE</Typography>
                    
                    <Link style={{textDecoration: "none"}} to ='/login'><Button variant="contained" style={{ background: '#ffff' }}  >My Book</Button></Link> 
-                   <Link style={{textDecoration: "none"}} to ='/setting'><Button variant="contained" style={{marginLeft: 5, background: '#ffff'}}>Setting</Button></Link> 
+                   <Link style={{textDecoration: "none"}} to ='/setting'><Button variant="contained" style={{marginLeft: 5, background: '#ffff'}}>Customer</Button></Link> 
                    <Link style={{textDecoration: "none"}} to ='/home'><Button variant="contained" style={{ marginLeft: 5, background: '#ffff' }}  >Log out</Button></Link> 
                    </Toolbar>
 

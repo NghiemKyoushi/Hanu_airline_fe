@@ -14,14 +14,14 @@ class CardViewTimeFlight extends React.Component{
                       <button className ="from">{arrivalAirport_city}</button>
                         <input className="time_departure_pr" id="" value={formatTime(departureTime)}/>
                         <div className ="price1">
-                          <div className="price">{price} VNĐ</div>
+                          <div className="price-pr">{price} VNĐ</div>
                           <div className="price-promotion">50%</div>
                         </div>
                         <div className = "oneway1">
                           <button className ="oneway_pr">One way</button>
                           <button className ="oneway_pr">Economy</button>
                         </div>
-                          <button className="BookNow"><Link to = {`/seatbooking/${Number(this.props.idFlight)}`} >Book Now </Link></button>
+                          <button className="BookNow"><Link to = {`/seatbooking/${Number(this.props.idFlight)}`} >Add </Link></button>
                     </div>
             </>
         )

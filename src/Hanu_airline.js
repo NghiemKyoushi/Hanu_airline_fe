@@ -19,6 +19,8 @@ import MultiFlight1 from './view/MultiTrip/MultiFlight1';
 import SeatBooking from "./view/seatBooking/SeatBooking";
 import ChooseType from './view/ChooseType/ChooseType';
 import  Profile from './view/Profile/profile';
+import Profile1 from "./view/Profile/profile1";
+import MyBook from './view/MyBook/myBook';
 class Hanu_Airline extends React.Component{
   constructor(){
     super();
@@ -69,8 +71,8 @@ setStateLogin(data, callback_function) {
     });
   }
   componentDidMount(){
-    const jwtToken = getCookie("jwtToken");
-    if(jwtToken){
+    const userId = getCookie("userId");
+    if(userId){
       console.log("login succcccccc")
       this.setState({
         isLogin: true
@@ -98,11 +100,7 @@ setStateLogin(data, callback_function) {
         </Template>
       </Route>
 
-      <ProtectedRoute>
-        <Template>
-        <Profile isLogin = {isLogin} path ='user/profiles'/>
-        </Template>
-      </ProtectedRoute>
+      
       <Route exact path ='/seatbooking/:id'>
         <Template>
           <SeatBooking/>
@@ -122,13 +120,33 @@ setStateLogin(data, callback_function) {
       </Route>
 
 
-      <UnAuthenRoute isLogin={isLogin} exact ={true} path ='/login' >
-      <SignIn saveAuthentication = {this.saveAuthentication} setStateLogin = {this.setStateLogin}/>
+      <UnAuthenRoute isLogin={isLogin} exact ={true} path ="/login" >
+      <SignIn saveAuthentication = {this.saveAuthentication} setStateLogin = {this.setStateLogin}></SignIn>
       </UnAuthenRoute>
 
       <UnAuthenRoute exact ={true} path ='/signup'>
-      <SignUp setStateLogin = {this.setStateLogin} />
+      <SignUp setStateLogin = {this.setStateLogin}/>
       </UnAuthenRoute>
+      <Route exact = {true} path="/mybook">
+          <Template>
+            <MyBook/>
+          </Template>
+        </Route>
+
+      <ProtectedRoute  isLogin ={isLogin} exact ={true}  path ='/profile'>
+      <Template>
+        <Profile/>
+      </Template>
+      </ProtectedRoute>
+
+      <ProtectedRoute  isLogin ={isLogin} exact ={true}  path =''>
+      <Template>/profile/edit
+        <Profile1/>
+      </Template>
+      </ProtectedRoute>
+
+       
+
       </Switch>
       </BrowserRouter>
     )

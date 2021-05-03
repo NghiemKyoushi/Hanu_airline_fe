@@ -3,7 +3,7 @@ import { Button } from "@material-ui/core";
 import { formatDate, formatTime } from "../../utils/fetchData/fetchData";
 import { Link } from 'react-router-dom';
 
-class CardViewFlight extends React.Component {
+class CardViewMyBook extends React.Component {
   constructor(props){
     super(props);
   }
@@ -34,10 +34,10 @@ class CardViewFlight extends React.Component {
             <button className="oneway_pr">One way</button>
             <button className="oneway_pr">Economy</button>
           </div>
-          <button className="BookNow"><Link style = {{textDecoration:"none" }} to= {`/seatbooking/${ Number(this.props.idFlight)}`}> Add  </Link></button>
+          <button className="BookNow"><Link style = {{textDecoration:"none" }} to= {`/seatbooking/${ Number(this.props.idFlight)}`}> Book Now </Link></button>
         </div>
       </>
     );
   }
 }
-export default CardViewFlight;
+export default CardViewMyBook;

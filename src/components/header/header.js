@@ -34,10 +34,13 @@ class Header extends React.Component{
                <AppBar position="static" style={{ background: '#212121' }} >
                {
                    (isLogin) ?
+                  
                    <Toolbar >
-                   <Typography style={{flexGrow: 1}} > <Link to = "/" style={{textDecoration: "none", color: "#ffff"}}>HANU<FlightIcon/>AIRLINE</Link> </Typography>
+                   <Typography style={{flexGrow: 1}} > <Link style={{textDecoration: "none" , color: "white"}} to ="/">HANU<FlightIcon/>AIRLINE</Link> </Typography>
                    
-                   <Button variant="contained" style={{ background: '#ffff' }} onClick={this.onClick}><ExitToAppIcon/></Button>
+                   <Link style={{textDecoration: "none"}} to ='/mybook'><Button variant="contained" style={{ background: '#ffff' }}  >My Book</Button></Link> 
+                   <Link style={{textDecoration: "none"}} to ='/profile'><Button variant="contained" style={{marginLeft: 5, background: '#ffff'}}>Customer</Button></Link> 
+                   <Link style={{textDecoration: "none"}} to ='/home' ><Button variant="contained" style={{ marginLeft: 5, background: '#ffff' }} onClick={this.onClick} >Log out</Button></Link> 
                    </Toolbar>
                     :
                     <Toolbar >
@@ -54,3 +57,9 @@ class Header extends React.Component{
     }
 }
 export default Header;
+
+ {/* <Toolbar >
+                   <Typography style={{flexGrow: 1}} > <Link to = "/" style={{textDecoration: "none", color: "#ffff"}}>HANU<FlightIcon/>AIRLINE</Link> </Typography>
+                   
+                   <Button variant="contained" style={{ background: '#ffff' }} onClick={this.onClick}><ExitToAppIcon/></Button>
+                   </Toolbar> */}

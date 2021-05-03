@@ -81,7 +81,7 @@ export async function Register(data){
 
 //format date 
 export function formatDate(date){
-  const format = new Date(date);
+  const format = new Date(date); 
   return format.toLocaleDateString('pt-PT');
 }
 

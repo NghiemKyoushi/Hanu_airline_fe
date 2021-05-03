@@ -1,14 +1,6 @@
 import React from "react";
-// import {
-//   AppBar,
-//   Button,
-//   Toolbar,
-//   Typography,
-//   TextField,
-// } from "@material-ui/core";
-// import Box from "@material-ui/core/Box";
-import "./SearchForm.css";
-import { ClearAll } from "@material-ui/icons";
+import { Button } from "@material-ui/core";
+
 import { withRouter } from "react-router";
 
 class MyBook extends React.Component {
@@ -74,7 +66,7 @@ class MyBook extends React.Component {
                         <button className="oneway_pr">One way</button>
                         <button className="oneway_pr">Economy</button>
                       </div>
-                      <button className="BookNow">View</button>
+                      <button className="BookNow">Booking Now</button>
                     </div>
                   </li>
                   <li>
@@ -229,4 +221,4 @@ class MyBook extends React.Component {
   }
 }
 
-export default MyBook;
+export default withRouter(MyBook);

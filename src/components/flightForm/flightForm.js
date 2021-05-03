@@ -13,9 +13,7 @@ class FlightForm extends React.Component {
             <div class="promotion">
               <div
                 style={{
-                  height: "20px",
-                  marginTop: "100px",
-                  marginBottom: "40px",
+                  marginTop: "30px",
                   borderRadius: "60px",
                   display: "flex",
                   justifyContent: "center",
@@ -45,10 +43,11 @@ class FlightForm extends React.Component {
                   }
                 </ul>
               </nav>
-              <button className="more">More</button>
+              
             </div>
           </div>
         </form>
+        <button className="more-flight">More</button>
       </>
     );
   }
