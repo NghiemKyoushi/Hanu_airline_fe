@@ -7,14 +7,14 @@ class MyBook extends React.Component {
   render() {
     return (
       <>
-        <form class="FlightForm" id="flight">
+        <form class="FlightForm1" id="flight">
           <div class="promotionMenu">
             <div class="promotion">
               <div
                 style={{
                   height: "20px",
                   marginTop: "30px",
-                  marginBottom: "40px",
+                  marginBottom: "10px",
                   borderRadius: "60px",
                   display: "flex",
                   justifyContent: "center",

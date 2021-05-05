@@ -9,7 +9,7 @@ class FlightForm extends React.Component {
     return (
       <>
         <form class="FlightForm" id="flight">
-          <div class="promotionMenu">
+          <div class="flightMenu">
             <div class="promotion">
               <div
                 style={{

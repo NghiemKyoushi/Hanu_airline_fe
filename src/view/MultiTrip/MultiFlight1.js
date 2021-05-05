@@ -156,7 +156,7 @@ class MultiFlight1 extends React.Component {
               return (
                 <div key = {index}>
                   <div className="FlightinMulti">Flight {number}</div>
-
+                  <div className = "FlightNumber">
                   <form className="form-in-multi">
                     <div className="container1">
                       <div className="location">
@@ -175,7 +175,7 @@ class MultiFlight1 extends React.Component {
                         <div className="place">Departing</div>
                         <input
                           id = "departureTime"
-                          className="time_departure"
+                          className="time_departure_inMul"
                           type="date"
                           // id="date"
                           required
@@ -246,6 +246,7 @@ class MultiFlight1 extends React.Component {
                       </div>
                     </div>
                   </form>
+                  </div>
                 </div>
               );
             }))

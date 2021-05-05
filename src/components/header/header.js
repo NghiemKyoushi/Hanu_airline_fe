@@ -31,7 +31,7 @@ class Header extends React.Component{
         // const classes = useStyles();
         return(
 
-               <AppBar position="static" style={{ background: '#212121' }} >
+               <AppBar position="static" style={{ background: '#212121'}} >
                {
                    (isLogin) ?
                   

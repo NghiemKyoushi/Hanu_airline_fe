@@ -3,7 +3,7 @@
     width: 950px;
     display:flex;
     margin: auto;
-    padding: 45px;
+    padding: 0 0 45px 0;
     border-radius: 10px;
     flex-direction: row;
     justify-content: center;
@@ -48,9 +48,8 @@
 }
 .form-in-multi{
     background-color: rgba(0, 0, 0, 0.7);
-    width: 950px;
     display:flex;
-    height: 350px;
+    padding: 0 0 30px 0;
     margin: auto;
     margin-top: 10px;
     border-radius: 10px;
@@ -319,6 +318,20 @@ justify-content: center;
 margin-top: 15px;
 margin-left: 20px;
 }
+.time_departure_inMul {
+    margin: auto;
+    width: 180px;
+    text-align: center;
+    height: 40px;
+    border-radius: 50px;
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7px;
+    margin-left: 20px;
+    }
 .ageSelect{
 margin-top: 8px;
 margin-left: 20px;
@@ -398,7 +411,7 @@ margin-left: 130px;
     }
 .searchButton-in-multi{
     width: 300px;
-    height: 50px;
+    padding: 10px 0;
     border-radius: 60px;
     background-color:#FFC940;
     font-weight: bold;
@@ -409,6 +422,7 @@ margin-left: 130px;
     align-items: center;
     justify-content: center;
     margin: auto;
+    margin-bottom: 30px;
     }
 .BookNow{
 width: 100px;
@@ -430,13 +444,51 @@ align-items: center;
 }
 .promotionForm{
 display:flex;
+background-image: url(bg.jpg);
+background-repeat: no-repeat;
+background-size: cover;
 margin: auto;
 margin-top: 10px;
-border-radius: 10px;
 flex-direction: row;
 justify-content: center;
+background-color: #026987;
+padding-bottom: 30px;
 }
 .FlightForm{
+    display:flex;
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    margin-top: 10px;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #026987;
+    padding-bottom: 30px;
+    }
+.FlightForm1{
+    display:flex;
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #026987;
+    padding-bottom: 30px;
+    }
+.searchForm{
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+    margin: auto;
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: center;
+    padding: 30px;
+    }
+.flightMenu{
     width: 950px;
     display: flex;
     margin: auto;
@@ -552,7 +604,7 @@ margin: auto;
 display: flex;
 align-items: center;
 justify-content: center;
-width: 110px;
+width: 140px;
 text-align: center;
 height: 30px;
 border-radius: 50px;
@@ -939,10 +991,14 @@ font-weight: bold;
 font-size: 12px;
 border: none;
 margin: auto;
-margin-top: 20px;
+margin-top: 10px;
 justify-content: center;
 display: flex;
 align-items: center;
+}
+.bgFormCheck{
+    background-color: #026987;
+    padding: 0 0 30px 0;
 }
 .more-fl{
     padding: 5px 15px;
@@ -952,11 +1008,11 @@ align-items: center;
     font-size: 12px;
     border: none;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
     justify-content: center;
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     }
 .more-flight{
     padding: 5px 15px;
@@ -966,7 +1022,7 @@ align-items: center;
     font-size: 12px;
     border: none;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -1054,10 +1110,9 @@ margin: auto;
     background-color: #3f51b5;
     color: white;
     width: 150px;
-    height: 40px;
+    padding: 5px;
     margin-top: 30px;
     margin-bottom: 25px;
-    margin-left: 200px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -1202,15 +1257,15 @@ margin: auto;
     margin: 1rem 0;
   }
 .BookedTicket{
-    width: 950px;
-    display: flex;
+    background-image: url(bg.jpg);
+    display:flex;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: auto;
-    /* margin-top: 10px; */
-    border-radius: 10px;
     flex-direction: row;
     justify-content: center;
-    justify-items: center;
-    padding: 10px;
+    background-color: #026987;
+    padding: 30px;
 }
 .Delete{
     width: 100px;
