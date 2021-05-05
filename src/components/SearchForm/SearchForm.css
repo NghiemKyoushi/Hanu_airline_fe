@@ -1401,3 +1401,12 @@ margin: auto;
     background-color: #bb0000;
     transform: scale(1);
   }
+  input{
+    border-left: 6px solid #1c9eff;
+    background-color: white;
+    padding: 10px;
+    /* border: none; */
+    outline: none;
+    background: none;
+    text-transform: uppercase;
+  }

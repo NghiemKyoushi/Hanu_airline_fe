@@ -91,9 +91,6 @@ class Profile1 extends React.Component {
                   name="phoneNumber"
                   onChange={this.handleChange}
                   style={{
-                    border: "1px solid black",
-                    height: "40px",
-                    width: "70px",
                   }}
                   required
                 />
@@ -110,9 +107,6 @@ class Profile1 extends React.Component {
                   name="id_card_number"
                   onChange={this.handleChange}
                   style={{
-                    border: "1px solid black",
-                    height: "40px",
-                    width: "70px",
                   }}
                   required
                 />
@@ -127,9 +121,6 @@ class Profile1 extends React.Component {
                   name="credit_card_number"
                   onChange={this.handleChange}
                   style={{
-                    border: "1.5px solid black",
-                    height: "40px",
-                    width: "70px",
                   }}
                   required
                 />
