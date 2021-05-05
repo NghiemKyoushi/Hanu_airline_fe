@@ -108,7 +108,11 @@ class SeatBooking extends React.Component {
       <> 
 {
  (showFlightInfo) ? (<>
-  <div style={{
+  
+
+                <form className="FlightDetailForm">
+                  <div>
+                <div style={{
                   height: "20px",
                   marginTop: "50px",
                   marginBottom: "40px",
@@ -118,8 +122,7 @@ class SeatBooking extends React.Component {
                   alignItems: "center",
                 }}><button className = "FlightDetail" >Flight Details</button>
                 </div>
-
-                <form className="aircraftForm">
+                  <div className = "aircraftForm">
                   <div className="container1">
                     <div className="ticket-form">
                       <div className="aircraft">Airway Name</div>
@@ -172,12 +175,17 @@ class SeatBooking extends React.Component {
                       <div className="aircraft-name">{formatDate(showFlightInfo.arrivalTime)}</div>
                     </div>
                   </div>
+                  </div>
+                  </div>
                 </form>
  </>) : "" 
 }
        
                 
-                <div style={{
+                
+              <form className = "SeatForm">
+                <div>
+              <div style={{
                   height: "20px",
                   marginTop: "50px",
                   marginBottom: "40px",
@@ -186,7 +194,7 @@ class SeatBooking extends React.Component {
                   justifyContent: "center",
                   alignItems: "center",
                 }}><button className = "FlightDetail" >Available Seat</button></div>
-              <form className = "available-seat-form">
+                <div className = "available-seat-form">
                  <div className="container1">
                     <div className="seat-form">
                       <div className="round1"></div>
@@ -304,9 +312,10 @@ class SeatBooking extends React.Component {
           </li>
         </div>
         </div>
+        </div>
+        </div>
         </form>                 
-        <div>
-
+                <div className = "button-in-seat">
                   <button className="confirm-ticket">Confirm</button>
                   <button className="cancel-ticket">Cancel</button>
                 </div>

@@ -35,6 +35,14 @@
     flex-direction: row;
     justify-content: center;
 }
+.button-in-seat{
+    display:flex;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+}
 .form-in-multiTrip{
     background-color: rgba(0, 0, 0, 0.7);
     width: 950px;
@@ -80,7 +88,7 @@ letter-spacing: 0.02857em;
     border: none;
     background-color: #3f51b5;
     color: white;
-    height: 40px;
+    padding: 10px;
     margin-top: 30px;
     margin-bottom: 40px;
     border-radius: 5px;
@@ -454,6 +462,7 @@ justify-content: center;
 background-color: #026987;
 padding-bottom: 30px;
 }
+
 .FlightForm{
     display:flex;
     background-image: url(bg.jpg);
@@ -461,6 +470,29 @@ padding-bottom: 30px;
     background-size: cover;
     margin: auto;
     margin-top: 10px;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #026987;
+    padding-bottom: 30px;
+    }
+.SeatForm{
+    display:flex;
+    background-image: url(seat.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    margin-top: 15px;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #026987;
+    padding-bottom: 30px;
+    }
+.FlightDetailForm{
+    display:flex;
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
     flex-direction: row;
     justify-content: center;
     background-color: #026987;
@@ -575,8 +607,8 @@ justify-items: center;
     justify-items: center;
 }
 .confirm-ticket{
-    width: 120px;
-    height: 30px;
+    width: 150px;
+    padding: 15px;
     border-radius: 50px;
     background-color: #FFC940;
     font-weight: bold;
@@ -588,8 +620,8 @@ justify-items: center;
     justify-items: center;
 }
 .cancel-ticket{
-    width: 120px;
-    height: 30px;
+    width: 150px;
+    padding: 15px;
     border-radius: 50px;
     background-color: rgb(255, 0, 0);
     font-weight: bold;
@@ -701,6 +733,7 @@ justify-content: center;
 }
 .aircraftForm{
     background-color: rgba(0, 0, 0, 0.7);
+    width: 950px;
     display:flex;
     margin: auto;
     border-radius: 10px;
@@ -728,6 +761,7 @@ justify-content: center;
     align-items: center;
     display: flex;
     justify-content: center;
+    font-size: 14px;
 }
 .aircraft-name{
     width: 350px;
@@ -775,6 +809,7 @@ justify-content: center;
     align-items: center;
     display: flex;
     justify-content: center;
+    font-size: 14px;
 }
 .total-price{
     width: 100px;
@@ -812,8 +847,9 @@ justify-content: center;
 }
 
 .ticket-from-to{
-    width: 140px;
+    width: 150px;
     height: 30px;
+    font-size: 12px;
     border-radius: 50px;
     background-color: rgb(64, 204, 223);
     font-weight: bold;
@@ -1182,8 +1218,8 @@ margin: auto;
     justify-content: center;
     display: flex;
     color: white;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 .toinroad{
     width: 110px;
