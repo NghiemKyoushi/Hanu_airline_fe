@@ -13,7 +13,7 @@ class MyBook extends React.Component {
               <div
                 style={{
                   height: "20px",
-                  marginTop: "100px",
+                  marginTop: "30px",
                   marginBottom: "40px",
                   borderRadius: "60px",
                   display: "flex",
@@ -33,19 +33,20 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
                       <div className="price1">
-                        <div className="price">Price</div>
+                        <div className="price-flight">Price</div>
                         <div className="price-promotion">50%</div>
                       </div>
                       <div className = "oneway1">
                         <button className="oneway_pr">One way</button>
                         <button className="oneway_pr">Economy</button>
                       </div>
-                      <button className="BookNow">View</button>
+                      <button className="BookNow">Buy Ticket</button>
+                      <button className="Delete"> Delete</button>
                     </div>
                   </li>
                   <li>
@@ -54,20 +55,20 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
                       <div className="price1">
-                        <div className="price">Price</div>
+                        <div className="price-flight">Price</div>
                         <div className="price-promotion">50%</div>
                       </div>
                       <div className = "oneway1">
                         <button className="oneway_pr">One way</button>
                         <button className="oneway_pr">Economy</button>
                       </div>
-                      <button className="BookNow">Booking Now</button>
-                    </div>
+                      <button className="BookNow">Buy Ticket</button>
+                      <button className="Delete"> Delete</button>                    </div>
                   </li>
                   <li>
                     <div className="promorion3">
@@ -75,20 +76,20 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
                       <div className="price1">
-                        <div className="price">Price</div>
+                        <div className="price-flight">Price</div>
                         <div className="price-promotion">50%</div>
                       </div>
                       <div className = "oneway1">
                         <button className="oneway_pr">One way</button>
                         <button className="oneway_pr">Economy</button>
                       </div>
-                      <button className="BookNow">View</button>
-                    </div>
+                      <button className="BookNow">Buy Ticket</button>
+                      <button className="Delete"> Delete</button>                    </div>
                   </li>
                   <li>
                     <div className="promorion3">
@@ -96,26 +97,27 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
                       <div className="price1">
-                        <div className="price">Price</div>
+                        <div className="price-flight">Price</div>
                         <div className="price-promotion">50%</div>
                       </div>
                       <div className = "oneway1">
                         <button className="oneway_pr">One way</button>
                         <button className="oneway_pr">Economy</button>
                       </div>
-                      <button className="BookNow">View</button>
-                    </div>
+                      <button className="BookNow">Buy Ticket</button>
+                      <button className="Delete"> Delete</button>                    </div>
                   </li>
                 </ul>
               </nav>
             </div>
           </div>
         </form>
+        <button className="more-fl">More</button>
 
 
 
@@ -125,8 +127,7 @@ class MyBook extends React.Component {
               <div
                 style={{
                   height: "20px",
-                  marginTop: "100px",
-                  marginBottom: "40px",
+                  marginBottom: "20px",
                   borderRadius: "60px",
                   display: "flex",
                   justifyContent: "center",
@@ -145,7 +146,7 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
@@ -163,7 +164,7 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
@@ -181,7 +182,7 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
@@ -199,7 +200,7 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
@@ -216,6 +217,7 @@ class MyBook extends React.Component {
             </div>
           </div>
         </form>
+        <button className="more-fl">More</button>
       </>
     );
   }
