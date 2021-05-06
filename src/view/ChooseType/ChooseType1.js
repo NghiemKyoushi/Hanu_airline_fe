@@ -1,166 +1,126 @@
+import { ThreeSixtySharp } from "@material-ui/icons";
+import axios from "axios";
 import React from "react";
-// import {
-//   AppBar,
-//   Button,
-//   Toolbar,
-//   Typography,
-//   TextField,
-// } from "@material-ui/core";
-// import Box from "@material-ui/core/Box";
-import "./SearchForm.css";
-import { ClearAll } from "@material-ui/icons";
+
+import TicketPrice from "../../components/ticketPrice/ticketPrice";
+import {getCookie} from '../../utils/fetchData/fetchData';
 class ChooseType1 extends React.Component {
-  
+  constructor(props){
+    super(props);
+    this.state= {
+      count: 0
+    }
+    this.confirmButton = this.confirmButton.bind(this);
+    // this.onChange= this.onChange.bind(this);
+  }
+
+  // onChange(e){
+  //   this.setState({
+  //     [e.target.name]: e.target.value
+  //   })
+
+  // }
+
+ async confirmButton(){
+   let arrTicket = [];
+   const ticketProps = this.props.ticketPrice.map((ticket) => {
+     arrTicket.push(ticket.data[0]);
+   })
+
+    const body = {
+      price: 10000,
+      currency: "USD",
+      method: "paypal",
+      intent: "sale",
+      description: "empty",
+      ticketPayloads:arrTicket ,
+    }
+    console.log("bodyPay",body)
+    try{
+      const api = "http://hanuairline.azurewebsites.net/payment/pay";
+      const fetchData = await axios.post(api, body);
+       console.log(fetchData.data.substring(9));
+      
+        window.location = fetchData.data.substring(9);
+      
+    }catch(e){
+      alert("fail")
+    }
+   
+
+  }
   render() {
-    
+    const { ticketPrice, airway } = this.props;
+    let {count} = this.state;
+
+    console.log(this.props);
+    let arrPrice = [];
+  
+    ticketPrice.map(ticket =>{
+      arrPrice.push(ticket.data[0].totalPrice);
+    })
+    for(let i=0; i< arrPrice.length; i++){
+      count += arrPrice[i];
+    }
+    // this.setState({
+    //   count: count
+    // })
+ 
+
     return (
       <>
-        <div style={{
-                  height: "20px",
-                  marginTop: "50px",
-                  marginBottom: "40px",
-                  borderRadius: "60px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}><button className = "bookButton" >Ticket</button></div>
-        <form className="ticket">
-          <div className="container1">
-            <div className="ticket-form">
-              <div className="ticket-field">Ticket ID</div>
-              <div className="ticket-field-detail">198</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Airway</div>
-              <div className="ticket-field-detail-2">
-                <div className = "ticket-from-to">HCM City</div>
-                <div className = "t-in-ticket">❯❯❯</div>
-                <div className = "ticket-from-to">Ha Noi</div>
-              </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field">Seat</div>
-              <div className="ticket-field-detail">H98</div>
-            </div>
-          </div>
-
-          <div className="container2">
-            <div className="ticket-form">
-              <div className="ticket-field">Price</div>
-              <div className="ticket-field-detail">3 000 000 VND</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Type</div>
-                <div className="ticket-field-detail-2">
-                  <button className="adult-in-ticket">Adult</button>
-                  <button className="adult-in-ticket">Children</button>
-                  </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Status</div>
-              <div className="ticket-field-status">Available</div>
-            </div>
-          </div>
-        </form>
-
-        <form className="ticket">
-          <div className="container1">
-            <div className="ticket-form">
-              <div className="ticket-field">Ticket ID</div>
-              <div className="ticket-field-detail">198</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Airway</div>
-              <div className="ticket-field-detail-2">
-                <div className = "ticket-from-to">HCM City</div>
-                <div className = "t-in-ticket">❯❯❯</div>
-                <div className = "ticket-from-to">Ha Noi</div>
-              </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field">Seat</div>
-              <div className="ticket-field-detail">H98</div>
-            </div>
-          </div>
-
-          <div className="container2">
-            <div className="ticket-form">
-              <div className="ticket-field">Price</div>
-              <div className="ticket-field-detail">3 000 000 VND</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Type</div>
-                <div className="ticket-field-detail-2">
-                  <button className="adult-in-ticket">Adult</button>
-                  <button className="adult-in-ticket">Children</button>
-                  </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Status</div>
-              <div className="ticket-field-status">Available</div>
-            </div>
-          </div>
-        </form>
-
-        <form className="ticket">
-          <div className="container1">
-            <div className="ticket-form">
-              <div className="ticket-field">Ticket ID</div>
-              <div className="ticket-field-detail">198</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Airway</div>
-              <div className="ticket-field-detail-2">
-                <div className = "ticket-from-to">HCM City</div>
-                <div className = "t-in-ticket">❯❯❯</div>
-                <div className = "ticket-from-to">Ha Noi</div>
-              </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field">Seat</div>
-              <div className="ticket-field-detail">H98</div>
-            </div>
-          </div>
-
-          <div className="container2">
-            <div className="ticket-form">
-              <div className="ticket-field">Price</div>
-              <div className="ticket-field-detail">3 000 000 VND</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Type</div>
-                <div className="ticket-field-detail-2">
-                  <button className="adult-in-ticket">Adult</button>
-                  <button className="adult-in-ticket">Children</button>
-                  </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Status</div>
-              <div className="ticket-field-status">Available</div>
-            </div>
-          </div>
-        </form>
-
+        <div
+          style={{
+            height: "20px",
+            marginTop: "50px",
+            marginBottom: "40px",
+            borderRadius: "60px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <button className="bookButton">Ticket</button>
+        </div>
+        {ticketPrice
+          ?( ticketPrice.map((ticket, index) => {
+            return (
+              <div key={index}>
+                <TicketPrice
+                  seatName={ticket.data[0].aircraftSeat_id}
+                  departureCity={airway[0].flight.airway.departureAirport.city}
+                  arrivalCity={airway[0].flight.airway.arrivalAirport.city}
+                  price={ticket.data[0].totalPrice}
+                  type={ticket.data[0].type}
+                  ticketID={ticket.data[0].id}
+                />
+                
+              </div>)
+            }))
+          : ""}
 
         <div className="total">
           <div className="total-price">Total price</div>
-          <div className="total-price-detail">8 100 000 VND</div>
+          <div className="total-price-detail" name= "count" value = {count}>{count}</div>
         </div>
 
-        <div style={{
-                  height: "20px",
-                  marginTop: "50px",
-                  marginBottom: "40px",
-                  borderRadius: "60px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}><button className = "PaymentButton" >Payment Method</button></div>
-        <div className = "button-ticket">
-          <button className="confirm-ticket">Confirm</button>
+        <div
+          style={{
+            height: "20px",
+            marginTop: "50px",
+            marginBottom: "40px",
+            borderRadius: "60px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <button className="PaymentButton">Payment Method</button>
+        </div>
+        <div className="button-ticket">
+          <button className="confirm-ticket" onClick={this.confirmButton}>Confirm</button>
           <button className="cancel-ticket">Cancel</button>
         </div>
-                  
       </>
     );
   }

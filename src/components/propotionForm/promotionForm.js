@@ -1,5 +1,5 @@
 import React from "react";
-import CardViewFlight from "../../components/cardViewTimeFlight/cardViewTimeFlight";
+import CardViewFlight from "../../components/cardViewFlight/cardViewFlight";
 import { Button } from "@material-ui/core";
 import { formatDate } from "../../utils/fetchData/fetchData";
 class PromotionForm extends React.Component {

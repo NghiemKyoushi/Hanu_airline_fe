@@ -5,6 +5,7 @@ import { Button } from "@material-ui/core";
 class FlightForm extends React.Component {
   render() {
     const {allFlight} = this.props;
+    console.log("dddddd",allFlight.id);
 
     return (
       <>

@@ -127,11 +127,8 @@ setStateLogin(data, callback_function) {
       <UnAuthenRoute exact ={true} path ='/signup'>
       <SignUp setStateLogin = {this.setStateLogin}/>
       </UnAuthenRoute>
-      <Route exact = {true} path="/mybook">
-          <Template>
-            <MyBook/>
-          </Template>
-        </Route>
+      
+       
 
       <ProtectedRoute  isLogin ={isLogin} exact ={true}  path ='/profile'>
       <Template>
@@ -139,12 +136,22 @@ setStateLogin(data, callback_function) {
       </Template>
       </ProtectedRoute>
 
-      <ProtectedRoute  isLogin ={isLogin} exact ={true}  path =''>
-      <Template>/profile/edit
+      <ProtectedRoute  isLogin ={isLogin} exact ={true}  path ='/profile/edit'>
+      <Template>
         <Profile1/>
       </Template>
       </ProtectedRoute>
 
+      <ProtectedRoute isLogin={isLogin} exact = {true} path="/mybook">
+          <Template>
+            <MyBook/>
+          </Template>
+        </ProtectedRoute>
+        <ProtectedRoute isLogin={true} exact = {true} path="/choosetype/:id">
+          <Template>
+            <ChooseType/>
+          </Template>
+        </ProtectedRoute>
        
 
       </Switch>

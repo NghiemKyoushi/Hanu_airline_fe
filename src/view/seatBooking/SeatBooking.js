@@ -1,8 +1,9 @@
 import axios from "axios";
 import React from "react";
 import { withRouter } from "react-router";
+import { Link } from "react-scroll";
 import { get } from "react-scroll/modules/mixins/scroller";
-import {formatDate} from '../../utils/fetchData/fetchData';
+import {deleteCookie, formatDate, getCookie, setCookie} from '../../utils/fetchData/fetchData';
 import "./seatBooking.scss";
 class SeatBooking extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class SeatBooking extends React.Component {
       business: [],
       premiumEconomy: [],
       economy: [],
-      form: null,
+      form: [],
       showFlightInfo: ""
       
       // test: [9, 6, 7, 8],
@@ -22,7 +23,27 @@ class SeatBooking extends React.Component {
 
   onSubmit(e){
     e.preventDefault();
+    if( getCookie("saveseat").split().length >0){
+      deleteCookie("saveseat")
+      const {form} = this.state;
+      setCookie("saveseat", form,100 );
+      console.log(form.length);
+      if(form.length > 0){
+        this.props.history.push(`/choosetype/${this.props.match.params.id}`);
 
+      }else{
+        alert("Choose seat to next step");
+      }
+    }else {
+      const {form} = this.state;
+      setCookie("saveseat", form,100 );
+      if(form.length > 0){
+        this.props.history.push(`/choosetype/${this.props.match.params.id}`);
+      }else{
+        alert("Choose seat to next step");
+      }
+    }
+   
   }
 
   handleChange(e){
@@ -44,6 +65,9 @@ class SeatBooking extends React.Component {
       // const {form} = this.state;
       // this.state.form = checkedArray;
       console.log("form", checkedArray);
+      this.setState({
+        form: checkedArray
+      })
 
     }
   }
@@ -59,7 +83,7 @@ class SeatBooking extends React.Component {
 
     const apiSeat = `http://hanuairline.azurewebsites.net/flight/seats-and-status/${id}`;
     const fetchDatSeat =  await axios.get(apiSeat);
-    console.log(fetchDatSeat.data[1]);
+    // console.log(fetchDatSeat.data[1]);
 
     const business = [];
     const premiumEconomy = [];
@@ -101,7 +125,7 @@ class SeatBooking extends React.Component {
 
   render() {
     const { business, premiumEconomy, economy, showFlightInfo } = this.state;
-    // console.log("bussssss",typeof business)
+    console.log("bussssss", economy)
     console.log("data seat : ", showFlightInfo.id);
 
     return ( 
@@ -307,7 +331,7 @@ class SeatBooking extends React.Component {
         </form>                 
         <div>
 
-                  <button className="confirm-ticket">Confirm</button>
+                 <button className="confirm-ticket" onClick={this.onSubmit}>Confirm</button>
                   <button className="cancel-ticket">Cancel</button>
                 </div>
       </>

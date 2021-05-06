@@ -162,17 +162,15 @@ async componentDidMount(){
 
           <Grid item >
           <SearchForm setDataSearchOneWay ={this.setDataSearchOneWay} setDataSearchRoadTrip = {this.setDataSearchRoadTrip}/>
-          {
+          {/* {
             (resultSearchOne) ? (<><OneWay flightOneWay ={resultSearchOne}/></>) : ""
           }
           {
             (departure_Time && arrival_Time) ? (<> <RoadTrip departure_Time={departure_Time} arrival_Time={arrival_Time} /></>) :""
-          }
-          {
-            (! resultSearchOne && ! departure_Time &&  ! arrival_Time) ? (<> <PromotionForm allFlight = {allFlight}/>
+          } */}
+          <PromotionForm allFlight = {allFlight}/>
           <FlightForm allFlight = {allFlight}/>
-          <TicketForm/></>): ""
-          }
+          <TicketForm/>
           </Grid>
           <div style={{ height: "20px" }}></div>
           <Grid item container>
