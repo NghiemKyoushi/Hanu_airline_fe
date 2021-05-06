@@ -42,12 +42,7 @@ class MyBook extends React.Component {
     const {flightAdd} = this.state;
     return (
       <>
-<<<<<<< HEAD
-
-        <form class="FlightForm" id="flight">
-=======
         <form class="FlightForm1" id="flight">
->>>>>>> 00f6f48a79573433c2727db1bc76c5fffd805990
           <div class="promotionMenu">
             <div class="promotion">
               <div
@@ -67,7 +62,7 @@ class MyBook extends React.Component {
               </div>
               <nav>
                 <ul>
-<<<<<<< HEAD
+
                 {( flightAdd )
                     ? flightAdd.map((flight, index) => {
                         return (
@@ -173,7 +168,6 @@ class MyBook extends React.Component {
                       <button className="BookNow">Buy Ticket</button>
                       <button className="Delete"> Delete</button>                    </div>
                   </li>
->>>>>>> 00f6f48a79573433c2727db1bc76c5fffd805990
                 </ul>
               </nav>
             </div>
