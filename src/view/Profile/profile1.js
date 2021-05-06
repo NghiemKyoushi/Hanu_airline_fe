@@ -47,6 +47,8 @@ class Profile1 extends React.Component {
   render() {
     return (
       <>
+        
+        <section className="profile">
         <div
           style={{
             height: "20px",
@@ -60,7 +62,6 @@ class Profile1 extends React.Component {
         >
           <button className="ProfileButton">My profile</button>
         </div>
-        <section className="profile">
           <div class="card">
             <div class="banner">
               <svg viewBox="0 0 100 100">
@@ -91,9 +92,6 @@ class Profile1 extends React.Component {
                   name="phoneNumber"
                   onChange={this.handleChange}
                   style={{
-                    border: "1px solid black",
-                    height: "40px",
-                    width: "70px",
                   }}
                   required
                 />
@@ -110,9 +108,6 @@ class Profile1 extends React.Component {
                   name="id_card_number"
                   onChange={this.handleChange}
                   style={{
-                    border: "1px solid black",
-                    height: "40px",
-                    width: "70px",
                   }}
                   required
                 />
@@ -127,9 +122,6 @@ class Profile1 extends React.Component {
                   name="credit_card_number"
                   onChange={this.handleChange}
                   style={{
-                    border: "1.5px solid black",
-                    height: "40px",
-                    width: "70px",
                   }}
                   required
                 />

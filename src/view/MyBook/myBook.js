@@ -42,15 +42,19 @@ class MyBook extends React.Component {
     const {flightAdd} = this.state;
     return (
       <>
+<<<<<<< HEAD
 
         <form class="FlightForm" id="flight">
+=======
+        <form class="FlightForm1" id="flight">
+>>>>>>> 00f6f48a79573433c2727db1bc76c5fffd805990
           <div class="promotionMenu">
             <div class="promotion">
               <div
                 style={{
                   height: "20px",
-                  marginTop: "100px",
-                  marginBottom: "40px",
+                  marginTop: "30px",
+                  marginBottom: "10px",
                   borderRadius: "60px",
                   display: "flex",
                   justifyContent: "center",
@@ -63,6 +67,7 @@ class MyBook extends React.Component {
               </div>
               <nav>
                 <ul>
+<<<<<<< HEAD
                 {( flightAdd )
                     ? flightAdd.map((flight, index) => {
                         return (
@@ -82,11 +87,99 @@ class MyBook extends React.Component {
                         );
                       })
                     : ""}
+=======
+                <li>
+                    <div className="promorion3">
+                      <button className="from">Ha Noi</button>
+                      <div className="t">to</div>
+                      <button className="from">HCM City</button>
+                      <input
+                        className="time_departure_fl"
+                        type="date"
+                        id="date"
+                      />
+                      <div className="price1">
+                        <div className="price-flight">Price</div>
+                        <div className="price-promotion">50%</div>
+                      </div>
+                      <div className = "oneway1">
+                        <button className="oneway_pr">One way</button>
+                        <button className="oneway_pr">Economy</button>
+                      </div>
+                      <button className="BookNow">Buy Ticket</button>
+                      <button className="Delete"> Delete</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="promorion3">
+                      <button className="from">Ha Noi</button>
+                      <div className="t">to</div>
+                      <button className="from">HCM City</button>
+                      <input
+                        className="time_departure_fl"
+                        type="date"
+                        id="date"
+                      />
+                      <div className="price1">
+                        <div className="price-flight">Price</div>
+                        <div className="price-promotion">50%</div>
+                      </div>
+                      <div className = "oneway1">
+                        <button className="oneway_pr">One way</button>
+                        <button className="oneway_pr">Economy</button>
+                      </div>
+                      <button className="BookNow">Buy Ticket</button>
+                      <button className="Delete"> Delete</button>                    </div>
+                  </li>
+                  <li>
+                    <div className="promorion3">
+                      <button className="from">Ha Noi</button>
+                      <div className="t">to</div>
+                      <button className="from">HCM City</button>
+                      <input
+                        className="time_departure_fl"
+                        type="date"
+                        id="date"
+                      />
+                      <div className="price1">
+                        <div className="price-flight">Price</div>
+                        <div className="price-promotion">50%</div>
+                      </div>
+                      <div className = "oneway1">
+                        <button className="oneway_pr">One way</button>
+                        <button className="oneway_pr">Economy</button>
+                      </div>
+                      <button className="BookNow">Buy Ticket</button>
+                      <button className="Delete"> Delete</button>                    </div>
+                  </li>
+                  <li>
+                    <div className="promorion3">
+                      <button className="from">Ha Noi</button>
+                      <div className="t">to</div>
+                      <button className="from">HCM City</button>
+                      <input
+                        className="time_departure_fl"
+                        type="date"
+                        id="date"
+                      />
+                      <div className="price1">
+                        <div className="price-flight">Price</div>
+                        <div className="price-promotion">50%</div>
+                      </div>
+                      <div className = "oneway1">
+                        <button className="oneway_pr">One way</button>
+                        <button className="oneway_pr">Economy</button>
+                      </div>
+                      <button className="BookNow">Buy Ticket</button>
+                      <button className="Delete"> Delete</button>                    </div>
+                  </li>
+>>>>>>> 00f6f48a79573433c2727db1bc76c5fffd805990
                 </ul>
               </nav>
             </div>
           </div>
         </form>
+        <button className="more-fl">More</button>
 
 
 
@@ -96,8 +189,7 @@ class MyBook extends React.Component {
               <div
                 style={{
                   height: "20px",
-                  marginTop: "100px",
-                  marginBottom: "40px",
+                  marginBottom: "20px",
                   borderRadius: "60px",
                   display: "flex",
                   justifyContent: "center",
@@ -116,7 +208,7 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
@@ -134,7 +226,7 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
@@ -152,7 +244,7 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
@@ -170,7 +262,7 @@ class MyBook extends React.Component {
                       <div className="t">to</div>
                       <button className="from">HCM City</button>
                       <input
-                        className="time_departure_pr"
+                        className="time_departure_fl"
                         type="date"
                         id="date"
                       />
@@ -187,6 +279,7 @@ class MyBook extends React.Component {
             </div>
           </div>
         </form>
+        <button className="more-fl">More</button>
       </>
     );
   }

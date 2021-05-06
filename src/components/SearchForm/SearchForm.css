@@ -3,7 +3,7 @@
     width: 950px;
     display:flex;
     margin: auto;
-    padding: 45px;
+    padding: 0 0 45px 0;
     border-radius: 10px;
     flex-direction: row;
     justify-content: center;
@@ -35,6 +35,14 @@
     flex-direction: row;
     justify-content: center;
 }
+.button-in-seat{
+    display:flex;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+}
 .form-in-multiTrip{
     background-color: rgba(0, 0, 0, 0.7);
     width: 950px;
@@ -48,9 +56,8 @@
 }
 .form-in-multi{
     background-color: rgba(0, 0, 0, 0.7);
-    width: 950px;
     display:flex;
-    height: 350px;
+    padding: 0 0 30px 0;
     margin: auto;
     margin-top: 10px;
     border-radius: 10px;
@@ -81,7 +88,7 @@ letter-spacing: 0.02857em;
     border: none;
     background-color: #3f51b5;
     color: white;
-    height: 40px;
+    padding: 10px;
     margin-top: 30px;
     margin-bottom: 40px;
     border-radius: 5px;
@@ -116,7 +123,7 @@ letter-spacing: 0.02857em;
     }
 .ProfileButton{
     border: none;
-    background-color: #3f51b5;
+    background-color: black;
     color: white;
     width: 150px;
     height: 40px;
@@ -319,6 +326,20 @@ justify-content: center;
 margin-top: 15px;
 margin-left: 20px;
 }
+.time_departure_inMul {
+    margin: auto;
+    width: 180px;
+    text-align: center;
+    height: 40px;
+    border-radius: 50px;
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7px;
+    margin-left: 20px;
+    }
 .ageSelect{
 margin-top: 8px;
 margin-left: 20px;
@@ -398,7 +419,7 @@ margin-left: 130px;
     }
 .searchButton-in-multi{
     width: 300px;
-    height: 50px;
+    padding: 10px 0;
     border-radius: 60px;
     background-color:#FFC940;
     font-weight: bold;
@@ -409,15 +430,16 @@ margin-left: 130px;
     align-items: center;
     justify-content: center;
     margin: auto;
+    margin-bottom: 30px;
     }
 .BookNow{
 width: 100px;
 height: 30px;
 border-radius: 60px;
 background-color:#FFC940;
+text-transform: uppercase;
 font-weight: bold;
 border: none;
-font-size: 15px;
 margin: auto;
 margin-top: 20px;
 display: flex;
@@ -430,20 +452,84 @@ align-items: center;
 }
 .promotionForm{
 display:flex;
+background-image: url(bg.jpg);
+background-repeat: no-repeat;
+background-size: cover;
 margin: auto;
 margin-top: 10px;
-border-radius: 10px;
 flex-direction: row;
 justify-content: center;
+background-color: #026987;
+padding-bottom: 30px;
 }
+
 .FlightForm{
-width: 950px;
-display:flex;
-margin: auto;
-margin-top: 10px;
-border-radius: 10px;
-flex-direction: row;
-justify-content: center;
+    display:flex;
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    margin-top: 10px;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #026987;
+    padding-bottom: 30px;
+    }
+.SeatForm{
+    display:flex;
+    background-image: url(seat.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    margin-top: 15px;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #026987;
+    padding-bottom: 30px;
+    }
+.FlightDetailForm{
+    display:flex;
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #026987;
+    padding-bottom: 30px;
+    }
+.FlightForm1{
+    display:flex;
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #026987;
+    padding-bottom: 30px;
+    }
+.searchForm{
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:flex;
+    margin: auto;
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: center;
+    padding: 30px;
+    }
+.flightMenu{
+    width: 950px;
+    display: flex;
+    margin: auto;
+    /* margin-top: 10px; */
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    padding: 10px;
 }
 
 .mainButton{
@@ -521,8 +607,8 @@ justify-items: center;
     justify-items: center;
 }
 .confirm-ticket{
-    width: 120px;
-    height: 30px;
+    width: 150px;
+    padding: 15px;
     border-radius: 50px;
     background-color: #FFC940;
     font-weight: bold;
@@ -534,8 +620,8 @@ justify-items: center;
     justify-items: center;
 }
 .cancel-ticket{
-    width: 120px;
-    height: 30px;
+    width: 150px;
+    padding: 15px;
     border-radius: 50px;
     background-color: rgb(255, 0, 0);
     font-weight: bold;
@@ -550,7 +636,7 @@ margin: auto;
 display: flex;
 align-items: center;
 justify-content: center;
-width: 110px;
+width: 140px;
 text-align: center;
 height: 30px;
 border-radius: 50px;
@@ -559,6 +645,20 @@ border: none;
 padding: 0px 15px;
 margin-top: 15px;
 }
+.time_departure_fl{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    text-align: center;
+    height: 30px;
+    border-radius: 50px;
+    background-color: white;
+    border: none;
+    padding: 0px 15px;
+    margin-top: 15px;
+    }
 .from{
 width: 140px;
 height: 40px;
@@ -633,6 +733,7 @@ justify-content: center;
 }
 .aircraftForm{
     background-color: rgba(0, 0, 0, 0.7);
+    width: 950px;
     display:flex;
     margin: auto;
     border-radius: 10px;
@@ -660,6 +761,7 @@ justify-content: center;
     align-items: center;
     display: flex;
     justify-content: center;
+    font-size: 14px;
 }
 .aircraft-name{
     width: 350px;
@@ -707,6 +809,7 @@ justify-content: center;
     align-items: center;
     display: flex;
     justify-content: center;
+    font-size: 14px;
 }
 .total-price{
     width: 100px;
@@ -744,8 +847,9 @@ justify-content: center;
 }
 
 .ticket-from-to{
-    width: 140px;
+    width: 150px;
     height: 30px;
+    font-size: 12px;
     border-radius: 50px;
     background-color: rgb(64, 204, 223);
     font-weight: bold;
@@ -848,6 +952,19 @@ justify-content: center;
 align-items: center;
 margin-top: 15px;
 }
+.price-flight{
+    display: flex;
+    color: rgb(0, 0, 0);
+    margin: auto;
+    border-radius: 60px;
+    width: 135px;
+    height: 30px;
+    background-color: white;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 .price-pr{
     display: flex;
     color: rgb(0, 0, 0);
@@ -910,11 +1027,29 @@ font-weight: bold;
 font-size: 12px;
 border: none;
 margin: auto;
-margin-top: 20px;
+margin-top: 10px;
 justify-content: center;
 display: flex;
 align-items: center;
 }
+.bgFormCheck{
+    background-color: #026987;
+    padding: 0 0 30px 0;
+}
+.more-fl{
+    padding: 5px 15px;
+    border-radius: 50px;
+    background-color: rgb(64, 204, 223);
+    font-weight: bold;
+    font-size: 12px;
+    border: none;
+    margin: auto;
+    margin-top: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    }
 .more-flight{
     padding: 5px 15px;
     border-radius: 50px;
@@ -923,7 +1058,7 @@ align-items: center;
     font-size: 12px;
     border: none;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -1011,10 +1146,9 @@ margin: auto;
     background-color: #3f51b5;
     color: white;
     width: 150px;
-    height: 40px;
+    padding: 5px;
     margin-top: 30px;
     margin-bottom: 25px;
-    margin-left: 200px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -1084,8 +1218,8 @@ margin: auto;
     justify-content: center;
     display: flex;
     color: white;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 .toinroad{
     width: 110px;
@@ -1103,10 +1237,10 @@ margin: auto;
     color: white;
 }
 
-
 .profile{
     margin-top: 50px;
-
+    background-image: radial-gradient(farthest-corner at 50% 50%, #aeedee, #3970b0);    
+    padding: 5px 0 80px 0;
 }
 .profile-user {
     min-height: 60vh;
@@ -1159,23 +1293,24 @@ margin: auto;
     margin: 1rem 0;
   }
 .BookedTicket{
-    width: 950px;
+    background-image: url(bg.jpg);
     display:flex;
-    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: auto;
-    margin-top: 100px;
-    border-radius: 10px;
     flex-direction: row;
     justify-content: center;
-    }
+    background-color: #026987;
+    padding: 30px;
+}
 .Delete{
     width: 100px;
     height: 30px;
     border-radius: 60px;
     background-color:#ff0000;
+    text-transform: uppercase;
     font-weight: bold;
     border: none;
-    font-size: 15px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -1195,7 +1330,7 @@ margin: auto;
     padding: 0 0 30px;
   }
   .card .banner {
-    background-color: rgb(165, 165, 165);
+    background-color: rgb(0, 0, 0);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1356,4 +1491,13 @@ margin: auto;
   .card .actions .cancel-btn button:active {
     background-color: #bb0000;
     transform: scale(1);
+  }
+  input{
+    border-left: 6px solid #1c9eff;
+    background-color: white;
+    padding: 10px;
+    /* border: none; */
+    outline: none;
+    background: none;
+    text-transform: uppercase;
   }

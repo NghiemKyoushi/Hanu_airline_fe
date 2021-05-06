@@ -147,16 +147,11 @@ class SearchForm extends React.Component {
     return (
       <>
       {
-        (oneWay || roadTrip) ? (<> <div style={{
-                  height: "20px",
-                  marginTop: "50px",
-                  marginBottom: "40px",
-                  borderRadius: "60px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}><button className = "bookButton" >Booking</button></div>
-        <form className="form">
+        (oneWay || roadTrip) ? (<> 
+        <form className = "searchForm">
+        <div> 
+        
+          <div className="form">
           <div className="container1">
             <div className="buttonClass">
               <button className="oneway" value= "oneWay" onClick={this.clickTypeFlight} >One way</button>
@@ -253,6 +248,8 @@ class SearchForm extends React.Component {
             </select>
             <button className="searchButton" onClick = {this.submitSearch}>Search</button>
           </div>
+          </div>
+          </div> 
         </form></>): (<>
          <div style={{
                   height: "20px",

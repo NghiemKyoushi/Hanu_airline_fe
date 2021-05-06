@@ -8,10 +8,10 @@ class TicketForm extends React.Component {
           <div class="promotion">
             <div
               style={{
+                backgroundColor: "#026987",
+                padding: "50px 0 50px 0",
                 height: "20px",
-                marginTop: "50px",
-                marginBottom: "30px",
-                borderRadius: "60px",
+                marginTop: "10px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -21,12 +21,14 @@ class TicketForm extends React.Component {
                 Ticket
               </Button>
             </div>
+            <div className = "bgFormCheck">
             <form class="form_check">
               <div>
                 <input className="TicketID" placeholder="Ticket ID _ " />
                 <button className="check">check status</button>
               </div>
             </form>
+            </div>
           </div>
         </div>
       </>

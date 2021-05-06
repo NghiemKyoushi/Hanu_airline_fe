@@ -10,6 +10,7 @@ class NavBar extends React.Component{
    
     render(){
         return(
+            <div className = "NavbarForm">
                <div className = "hex-navbar">
                    <Toolbar style={{marginTop: "-5px"}}>
                    <Link activeClass="active" to="home" spy={true} smooth={true} > <Button className = "navbar" >Home </Button></Link>
@@ -18,6 +19,7 @@ class NavBar extends React.Component{
                    <Link spy={true} smooth={true} to ="ticket"><Button className = "navbar">Ticket</Button></Link>
                    <Button className = "navbar">Contact</Button>
                    </Toolbar>
+               </div>
                </div>
         )
     }

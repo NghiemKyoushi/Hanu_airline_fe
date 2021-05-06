@@ -40,31 +40,31 @@ async componentDidMount(){
     const { children } = this.props;
     return (
       <div className ="home" id="home">
-        <Grid container direction="column">
-          <Grid item>
+        <div container direction="column">
+          <div item>
             <Header />
-          </Grid>
+          </div>
           <div style={{ height: "20px" }}></div>
 
-          <Grid item>
+          <div item>
           <NavBar/>
-          </Grid>
+          </div>
         
           <div style={{ height: "20px" }}></div>
-          <Grid item container>
-            <Grid item xs={false} sm={2} />
+          <div item container>
+            <div item xs={false} sm={2} />
 
-            <Grid item xs={8}>
+            <div item xs={8}>
               {children}
-            </Grid>
+            </div>
 
-            <Grid item xs={false} sm={2} />
-          </Grid>
-          <Grid item>
+            <div item xs={false} sm={2} />
+          </div>
+          <div item>
           <Footer />
 
-          </Grid>
-        </Grid>
+          </div>
+        </div>
 
       </div>
     );

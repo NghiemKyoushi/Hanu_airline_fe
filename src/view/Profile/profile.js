@@ -39,6 +39,8 @@ class Profile extends React.Component {
       <>
         {user ? (
           <>
+            
+            <section className="profile">
             <div
               style={{
                 height: "20px",
@@ -52,7 +54,6 @@ class Profile extends React.Component {
             >
               <button className="ProfileButton">My profile</button>
             </div>
-            <section className="profile">
               <div class="card">
                 <div class="banner">
                   <svg viewBox="0 0 100 100">
