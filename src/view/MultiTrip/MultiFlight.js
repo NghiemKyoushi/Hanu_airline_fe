@@ -90,7 +90,8 @@ class MultiFlight extends React.Component {
                   justifyContent: "center",
                   alignItems: "center",
                 }}><button className = "bookButton" >Booking</button></div>
-        <form className="form-in-multiTrip">
+        <form className="searchForm">
+        <div class="form-in-multiTrip">
           <div className="container1">
             <div className="buttonClass">
               <button className="oneway" value= "oneway" onClick={this.clickTypeFlight} >One way</button>
@@ -102,6 +103,7 @@ class MultiFlight extends React.Component {
           </div>
           <div className="container2">
             <button className="searchButton-in-multiTrip" onClick = {this.submitSearch}>Search</button>
+          </div>          
           </div>
         </form>
       </>
