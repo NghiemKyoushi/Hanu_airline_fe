@@ -27,7 +27,7 @@ class Template extends React.Component {
 async componentDidMount(){
     console.log("homeeeeeeeeee");
 
-    const  apiGetFlight = "http://hanuairline.azurewebsites.net/flight/getAll";
+    const  apiGetFlight = "https://hanuairline4c.azurewebsites.net/flight/getAll";
 
     const getFlight = await axios.get(apiGetFlight);
     console.log(getFlight.data);

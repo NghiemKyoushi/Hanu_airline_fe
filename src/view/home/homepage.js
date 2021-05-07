@@ -49,7 +49,7 @@ class HomePage extends React.Component {
     // console.log("data roadtrip", data1)
 
     const arrDepartureTime = [];
-    const apiSearchOne= "http://hanuairline.azurewebsites.net/flight/search-one";
+    const apiSearchOne= "https://hanuairline4c.azurewebsites.net/flight/search-one";
     try{
       const searchFlight = await axios.post(apiSearchOne,data1);
       this.setState({
@@ -110,7 +110,7 @@ class HomePage extends React.Component {
     this.props.dataSearch(d);
 
     // console.log("data", d)
-    const apiSearchOne= "http://hanuairline.azurewebsites.net/flight/search-one";
+    const apiSearchOne= "https://hanuairline4c.azurewebsites.net/flight/search-one";
     try{
       const searchFlight = await axios.post(apiSearchOne,d);
 
@@ -136,7 +136,7 @@ class HomePage extends React.Component {
 async componentDidMount(){
     console.log("homeeeeeeeeee");
 
-    const  apiGetFlight = "http://hanuairline.azurewebsites.net/flight/getAll";
+    const  apiGetFlight = "https://hanuairline4c.azurewebsites.net/flight/getAll";
     const getFlight = await axios.get(apiGetFlight);
     console.log(getFlight.data);
     this.setState({
@@ -144,7 +144,7 @@ async componentDidMount(){
     })
 
     
-    const  apiGetFlight1 = "http://hanuairline.azurewebsites.net/flight/getAll?saleFlightOnly=true ";
+    const  apiGetFlight1 = "https://hanuairline4c.azurewebsites.net/flight/getAll?saleFlightOnly=true ";
     const getFlight1 = await axios.get(apiGetFlight1);
     this.setState({
       flightSale: getFlight1.data.content

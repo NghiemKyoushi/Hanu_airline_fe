@@ -75,13 +75,13 @@ class SeatBooking extends React.Component {
   async componentDidMount() {
     const id = Number(this.props.match.params.id);
     //inform của máy bay 
-    const apiFlight = `http://hanuairline.azurewebsites.net/flight/getById/${id}`;
+    const apiFlight = `https://hanuairline4c.azurewebsites.net/flight/getById/${id}`;
     const getDataFight = await axios.get(apiFlight);
     // this.setState({
     //   showFlightInfo: getDataFight.data
     // })
 
-    const apiSeat = `http://hanuairline.azurewebsites.net/flight/seats-and-status/${id}`;
+    const apiSeat = `https://hanuairline4c.azurewebsites.net/flight/seats-and-status/${id}`;
     const fetchDatSeat =  await axios.get(apiSeat);
     // console.log(fetchDatSeat.data[1]);
 

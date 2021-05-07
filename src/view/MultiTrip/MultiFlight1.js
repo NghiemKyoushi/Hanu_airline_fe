@@ -71,7 +71,7 @@ class MultiFlight1 extends React.Component {
 
     for(let i = 0; i < this.props.match.params.id; i ++ ){
       try{
-        const apiSearchOne= "http://hanuairline.azurewebsites.net/flight/search-one";
+        const apiSearchOne= "https://hanuairline4c.azurewebsites.net/flight/search-one";
         const searchFlight = await axios.post(apiSearchOne,this.state.dataSearch[i]);
       this.state.dataFetch.push(searchFlight.data);
       console.log(this.state.dataFetch);

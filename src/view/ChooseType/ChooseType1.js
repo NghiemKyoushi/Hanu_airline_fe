@@ -37,7 +37,7 @@ class ChooseType1 extends React.Component {
     }
     console.log("bodyPay",body)
     try{
-      const api = "http://hanuairline.azurewebsites.net/payment/pay";
+      const api = "https://hanuairline4c.azurewebsites.net/payment/pay";
       const fetchData = await axios.post(api, body);
        console.log(fetchData.data.substring(9));
       

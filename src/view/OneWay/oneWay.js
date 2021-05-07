@@ -28,7 +28,7 @@ class OneWay extends React.Component {
       let flight_Number = Number(flight);
       console.log("nummmmmmmmm", flight_Number);
       if (flight_Number > 0) {
-        let apiSearchOne1 = `http://hanuairline.azurewebsites.net/flight/getById/${flight_Number}`;
+        let apiSearchOne1 = `https://hanuairline4c.azurewebsites.net/flight/getById/${flight_Number}`;
         let fetchData = axios.get(apiSearchOne1);
         return fetchData;
       }

@@ -25,7 +25,7 @@ class MyBook extends React.Component {
       let flight_Number = Number(flight);
       console.log("nummmmmmmmm", flight_Number);
       if (flight_Number > 0) {
-        let apiSearchOne1 = `http://hanuairline.azurewebsites.net/flight/getById/${flight_Number}`;
+        let apiSearchOne1 = `https://hanuairline4c.azurewebsites.net/flight/getById/${flight_Number}`;
         let fetchData = axios.get(apiSearchOne1);
         console.log("daaaaaa", apiSearchOne1)
         return fetchData;
@@ -41,7 +41,7 @@ class MyBook extends React.Component {
 
     // ticket booked
     const userId = getCookie("userId");
-    const apiTicket = `http://hanuairline.azurewebsites.net/ticket/getByUserId/${userId}`;
+    const apiTicket = `https://hanuairline4c.azurewebsites.net/ticket/getByUserId/${userId}`;
     const fetchTicket = await axios.get(apiTicket);
     this.setState({
       myTicket: fetchTicket.data

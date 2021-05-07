@@ -67,7 +67,7 @@ class SignUp extends React.Component {
   console.log(body)
 
   try{
-    const url ="http://hanuairline.azurewebsites.net/auth/signup";
+    const url ="https://hanuairline4c.azurewebsites.net/auth/signup";
     const postData = await axios.post(url, body)
     if(postData.data.success){
        this.props.history.push("/login");

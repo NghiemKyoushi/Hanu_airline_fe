@@ -35,7 +35,7 @@ class Profile1 extends React.Component {
     console.log(body);
     
     try{
-      const api = `http://hanuairline.azurewebsites.net/profile/admin/update-one/${uid}`;
+      const api = `https://hanuairline4c.azurewebsites.net/profile/admin/update-one/${uid}`;
     const fetchData = await axios.put(api,body);
     this.props.history.push('/profile');
     }catch(e){

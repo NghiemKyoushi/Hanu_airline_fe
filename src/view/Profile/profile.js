@@ -15,7 +15,7 @@ class Profile extends React.Component {
     const jwtToken = getCookie("jwtToken");
 
     console.log(jwtToken);
-    const api = "http://hanuairline.azurewebsites.net/profile/getMe";
+    const api = "https://hanuairline4c.azurewebsites.net/profile/getMe";
 
     const getData = await axios.get(api, {
       headers: {

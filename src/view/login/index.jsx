@@ -52,7 +52,7 @@ class SignIn extends React.Component {
       usernameOrEmail: usernameOrEmail,
       password: password,
     };
-    const url = "http://hanuairline.azurewebsites.net/auth/signin";
+    const url = "https://hanuairline4c.azurewebsites.net/auth/signin";
     try {
       const postData = await axios.post(url, body);
       setCookie("jwtToken", "Bearer" + " " + postData.data.accessToken, 14.4);

@@ -37,7 +37,7 @@ class MultiFlight2 extends React.Component {
         }
         </div>
 
-        <div className = "day">
+        {/* <div className = "day">
         {
           (flight) ? (<>
                    <button className = "eachday" >{ formatDate(flight[0].departureTime)}</button>
@@ -49,7 +49,7 @@ class MultiFlight2 extends React.Component {
                    <button className = "eachday" >{ nextDayOfDepartureTime(flight[0].departureTime, 6)}</button>
           </>): (<></>)
         }
-        </div>
+        </div> */}
 
         
         <form class="FlightForm" id="flight">

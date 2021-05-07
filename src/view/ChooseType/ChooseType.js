@@ -32,7 +32,7 @@ class ChooseType extends React.Component {
       //userId
       const userID = getCookie("userId");
       //airway ID
-      const apiFlight = `http://hanuairline.azurewebsites.net/flight/getById/${this.props.match.params.id}`;
+      const apiFlight = `https://hanuairline4c.azurewebsites.net/flight/getById/${this.props.match.params.id}`;
       const getDataFight = await axios.get(apiFlight);
       console.log(getDataFight.data.airway.id);
 
@@ -50,7 +50,7 @@ class ChooseType extends React.Component {
             ],
           };
           console.log("body", body)
-          let api = "http://hanuairline.azurewebsites.net/ticket/getTicketsPrices";
+          let api = "https://hanuairline4c.azurewebsites.net/ticket/getTicketsPrices";
   
           let fetchData = axios.post(api, body);
           return fetchData
@@ -93,7 +93,7 @@ class ChooseType extends React.Component {
     console.log("cchooooooooooooooooooooooooo");
     const id = this.props.match.params.id;
     console.log(this.props);
-    const apiSearchAirway = `http://hanuairline.azurewebsites.net/ticket/getByFlightId/${id}`;
+    const apiSearchAirway = `https://hanuairline4c.azurewebsites.net/ticket/getByFlightId/${id}`;
     const fetchData = await axios.get(apiSearchAirway);
 
     // console.log("airway", fetchData.data);
@@ -109,7 +109,7 @@ class ChooseType extends React.Component {
   render() {
     const { airway, seat, ticketPrice } = this.state;
     // seatName ={seat} departureCity = {airway[0].flight.airway.departureAirport.city} arrivalCity ={airway[0].flight.airway.arrivalAirport.city}
-    console.log("airrrrrrrrrr", ticketPrice);
+    console.log("airrrrrrrrrr", airway);
     return (
       <>
       {
@@ -162,119 +162,4 @@ class ChooseType extends React.Component {
   }
 }
 export default withRouter(ChooseType);
-    {/* <form className="ticket">
-          <div className="container1">
-            <div className="ticket-form">
-              <div className="ticket-field">Ticket ID</div>
-              <div className="ticket-field-detail">198</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Airway</div>
-              <div className="ticket-field-detail-2">
-                <div className = "ticket-from-to">HCM City</div>
-                <div className = "t-in-ticket">❯❯❯</div>
-                <div className = "ticket-from-to">Ha Noi</div>
-              </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field">Seat</div>
-              <div className="ticket-field-detail">H98</div>
-            </div>
-          </div>
-
-          <div className="container2">
-            <div className="ticket-form">
-              <div className="ticket-field">Price</div>
-              <div className="ticket-field-detail">3 000 000 VND</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Type</div>
-                <div className="ticket-field-detail-2">
-                  <button className="adult-in-ticket">Adult</button>
-                  <button className="adult-in-ticket">Children</button>
-                  </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Status</div>
-              <div className="ticket-field-status">Available</div>
-            </div>
-          </div>
-        </form>
-
-        <form className="ticket">
-          <div className="container1">
-            <div className="ticket-form">
-              <div className="ticket-field">Ticket ID</div>
-              <div className="ticket-field-detail">198</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Airway</div>
-              <div className="ticket-field-detail-2">
-                <div className = "ticket-from-to">HCM City</div>
-                <div className = "t-in-ticket">❯❯❯</div>
-                <div className = "ticket-from-to">Ha Noi</div>
-              </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field">Seat</div>
-              <div className="ticket-field-detail">H98</div>
-            </div>
-          </div>
-
-          <div className="container2">
-            <div className="ticket-form">
-              <div className="ticket-field">Price</div>
-              <div className="ticket-field-detail">3 000 000 VND</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Type</div>
-                <div className="ticket-field-detail-2">
-                  <button className="adult-in-ticket">Adult</button>
-                  <button className="adult-in-ticket">Children</button>
-                  </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Status</div>
-              <div className="ticket-field-status">Available</div>
-            </div>
-          </div>
-        </form>
-
-        <form className="ticket">
-          <div className="container1">
-            <div className="ticket-form">
-              <div className="ticket-field">Ticket ID</div>
-              <div className="ticket-field-detail">198</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Airway</div>
-              <div className="ticket-field-detail-2">
-                <div className = "ticket-from-to">HCM City</div>
-                <div className = "t-in-ticket">❯❯❯</div>
-                <div className = "ticket-from-to">Ha Noi</div>
-              </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field">Seat</div>
-              <div className="ticket-field-detail">H98</div>
-            </div>
-          </div>
-
-          <div className="container2">
-            <div className="ticket-form">
-              <div className="ticket-field">Price</div>
-              <div className="ticket-field-detail">3 000 000 VND</div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Type</div>
-                <div className="ticket-field-detail-2">
-                  <button className="adult-in-ticket">Adult</button>
-                  <button className="adult-in-ticket">Children</button>
-                  </div>
-            </div>
-            <div className="ticket-form">
-              <div className="ticket-field-1">Status</div>
-              <div className="ticket-field-status">Available</div>
-            </div>
-          </div>
-        </form> */}
+    
