@@ -137,8 +137,7 @@ class MultiFlight1 extends React.Component {
         </>) : (<><div
           style={{
             height: "20px",
-            marginTop: "50px",
-            marginBottom: "40px",
+            marginTop: "10px",
             borderRadius: "60px",
             display: "flex",
             justifyContent: "center",
@@ -154,10 +153,12 @@ class MultiFlight1 extends React.Component {
           (numberFlight.length )
           ?( numberFlight.map((number, index) => {
               return (
-                <div key = {index}>
+                
+                  
+                  <form className="MultiForm">
+                    <div key = {index}>
                   <div className="FlightinMulti">Flight {number}</div>
-                  <div className = "FlightNumber">
-                  <form className="form-in-multi">
+                  <div className = "form-in-multi">
                     <div className="container1">
                       <div className="location">
                         <div>
@@ -245,9 +246,11 @@ class MultiFlight1 extends React.Component {
                         </div>
                       </div>
                     </div>
+                    </div>
+                    </div>
                   </form>
-                  </div>
-                </div>
+                  
+                
               );
             }))
           : ""}

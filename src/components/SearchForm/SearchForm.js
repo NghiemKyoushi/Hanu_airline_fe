@@ -251,16 +251,9 @@ class SearchForm extends React.Component {
           </div>
           </div> 
         </form></>): (<>
-         <div style={{
-                  height: "20px",
-                  marginTop: "50px",
-                  marginBottom: "40px",
-                  borderRadius: "60px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}><button className = "bookButton" >Booking</button></div>
-        <form className="form-in-multiTrip">
+         
+        <form className="searchForm">
+        <div class="form-in-multiTrip">
           <div className="container1">
             <div className="buttonClass">
             <button className="oneway" value= "oneWay" onClick={this.clickTypeFlight} >One way</button>
@@ -282,6 +275,7 @@ class SearchForm extends React.Component {
           </div>
           <div className="container2">
             <button className="searchButton-in-multiTrip" onClick = {this.submitSearch}>Search</button>
+          </div>
           </div>
         </form></>
         )}
