@@ -361,6 +361,7 @@ class SeatBooking extends React.Component {
                  <button className="confirm-ticket" onClick={this.onSubmit}>Confirm</button>
 
                   <button className="cancel-ticket" onClick={()=> this.props.history.push('/mybook')}>Cancel</button>
+
                 </div>
       </>
     );

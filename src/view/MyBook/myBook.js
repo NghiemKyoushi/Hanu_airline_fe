@@ -55,6 +55,7 @@ class MyBook extends React.Component {
       <>
         <form class="FlightForm" id="flight">
 
+
           <div class="promotionMenu">
             <div class="promotion">
               <div
@@ -74,6 +75,7 @@ class MyBook extends React.Component {
               </div>
               <nav>
                 <ul>
+
                 {( flightAdd )
                     ? flightAdd.map((flight, index) => {
                         return (
