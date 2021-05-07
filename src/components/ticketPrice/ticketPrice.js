@@ -34,7 +34,7 @@ class TicketPrice extends React.Component {
     // }
 
   render() {
-      const {seatName, departureCity, arrivalCity,ticketID, price, type} = this.props;
+      const {seatName, departureCity, arrivalCity,ticketID, price, type,status} = this.props;
       console.log("props")
     return (
       <>
@@ -72,7 +72,7 @@ class TicketPrice extends React.Component {
             </div>
             <div className="ticket-form">
               <div className="ticket-field-1">Status</div>
-              <div className="ticket-field-status">Available</div>
+              <div className="ticket-field-status">{status}</div>
             </div>
           </div>
         </form>

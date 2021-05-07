@@ -61,7 +61,8 @@ class CardViewFlight extends React.Component {
       arrivalAirport_city,
       price,
       departureTime,
-      idFlight
+      idFlight,
+      sale
     } = this.props;
     // const idF = Number(this.props.idFLight);
     
@@ -77,8 +78,10 @@ class CardViewFlight extends React.Component {
             id="date"
             value={formatDate(departureTime)}
           />
-
-          <div className="price">{price} VNĐ</div>
+<div className="price1">
+            <div className="price-pr">{price} VNĐ</div>
+            {sale ? <div className="price-promotion">{sale}%</div> : ""}
+          </div> 
           <div className = "oneway-economy">
             <button className="oneway_pr">One way</button>
             <button className="oneway_pr">Economy</button>

@@ -28,10 +28,10 @@ class ChooseType1 extends React.Component {
    })
 
     const body = {
-      price: 10000,
+      price: 10,
       currency: "USD",
       method: "paypal",
-      intent: "sale",
+      intent: "ORDER",
       description: "empty",
       ticketPayloads:arrTicket ,
     }
@@ -62,11 +62,6 @@ class ChooseType1 extends React.Component {
     for(let i=0; i< arrPrice.length; i++){
       count += arrPrice[i];
     }
-    // this.setState({
-    //   count: count
-    // })
- 
-
     return (
       <>
         <div
@@ -93,6 +88,7 @@ class ChooseType1 extends React.Component {
                   price={ticket.data[0].totalPrice}
                   type={ticket.data[0].type}
                   ticketID={ticket.data[0].id}
+                  status={ticket.data[0].status}
                 />
                 
               </div>)
@@ -115,11 +111,10 @@ class ChooseType1 extends React.Component {
             alignItems: "center",
           }}
         >
-          <button className="PaymentButton">Payment Method</button>
         </div>
         <div className="button-ticket">
           <button className="confirm-ticket" onClick={this.confirmButton}>Confirm</button>
-          <button className="cancel-ticket">Cancel</button>
+          <button className="cancel-ticket" onClick={()=> window.location.reload()}>Cancel</button>
         </div>
       </>
     );

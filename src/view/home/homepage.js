@@ -24,7 +24,8 @@ class HomePage extends React.Component {
       //reault roadTrip
       departure_Time: "",
       arrival_Time: "",
-      localArray: []
+      localArray: [],
+      flightSale: []
     }
     this.setDataSearchOneWay = this.setDataSearchOneWay.bind(this);
     // this.formatDate = this.formatDate.bind(this);
@@ -141,10 +142,18 @@ async componentDidMount(){
     this.setState({
       allFlight: getFlight.data.content
     })
+
+    
+    const  apiGetFlight1 = "http://hanuairline.azurewebsites.net/flight/getAll?saleFlightOnly=true ";
+    const getFlight1 = await axios.get(apiGetFlight1);
+    this.setState({
+      flightSale: getFlight1.data.content
+    })
+    console.log("flight sale",this.state.flightSale);
   }
 
   render() {
-    const {allFlight, dataSearch,resultSearchOne, departure_Time, arrival_Time} = this.state
+    const {allFlight,flightSale } = this.state
     const { children } = this.props;
     // console.log("this data", this.state.dataSearch)
     return (
@@ -168,7 +177,7 @@ async componentDidMount(){
           {
             (departure_Time && arrival_Time) ? (<> <RoadTrip departure_Time={departure_Time} arrival_Time={arrival_Time} /></>) :""
           } */}
-          <PromotionForm allFlight = {allFlight}/>
+          <PromotionForm allFlight = {flightSale}/>
           <FlightForm allFlight = {allFlight}/>
           <TicketForm/>
           </Grid>

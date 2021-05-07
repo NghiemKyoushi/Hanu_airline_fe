@@ -151,7 +151,7 @@ class ChooseType extends React.Component {
           <button className="confirm-ticket" onClick={this.confirmButton}>
             Confirm
           </button>
-          <button className="cancel-ticket">Cancel</button>
+          <button className="cancel-ticket" onClick={()=> this.props.history.push(`/seatbooking/${this.props.match.params.id}`)} >Cancel</button>
         </div>
           </>
         )

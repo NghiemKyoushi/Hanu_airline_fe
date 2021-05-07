@@ -3,16 +3,18 @@ import { Button } from "@material-ui/core";
 import  axios from 'axios';
 import { withRouter } from "react-router";
 import {setCookie, getCookie} from '../../utils/fetchData/fetchData';
-import  CardViewMyBook from '../../components/cardViewMyBook/cardViewMyBook'
+import  CardViewMyBook from '../../components/cardViewMyBook/cardViewMyBook';
+import CardViewMyTicket from '../../components/cardViewMyTicket/cardViewMyTicket';
 class MyBook extends React.Component {
 
   constructor(props){
     super(props);
     this.state= {
-      flightAdd:[] 
+      flightAdd:[] ,
+      myTicket: []
     }
   }
-  componentDidMount(){
+ async componentDidMount(){
 
     console.log("myBook", getCookie("addBook"));
 
@@ -34,20 +36,25 @@ class MyBook extends React.Component {
       });
     });
 
+    // ticket booked
+    const userId = getCookie("userId");
+    const apiTicket = `http://hanuairline.azurewebsites.net/ticket/getByUserId/${userId}`;
+    const fetchTicket = await axios.get(apiTicket);
+    this.setState({
+      myTicket: fetchTicket.data
+    })
+
   }
   render() {
 
     console.log( "sssssssssssssss",this.state.flightAdd);
+    console.log("ticket",this.state.myTicket)
 
-    const {flightAdd} = this.state;
+    const {flightAdd,myTicket} = this.state;
     return (
       <>
-<<<<<<< HEAD
-
         <form class="FlightForm" id="flight">
-=======
-        <form class="FlightForm1" id="flight">
->>>>>>> 00f6f48a79573433c2727db1bc76c5fffd805990
+
           <div class="promotionMenu">
             <div class="promotion">
               <div
@@ -67,7 +74,6 @@ class MyBook extends React.Component {
               </div>
               <nav>
                 <ul>
-<<<<<<< HEAD
                 {( flightAdd )
                     ? flightAdd.map((flight, index) => {
                         return (
@@ -87,93 +93,7 @@ class MyBook extends React.Component {
                         );
                       })
                     : ""}
-=======
-                <li>
-                    <div className="promorion3">
-                      <button className="from">Ha Noi</button>
-                      <div className="t">to</div>
-                      <button className="from">HCM City</button>
-                      <input
-                        className="time_departure_fl"
-                        type="date"
-                        id="date"
-                      />
-                      <div className="price1">
-                        <div className="price-flight">Price</div>
-                        <div className="price-promotion">50%</div>
-                      </div>
-                      <div className = "oneway1">
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Buy Ticket</button>
-                      <button className="Delete"> Delete</button>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <button className="from">Ha Noi</button>
-                      <div className="t">to</div>
-                      <button className="from">HCM City</button>
-                      <input
-                        className="time_departure_fl"
-                        type="date"
-                        id="date"
-                      />
-                      <div className="price1">
-                        <div className="price-flight">Price</div>
-                        <div className="price-promotion">50%</div>
-                      </div>
-                      <div className = "oneway1">
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Buy Ticket</button>
-                      <button className="Delete"> Delete</button>                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <button className="from">Ha Noi</button>
-                      <div className="t">to</div>
-                      <button className="from">HCM City</button>
-                      <input
-                        className="time_departure_fl"
-                        type="date"
-                        id="date"
-                      />
-                      <div className="price1">
-                        <div className="price-flight">Price</div>
-                        <div className="price-promotion">50%</div>
-                      </div>
-                      <div className = "oneway1">
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Buy Ticket</button>
-                      <button className="Delete"> Delete</button>                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <button className="from">Ha Noi</button>
-                      <div className="t">to</div>
-                      <button className="from">HCM City</button>
-                      <input
-                        className="time_departure_fl"
-                        type="date"
-                        id="date"
-                      />
-                      <div className="price1">
-                        <div className="price-flight">Price</div>
-                        <div className="price-promotion">50%</div>
-                      </div>
-                      <div className = "oneway1">
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">Buy Ticket</button>
-                      <button className="Delete"> Delete</button>                    </div>
-                  </li>
->>>>>>> 00f6f48a79573433c2727db1bc76c5fffd805990
+
                 </ul>
               </nav>
             </div>
@@ -202,78 +122,25 @@ class MyBook extends React.Component {
               </div>
               <nav>
                 <ul>
-                  <li>
-                    <div className="promorion3">
-                      <button className="from">Ha Noi</button>
-                      <div className="t">to</div>
-                      <button className="from">HCM City</button>
-                      <input
-                        className="time_departure_fl"
-                        type="date"
-                        id="date"
-                      />
-                      <div className="ticket-id">Ticket ID</div>
-                      <div className = "oneway1">
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">View</button>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <button className="from">Ha Noi</button>
-                      <div className="t">to</div>
-                      <button className="from">HCM City</button>
-                      <input
-                        className="time_departure_fl"
-                        type="date"
-                        id="date"
-                      />
-                      <div className="ticket-id">Ticket ID</div>
-                      <div className = "oneway1">
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">View</button>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <button className="from">Ha Noi</button>
-                      <div className="t">to</div>
-                      <button className="from">HCM City</button>
-                      <input
-                        className="time_departure_fl"
-                        type="date"
-                        id="date"
-                      />
-                      <div className="ticket-id">Ticket ID</div>
-                      <div className = "oneway1">
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">View</button>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="promorion3">
-                      <button className="from">Ha Noi</button>
-                      <div className="t">to</div>
-                      <button className="from">HCM City</button>
-                      <input
-                        className="time_departure_fl"
-                        type="date"
-                        id="date"
-                      />
-                      <div className="ticket-id">Ticket ID</div>
-                      <div className = "oneway1">
-                        <button className="oneway_pr">One way</button>
-                        <button className="oneway_pr">Economy</button>
-                      </div>
-                      <button className="BookNow">View</button>
-                    </div>
-                  </li>
+                {( myTicket )
+                    ? myTicket.map((flight, index) => {
+                        return (
+                          <li key={index}>
+                            <CardViewMyTicket
+                              departureAirport_city={
+                                flight.flight.airway.departureAirport.city
+                              }
+                              arrivalAirport_city={
+                                flight.flight.airway.arrivalAirport.city
+                              }
+                              price={flight.flight.price}
+                              departureTime={flight.flight.departureTime}
+                              // idFLight = {flight.flight.id}
+                            />
+                          </li>
+                        );
+                      })
+                    : ""}
                 </ul>
               </nav>
             </div>

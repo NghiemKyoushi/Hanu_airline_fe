@@ -115,6 +115,22 @@ class SeatBooking extends React.Component {
         economy.push(data[index]);
       }
     });
+
+    // business.map(seat => {
+    //   if(seat.status === "BOOKED"){
+    //     document.querySelector(`#${seat.id}`).disabled = true
+    //   }
+    // })
+    // premiumEconomy.map(seat => {
+    //   if(seat.status === "BOOKED"){
+    //     document.querySelector(`#${seat.id}`).disabled = true
+    //   }
+    // })
+    // economy.map(seat => {
+    //   if(seat.status === "BOOKED"){
+    //     document.querySelector(`#${seat.id}`).disabled = true
+    //   }
+    // })
     this.setState({
       business: business,
       premiumEconomy: premiumEconomy,
@@ -249,27 +265,19 @@ class SeatBooking extends React.Component {
         <ol class="cabin fuselage">
           <li class="row row--1">
             <ol class="seats" type="A">
-              {
-                business.map((bus, index) => {
-                if(bus.status === 'BOOKED'){
-                  return (
-                    <li class="seat2" key={index} >
-                    <input type="checkbox" id={bus.id} disabled/>
-                    <label for={bus.id}>{bus.id}</label>
-                  </li>
-                  )
-                }
-                
-              })}
-
               {business.map((bus, index) => {
                 if (bus.status === "AVAILABLE"){
                   return (
                   <li class="seat2" key={index}>
-                    <input type="checkbox" id={bus.id} />
+                    <input type="checkbox" id={bus.id} onChange ={this.handleChange}/>
                     <label for={bus.id}>{bus.id}</label>
                   </li>
                 );
+                }else if(bus.status === "BOOKED"){
+                  <li class="seat2" key={index}>
+                    <input type="checkbox" id={bus.id} disabled onChange ={this.handleChange} />
+                    <label for={bus.id}>{bus.id}</label>
+                  </li>
                 }
                 
               })}
@@ -280,22 +288,19 @@ class SeatBooking extends React.Component {
         <ol class="cabin fuselage">
           <li class="row row--2">
             <ol class="seats" type="A">
-              {premiumEconomy.map((pre, index) => {
-                if(pre.status === "BOOKED"){
-                  return (
-                  <li class="seat" key={index}>
-                    <input type="checkbox" id={pre.id} disabled onChange ={this.handleChange}/>
-                    <label for={pre.id}>{pre.id}</label>
-                  </li>
-                );
-                }
-                
-              })}
+           
               {premiumEconomy.map((pre, index) => {
                 if(pre.status === "AVAILABLE"){
                   return (
                   <li class="seat" key={index}>
                     <input type="checkbox" id={pre.id} onChange ={this.handleChange}/>
+                    <label for={pre.id}>{pre.id}</label>
+                  </li>
+                );
+                }else if(pre.status === "BOOKED"){
+                  return (
+                  <li class="seat" key={index}>
+                    <input type="checkbox" id={pre.id} disabled onChange ={this.handleChange}/>
                     <label for={pre.id}>{pre.id}</label>
                   </li>
                 );
@@ -309,7 +314,7 @@ class SeatBooking extends React.Component {
           <br />
           <li class="row row--3">
             <ol class="seats" type="A">
-              {economy.map((eco, index) => {
+              {/* {economy.map((eco, index) => {
                 if(eco.status === "BOOKED"){
                   return (
                   <li class="seat3" key={index}>
@@ -319,19 +324,31 @@ class SeatBooking extends React.Component {
                 );
                 }
                 
-              })}
+              })} */}
 
-              {economy.map((eco, index) => {
+              {
+                economy.map((eco, index) => {
+            
                 if(eco.status === "AVAILABLE"){
+
                   return (
                   <li class="seat3" key={index}>
                     <input type="checkbox" id={eco.id} value={eco.id} onChange ={this.handleChange}/>
                     <label for={eco.id}>{eco.id}</label>
                   </li>
                 );
+                }else if(eco.status === "BOOKED"){
+                  return (
+                  <li class="seat3" key={index}>
+                    <input type="checkbox" id={eco.id} value={eco.id} disabled onChange ={this.handleChange}/>
+                    <label for={eco.id}>{eco.id}</label>
+                  </li>
+                );
                 }
                 
-              })}
+              })
+
+              }
            </ol>
           </li>
         </div>
@@ -339,15 +356,11 @@ class SeatBooking extends React.Component {
         </div>
         </div>
         </form>                 
-<<<<<<< HEAD
         <div>
 
                  <button className="confirm-ticket" onClick={this.onSubmit}>Confirm</button>
-=======
-                <div className = "button-in-seat">
-                  <button className="confirm-ticket">Confirm</button>
->>>>>>> 00f6f48a79573433c2727db1bc76c5fffd805990
-                  <button className="cancel-ticket">Cancel</button>
+
+                  <button className="cancel-ticket" onClick={()=> this.props.history.push('/mybook')}>Cancel</button>
                 </div>
       </>
     );
