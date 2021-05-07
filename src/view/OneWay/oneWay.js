@@ -60,7 +60,7 @@ class OneWay extends React.Component {
         </div>
         <div className="departingFlight">Departing Flight</div>
 
-        <div className="day">
+        {/* <div className="day">
           {oneWayFlight ? (
             <>
               <button className="eachday">
@@ -88,7 +88,7 @@ class OneWay extends React.Component {
           ) : (
             ""
           )}
-        </div>
+        </div> */}
 
         <form class="FlightForm" id="flight">
           <div class="promotionMenu">

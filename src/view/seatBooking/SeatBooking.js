@@ -356,7 +356,7 @@ class SeatBooking extends React.Component {
         </div>
         </div>
         </form>                 
-        <div>
+        <div className = "button-in-seat">
 
                  <button className="confirm-ticket" onClick={this.onSubmit}>Confirm</button>
 

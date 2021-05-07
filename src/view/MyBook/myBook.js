@@ -18,6 +18,7 @@ class MyBook extends React.Component {
 
     console.log("myBook", getCookie("addBook"));
 
+    
     let storedAry = getCookie("addBook").split(",");
     let containerResult = [];
     const mapData = storedAry.map((flight) => {
@@ -31,9 +32,11 @@ class MyBook extends React.Component {
       }
     });
     Promise.all(mapData).then((values) => {
-      this.setState({
-        flightAdd: values,
-      });
+        this.setState({
+          flightAdd: values,
+        });
+    
+      
     });
 
     // ticket booked
@@ -48,9 +51,9 @@ class MyBook extends React.Component {
   render() {
 
     console.log( "sssssssssssssss",this.state.flightAdd);
-    console.log("ticket",this.state.myTicket)
-
+    console.log("ticket",this.state.myTicket);
     const {flightAdd,myTicket} = this.state;
+    
     return (
       <>
         <form class="FlightForm" id="flight">
@@ -76,8 +79,8 @@ class MyBook extends React.Component {
               <nav>
                 <ul>
 
-                {( flightAdd )
-                    ? flightAdd.map((flight, index) => {
+                {
+                  ( flightAdd[0] !== undefined) ? (flightAdd.map((flight, index) => {
                         return (
                           <li key={index}>
                             <CardViewMyBook
@@ -93,8 +96,8 @@ class MyBook extends React.Component {
                             />
                           </li>
                         );
-                      })
-                    : ""}
+                      })) : <></>
+                    }
 
                 </ul>
               </nav>
@@ -137,6 +140,7 @@ class MyBook extends React.Component {
                               }
                               price={flight.flight.price}
                               departureTime={flight.flight.departureTime}
+                              idTicket={flight.id}
                               // idFLight = {flight.flight.id}
                             />
                           </li>

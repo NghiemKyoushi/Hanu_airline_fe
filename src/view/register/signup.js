@@ -129,6 +129,22 @@ class SignUp extends React.Component {
                   onChange= {this.onChange}
 
                 /></div>
+                <div>
+               <div class = "dis-textbox">
+              <TextField
+                size="small"
+                variant="outlined"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                onChange={this.onChange}
+              />
+            </div>
+                </div>
                 <div class = "SignUp"><Button
                   type="button"
                   class = "submit"

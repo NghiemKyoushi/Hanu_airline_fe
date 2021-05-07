@@ -129,7 +129,7 @@ class HomePage extends React.Component {
       this.props.history.push(`/oneway`);
 
     }catch(e){
-      alert("false ff")
+      alert("Please choose other flight")
     }
     
   }

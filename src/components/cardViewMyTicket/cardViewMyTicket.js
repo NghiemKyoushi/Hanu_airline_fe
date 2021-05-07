@@ -20,7 +20,8 @@ class CardViewMyTicket extends React.Component {
       arrivalAirport_city,
       price,
       departureTime,
-      idFLight
+      idFLight,
+      idTicket
     } = this.props;
     return (
       <>
@@ -35,7 +36,7 @@ class CardViewMyTicket extends React.Component {
             value={formatDate(departureTime)}
           />
 
-          <div className="price">{price} VNĐ</div>
+          <div className="price">ID: {idTicket}</div>
           <div className = "oneway-economy">
             <button className="oneway_pr">One way</button>
             <button className="oneway_pr">Economy</button>

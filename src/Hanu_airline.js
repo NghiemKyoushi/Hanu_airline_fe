@@ -101,11 +101,7 @@ setStateLogin(data, callback_function) {
       </Route>
 
       
-      <Route exact path ='/seatbooking/:id'>
-        <Template>
-          <SeatBooking/>
-        </Template>
-      </Route>
+  
 
       <Route exact path ='/oneway'>
         <Template>
@@ -129,6 +125,11 @@ setStateLogin(data, callback_function) {
       </UnAuthenRoute>
       
        
+      <ProtectedRoute isLogin={isLogin} exact path ='/seatbooking/:id'>
+        <Template>
+          <SeatBooking/>
+        </Template>
+      </ProtectedRoute>
 
       <ProtectedRoute  isLogin ={isLogin} exact ={true}  path ='/profile'>
       <Template>

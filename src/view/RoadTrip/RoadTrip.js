@@ -106,7 +106,7 @@ class RoadTrip extends React.Component {
         }
           
         </div>
-
+{/* 
         <div className = "day">
         {
           (departure_Time) ? (<>
@@ -120,7 +120,7 @@ class RoadTrip extends React.Component {
           </>): (<></>)
         }
                   
-        </div>
+        </div> */}
 
         <form className="FlightForm" id="flight">
           <div className="promotionMenu">
@@ -158,7 +158,7 @@ class RoadTrip extends React.Component {
         }
           
         </div>
-        <div className = "day">
+        {/* <div className = "day">
         {
           (arrival_Time) ? (<>
                   <button className = "eachday" >{ formatDate(arrival_Time[0].data.departureTime)}</button>
@@ -170,7 +170,7 @@ class RoadTrip extends React.Component {
                    <button className = "eachday" >{ nextDayOfDepartureTime(arrival_Time[0].data.departureTime, 6)}</button>
           </>): (<></>)
         }
-        </div>
+        </div> */}
         <form class="FlightForm" id="flight">
           <div class="promotionMenu">
             <div class="promotion">
