@@ -25,7 +25,7 @@ class Header extends React.Component{
         deleteCookie("username");
         deleteCookie("userId");
         deleteCookie("saveseat");
-        deleteCookie("addbook");
+        deleteCookie("addBook");
         window.location.reload()
     }
     render(){

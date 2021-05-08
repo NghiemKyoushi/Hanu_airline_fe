@@ -30,7 +30,7 @@ class FlightForm extends React.Component {
                 {
                       (allFlight) ? (
                         allFlight.map((flight, index) => {
-                      if(index > 5){
+                      if(index > 4 ){
                         return (
                       <li key = {index}>
                         <CardViewFlight  departureAirport_city = {flight.airway.departureAirport.city} arrivalAirport_city = {flight.airway.arrivalAirport.city} price ={flight.minPrice} departureTime={flight.departureTime} idFlight={flight.id} />

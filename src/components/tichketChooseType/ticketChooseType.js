@@ -23,7 +23,7 @@ class TicketChooseType extends React.Component {
         
        console.log("value", personType);
         const type = document.querySelectorAll(".adult-in-ticket");
-         clearAll(type);
+        //  clearAll(type);
    
         function clearAll(buttons){
            buttons.forEach((b) =>{
