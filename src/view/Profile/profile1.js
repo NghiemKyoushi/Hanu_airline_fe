@@ -78,53 +78,55 @@ class Profile1 extends React.Component {
                 <h2>
                   <a href="#">
                     <span>Email</span>
-                    <small>ngando00@gmail.com</small>
+                    <small><input className = "edit-profile" placeholder = "ngando00@gmail.com"></input></small>
                   </a>
                 </h2>
 
                 <h2>
                   <a href="#">
                     <span>Phone Number</span>
-                    {/* <small>0123456789</small> */}
-                  </a>
-                </h2>
-                <input
+                    <small><input className = "edit-profile" 
+                    placeholder = "0123456789"
                   name="phoneNumber"
                   onChange={this.handleChange}
                   style={{
                   }}
                   required
-                />
+                /></small>
+                  </a>
+                </h2>
+                
               </div>
               <div class="info">
                 <h2>
                   <a href="#">
                     <span>ID Card</span>
-                    {/* <small>0123456789</small> */}
-                    <input />
-                  </a>
-                </h2>
-                <input
+                    <small><input className = "edit-profile" 
+                    placeholder = "0123456789"
                   name="id_card_number"
                   onChange={this.handleChange}
                   style={{
                   }}
                   required
-                />
+                /></small>
+                  </a>
+                </h2>
+                
 
                 <h2>
                   <a href="#">
                     <span>Credit Number</span>
-                    {/* <small>0123456789</small> */}
-                  </a>
-                </h2>
-                <input
+                    <small><input className = "edit-profile" 
+                    placeholder = "0123456789"
                   name="credit_card_number"
                   onChange={this.handleChange}
                   style={{
                   }}
                   required
-                />
+                /></small>
+                  </a>
+                </h2>
+                
               </div>
               <div class="save-btn">
                 <button className="save-btn-profile" onClick={this.onSubmit}>
